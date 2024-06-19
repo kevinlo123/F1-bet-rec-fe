@@ -1,7 +1,7 @@
 import InstagramOne from '../common/components/instagram/InstagramOne';
 import FooterOne from '../common/elements/footer/FooterOne';
 import HeadTitle from '../common/elements/head/HeadTitle';
-import HeaderOne from '../common/elements/header/HeaderOne';
+// import HeaderOne from '../common/elements/header/HeaderOne';
 import { getAllPosts } from '../../lib/api';
 import PostSectionOne from '../common/components/post/PostSectionOne';
 import PostSectionTwo from '../common/components/post/PostSectionTwo';
@@ -12,16 +12,27 @@ import SocialOne from '../common/components/social/SocialOne';
 import PostSectionFive from '../common/components/post/PostSectionFive';
 import PostSectionSix from '../common/components/post/PostSectionSix';
 import SliderOne from '../common/components/slider/SliderOne';
+import PostSectionTwelve from '../common/components/post/PostSectionTwelve';
+import { slugify } from "../common/utils";
+import HeaderFour from "../common/elements/header/HeaderFour";
+
+
+
 
 
 const HomeDefault = ({allPosts}) => {
 
   const videoPost = allPosts.filter(post => post.postFormat === "video");
+  const PageSlug = "lifestyle-blog";
+  const lifestylePost = allPosts.filter(post => slugify(post.pCate) === PageSlug);
+
  
   return ( 
     <>
       <HeadTitle pageTitle="Home Default" />
-      <HeaderOne postData={allPosts}/>
+      {/* <HeaderOne postData={allPosts}/> */}
+      <HeaderFour postData={allPosts} />
+      <PostSectionTwelve postData={lifestylePost} />
       <SliderOne postData={allPosts} />
       <PostSectionOne postData={allPosts}/>
       <PostSectionTwo postData={allPosts} adBanner={true} />
@@ -52,6 +63,7 @@ export async function getStaticProps() {
     'date',
     'slug',
     'cate',
+    'pCate',
     'cate_img',
     'author_img',
     'author_name',

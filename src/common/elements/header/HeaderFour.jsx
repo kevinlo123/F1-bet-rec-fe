@@ -96,31 +96,31 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
         <div className="header-bottom">
           <div className="container">
             <div className="row justify-content-between align-items-center">
-              <div className="col-xl-8 col-lg-4 col-md-4 col-12">
-				<div className="wrapper d-block d-sm-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
-					<div className="logo">
-						<Link href="/">
-							<a>
-								<Image
-								className="dark-logo"
-								width={141}
-								height={37}
-								src={(colorMode === "Dark" ? lightLogo || "/images/logo/logo-white2.webp" : darkLogo || "/images/logo/logo-black.webp") || "/images/logo/logo-black.webp" }
-								alt="Blogar logo"
-								/>
-							</a>
-						</Link>
-					</div>
+              <div className="col-xl-8 col-lg-4 col-md-4 col-6">
+                <div className="wrapper d-block d-sm-flex flex-wrap align-items-center justify-content-start justify-content-md-start">
+                  <div className="logo">
+                    <Link href="/">
+                      <a>
+                        <Image
+                        className="dark-logo"
+                        width={141}
+                        height={37}
+                        src={(colorMode === "Dark" ? lightLogo || "/images/logo/f1(2)_processed.png" : darkLogo || "/images/logo/f1(2)light_processed.png") || "/images/logo/logo-black.webp" }
+                        alt="Blogar logo"
+                        />
+                      </a>
+                    </Link>
+                  </div>
 
-					<div className="mainmenu-wrapper d-none d-xl-block">
-					<nav className="mainmenu-nav">
-          <Nav posts={postData}/>
-					</nav>
-					</div>
-				</div>
+                  <div className="mainmenu-wrapper d-none d-xl-block">
+                    <nav className="mainmenu-nav">
+                      <Nav posts={postData}/>
+                    </nav>
+                  </div>
+                </div>
               </div>
-              <div className="col-xl-4 col-lg-8 col-md-8 col-12">
-                <div className="header-search d-flex flex-wrap align-items-center justify-content-center justify-content-xl-end">
+              <div className="col-xl-4 col-lg-8 col-md-8 col-6">
+                <div className="header-search d-flex flex-wrap align-items-center justify-content-end justify-content-xl-end">
                   <form className="header-search-form d-sm-block d-none">
                     <div className="axil-search form-group">
                       <button type="submit" className="search-button">
@@ -134,9 +134,9 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                     </div>
                   </form>
                   <div className="mobile-search-wrapper d-sm-none d-block">
-                    <button className="search-button-toggle" onClick={toggleHandler}>
+                    {/* <button className="search-button-toggle" onClick={toggleHandler}>
                       <i className="fal fa-search" />
-                    </button>
+                    </button> */}
                     <form className={`header-search-form ${togglaClass ? "open": ""}`}>
                       <div className="axil-search form-group">
                         <button type="submit" className="search-button">
@@ -150,7 +150,13 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                       </div>
                     </form>
                   </div>
-                  <ul className="metabar-block">
+                  <a className="axil-button button-rounded hover-flip-item-wrapper">
+                    <span className="hover-flip-item">
+                      <span data-text="Log in">Log in</span>
+                    </span>
+                  </a>
+                                
+                  {/* <ul className="metabar-block">
                     <li className="icon">
                       <Link href="#">
                         <a>
@@ -177,7 +183,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                         </a>
                       </Link>
                     </li>
-                  </ul>
+                  </ul> */}
                   {/* Start Hamburger Menu  */}
                   <div className="hamburger-menu d-block d-xl-none">
                     <div className="hamburger-inner">
