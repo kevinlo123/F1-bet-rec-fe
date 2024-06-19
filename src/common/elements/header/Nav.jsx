@@ -111,7 +111,7 @@ const Nav = ({posts}) => {
             </li>
             <li className="menu-item-has-children">
                 <Link href="/">
-                    <a>Posts</a>
+                    <a>F1 News</a>
                 </Link>
                 <ul className="axil-submenu">
                     <li>
@@ -163,7 +163,7 @@ const Nav = ({posts}) => {
             </li>
             <li className="menu-item-has-children megamenu-wrapper">
                 <Link href="#">
-                    <a>Mega Menu</a>
+                    <a>F1 Calendar</a>
                 </Link>
                 <ul className="megamenu-sub-menu">
                     <li className="megamenu-item">
@@ -238,7 +238,7 @@ const Nav = ({posts}) => {
             </li>
             <li className="menu-item-has-children">
                 <Link href="/">
-                    <a>Pages</a>
+                    <a>F1 Standings</a>
                 </Link>
                 <ul className="axil-submenu">
                     <li>
@@ -317,12 +317,7 @@ const Nav = ({posts}) => {
             </li>
             <li>
                 <Link href="/lifestyle-blog">
-                    <a>Lifestyle</a>
-                </Link>
-            </li>
-            <li>
-                <Link href="/tech-blog">
-                    <a>Gadgets</a>
+                    <a>F1 Predictions</a>
                 </Link>
             </li>
         </ul>

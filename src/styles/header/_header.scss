@@ -17,9 +17,11 @@ Header Styles
         box-shadow: var(--shadow-primary);
     }
     .logo {
+        top: 2.5px;
+        position: relative;
+
         @media #{$large-mobile} {
             text-align: center;
-            margin-bottom: 20px;
         }
     }
 
@@ -36,14 +38,13 @@ Header Styles
             .axil-search {
                 &.form-group {
                     input {
-                        min-width: 245px;
+                        min-width: 100%;
                         height: 40px;
                         @media only screen and (min-width: 1600px) and (max-width: 1800px) {
                             min-width: 220px;
                         }
                         @media #{$laptop-device} {
                             min-width: 143px;
-                            height: 35px;
                         }
                         @media #{$sm-layout} {
                             min-width: 174px;
@@ -109,6 +110,19 @@ Header Styles
                 }
             }
         }
+
+        
+        a.axil-button {
+            line-height: 36px;
+            height: 40px;
+            margin-left: 10px;
+
+            @media #{$large-mobile} {
+                margin-left: 0px;
+                padding: 0 20px;
+                font-size: var(--font-size-b3)
+            }
+        }
     }
    
 
@@ -166,6 +180,12 @@ Search Styles
         margin-bottom: 0;
         text-align: right;
         display: inline-block;
+        display: block;
+
+        @media #{$smlg-device} {
+            display: none;
+        }
+
         input {
             background: var(--color-lightest);
             border-radius: 44px;

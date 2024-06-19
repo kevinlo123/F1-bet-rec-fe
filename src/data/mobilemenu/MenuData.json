@@ -26,7 +26,7 @@
         ]
     },
     {
-        "label": "Posts",
+        "label": "F1 News",
         "path": "#",
         "submenu": [
             {
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "label": "Pages",
+        "label": "F1 Calendar",
         "path": "#",
         "submenu": [
             {
@@ -90,11 +90,11 @@
         ]
     },
     {
-        "label": "Lifestyle",
+        "label": "F1 Standings",
         "path": "/lifestyle-blog" 
     },
     {
-        "label": "Gadgets",
+        "label": "F1 Predictions",
         "path": "/tech-blog"
     }
 ]
