@@ -29,7 +29,7 @@ const HomeDefault = ({allPosts}) => {
  
   return ( 
     <>
-      <HeadTitle pageTitle="Home Default" />
+      <HeadTitle pageTitle="Home" />
       {/* <HeaderOne postData={allPosts}/> */}
       <HeaderFour postData={allPosts} />
       <PostSectionTwelve postData={lifestylePost} />
