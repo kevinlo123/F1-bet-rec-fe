@@ -518,7 +518,6 @@ button {
             background: var(--color-lightest);
             @media #{$sm-layout} {
                 padding: 10px 0;
-                padding-bottom: 20px;
             }
         }
 
@@ -736,6 +735,12 @@ button {
 
 .axil-header .logo a img.light-logo {
     display: none !important;
+}
+
+.popup-mobilemenu-area {
+    h2 {
+        margin: 0;
+    }
 }
 
 .popup-mobilemenu-area .inner .mobile-menu-top .logo a img.light-logo {

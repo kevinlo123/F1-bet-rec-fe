@@ -27,13 +27,14 @@ const MobileMenu = ({menuShow, menuHide}) => {
             <div className="logo">
                 <Link href="/">
                     <a>
-                        <Image
+                        {/* <Image
                         className="dark-logo"
                         width={141}
                         height={37}
                         src={colorMode === "Dark" ?  "/images/logo/f1(2)_processed.png" :  "/images/logo/f1(2)light_processed.png"  }
                         alt="Blogar logo"
-                        />
+                        /> */}
+                       <h2 class="title">F1 Press News</h2>
                     </a>
                 </Link>
             </div>
