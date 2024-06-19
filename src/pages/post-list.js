@@ -8,6 +8,8 @@ import SidebarOne from "../common/components/sidebar/SidebarOne";
 import PostLayoutTwo from "../common/components/post/layout/PostLayoutTwo";
 import { SortingByDate } from "../common/utils";
 import HeadTitle from "../common/elements/head/HeadTitle";
+import HeaderFour from "../common/elements/header/HeaderFour";
+
 
 const PostListPage = ({ allPosts }) => {
 
@@ -26,7 +28,9 @@ const PostListPage = ({ allPosts }) => {
     return (
         <>
         <HeadTitle pageTitle="Post Archive" />
-            <HeaderOne postData={allPosts} pClass="header-light header-sticky header-with-shadow" />
+            <HeaderFour postData={allPosts} />
+
+            {/* <HeaderOne postData={allPosts} pClass="header-light header-sticky header-with-shadow" /> */}
             <div className="axil-post-list-area axil-section-gap bg-color-white">
                 <div className="container">
                     <div className="row">

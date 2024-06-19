@@ -17,8 +17,14 @@ Header Styles
         box-shadow: var(--shadow-primary);
     }
     .logo {
-        top: 2.5px;
-        position: relative;
+        h1 {
+            font-size: 32px;
+            margin-bottom: 0;
+
+            @media #{$large-mobile} {
+                font-size: 21px;
+            }
+        }
 
         @media #{$large-mobile} {
             text-align: center;

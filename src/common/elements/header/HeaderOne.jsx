@@ -30,13 +30,15 @@ const HeaderOne = ({pClass, darkLogo, lightLogo, postData}) => {
                             <div className="logo">
                                 <Link href="/">
                                     <a>
-                                        <Image
+                                        {/* <Image
                                         className="dark-logo"
                                         width={141}
                                         height={34}
                                         src={(colorMode === "Dark" ? lightLogo || "/images/logo/f1(2)_processed.png" : darkLogo || "/images/logo/f1(2)light_processed.png") || "/images/logo/logo-black.webp" }
                                         alt="Blogar logo"
-                                        />
+                                        /> */}
+
+                                        <h2 class="title">F1 Press News</h2>
                                     </a>
                                 </Link>
                             </div>

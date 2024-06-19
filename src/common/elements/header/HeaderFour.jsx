@@ -65,7 +65,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                   </ul>
                 </div>
               </div>
-              <div className="col-lg-6 col-md-4 col-sm-12">
+              {/* <div className="col-lg-6 col-md-4 col-sm-12">
                 <ul className="social-share-transparent md-size justify-content-center justify-content-md-end">
                   <li>
                     <a href={SocialData.fb.url}>
@@ -88,7 +88,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -101,13 +101,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                   <div className="logo">
                     <Link href="/">
                       <a>
-                        <Image
-                        className="dark-logo"
-                        width={141}
-                        height={37}
-                        src={(colorMode === "Dark" ? lightLogo || "/images/logo/f1(2)_processed.png" : darkLogo || "/images/logo/f1(2)light_processed.png") || "/images/logo/logo-black.webp" }
-                        alt="Blogar logo"
-                        />
+                         <h1 class="title">F1 Press News</h1>
                       </a>
                     </Link>
                   </div>
