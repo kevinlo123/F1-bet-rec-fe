@@ -66,5 +66,9 @@
         @media #{$smlg-device} {
             text-align: center;
         }
+
+        a {
+            margin-left: 8px;
+        }
     }
 }
