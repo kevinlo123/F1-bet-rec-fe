@@ -20,6 +20,7 @@ Header Styles
         h2 {
             font-size: 32px;
             margin-bottom: 0;
+            text-align: left;
 
             @media #{$large-mobile} {
                 font-size: 21px;
@@ -34,7 +35,7 @@ Header Styles
     .header-search {
         @media #{$large-mobile} {
             text-align: center !important;
-            justify-content: center !important;
+            justify-content: flex-end !important;
         }
         .header-search-form {
             flex-grow: 1;

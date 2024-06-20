@@ -38,7 +38,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6 col-md-8 col-sm-12">
-                <div className="header-top-bar d-flex flex-wrap align-items-center justify-content-center justify-content-md-start">
+                <div className="header-top-bar d-flex flex-wrap align-items-center justify-content-between justify-content-md-start">
                   <ul className="header-top-date liststyle d-flex flrx-wrap align-items-center mr--20">
                     <li>
                       <Link href="#">

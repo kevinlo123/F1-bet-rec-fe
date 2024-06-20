@@ -13,9 +13,9 @@ const Login = ({allPosts}) => {
             <div className="">
                 <div className="container">
                     <div className="row">
-                        <div className="">
+                        <div className="col-12">
                             <div className="inner">
-                                <h1>Login</h1>
+                                <h1>Welcome Back</h1>
                                 <form className="login-form">
                                     <div className="axil-login form-group">
                                         <span className="search-button">
@@ -30,7 +30,7 @@ const Login = ({allPosts}) => {
                                     </div>
                                     <div className="axil-login form-group">
                                         <span className="search-button">
-                                            <i className="fal fa-user-circle" />
+                                            <i className="fal fa-key" />
                                         </span>
                                         <input
                                             type="password"
