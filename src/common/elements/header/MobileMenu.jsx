@@ -34,7 +34,7 @@ const MobileMenu = ({menuShow, menuHide}) => {
                         src={colorMode === "Dark" ?  "/images/logo/f1(2)_processed.png" :  "/images/logo/f1(2)light_processed.png"  }
                         alt="Blogar logo"
                         /> */}
-                       <h2 class="title">F1 Press News</h2>
+                       <h2 className="title">F1 Press News</h2>
                     </a>
                 </Link>
             </div>

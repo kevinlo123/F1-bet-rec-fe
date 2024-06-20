@@ -38,7 +38,7 @@ const HeaderOne = ({pClass, darkLogo, lightLogo, postData}) => {
                                         alt="Blogar logo"
                                         /> */}
 
-                                        <h2 class="title">F1 Press News</h2>
+                                        <h2 className="title">F1 Press News</h2>
                                     </a>
                                 </Link>
                             </div>

@@ -101,7 +101,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                   <div className="logo">
                     <Link href="/">
                       <a>
-                         <h1 class="title">F1 Press News</h1>
+                         <h2 className="title">F1 Press News</h2>
                       </a>
                     </Link>
                   </div>
@@ -144,12 +144,13 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                       </div>
                     </form>
                   </div>
-                  <a className="axil-button button-rounded hover-flip-item-wrapper">
-                    <span className="hover-flip-item">
-                      <span data-text="Log in">Log in</span>
-                    </span>
-                  </a>
-                                
+                    <Link href="/login">
+                      <a className="axil-button button-rounded hover-flip-item-wrapper">
+                        <span className="hover-flip-item">
+                          <span data-text="Log in">Log in</span>
+                        </span>
+                      </a>
+                    </Link>                                
                   {/* <ul className="metabar-block">
                     <li className="icon">
                       <Link href="#">
