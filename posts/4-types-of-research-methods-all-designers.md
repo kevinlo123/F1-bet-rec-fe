@@ -1,6 +1,6 @@
 ---
 postFormat: 'standard'
-title: 'f1 app of research methods all designers should know'
+title: 'f1 app Carlos Sainz of research methods all designers should know'
 featureImg: '/images/posts/thumbnail-01.webp'
 slidePost: true
 date: 'Feb 30 2022'
