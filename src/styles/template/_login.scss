@@ -48,8 +48,22 @@
     .login-button-cont {
         display: flex;
         justify-content: flex-start;
+
+        @media #{$smlg-device} {
+            justify-content: center;
+            margin-top: 42px;
+        }
+
         .axil-button {
             width: 125px;
+            text-align: center;
+        }
+    }
+
+    .signup-text {
+        margin-top: 42px;
+        
+        @media #{$smlg-device} {
             text-align: center;
         }
     }

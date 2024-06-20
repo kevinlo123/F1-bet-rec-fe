@@ -47,6 +47,14 @@ const Login = ({allPosts}) => {
                                         </button>
                                     </div>
                                 </form>
+                                <p className="signup-text">
+                                    Don't have an account? &nbsp;
+                                    <Link href="/signup">
+                                        <a className="primary-color">
+                                            Sign up   
+                                        </a>
+                                    </Link>
+                                </p>
                             </div>
                         </div>
                     </div>
