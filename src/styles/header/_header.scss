@@ -22,7 +22,7 @@ Header Styles
             margin-bottom: 0;
             text-align: left;
 
-            @media #{$large-mobile} {
+            @media #{$smlg-device} {
                 font-size: 21px;
             }
         }

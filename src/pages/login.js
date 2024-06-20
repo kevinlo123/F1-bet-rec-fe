@@ -10,12 +10,12 @@ const Login = ({allPosts}) => {
         <>
             <HeadTitle pageTitle="Login" />
             <HeaderFour postData={allPosts} pClass="header-light header-sticky header-with-shadow" />
-            <div className="">
+            <div className="login-wrapper">
                 <div className="container">
                     <div className="row">
-                        <div className="col-12">
+                        <div className="col-12 col-md-6 axil-section-gap">
                             <div className="inner">
-                                <h1>Welcome Back</h1>
+                                <h1 className="title">Welcome Back</h1>
                                 <form className="login-form">
                                     <div className="axil-login form-group">
                                         <span className="search-button">
@@ -39,7 +39,7 @@ const Login = ({allPosts}) => {
                                             required
                                         />
                                     </div>
-                                    <div className="axil-login form-group">
+                                    <div className="login-button-cont form-group">
                                         <button type="submit" className="axil-button button-rounded hover-flip-item-wrapper">
                                             <span className="hover-flip-item">
                                                 <span data-text="Log in">Log in</span>
