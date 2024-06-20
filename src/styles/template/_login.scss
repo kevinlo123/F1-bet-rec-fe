@@ -2,7 +2,7 @@
     margin: 135px 0;
     position: relative;
 
-    @media #{$sm-layout} {
+    @media #{$medium} {
         margin: 50px 0;
     }
 
@@ -26,7 +26,7 @@
         margin-bottom: 42px;
         text-align: left;
 
-        @media #{$sm-layout} {
+        @media #{$medium} {
             text-align: center;
         }
     }
@@ -41,7 +41,7 @@
             max-width: 350px;
             margin-right: auto;
 
-            @media #{$sm-layout} {
+            @media #{$medium} {
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -80,7 +80,7 @@
         margin-top: 42px;
 
 
-        @media #{$sm-layout} {
+        @media #{$medium} {
             justify-content: center;
         }
 
@@ -93,7 +93,7 @@
     .signup-text {
         margin-top: 42px;
         
-        @media #{$sm-layout} {
+        @media #{$medium} {
             text-align: center;
         }
 
