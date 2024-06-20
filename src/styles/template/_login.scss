@@ -1,11 +1,32 @@
 .login-wrapper {
-    margin: 50px 0;
+    margin: 135px 0;
+    position: relative;
+
+    @media #{$sm-layout} {
+        margin: 50px 0;
+    }
+
+    &:after{
+        content: '';
+        height: 125%;
+        width: 28%;
+        position: absolute;
+        background-color: #e10600;
+        top: -13%;
+        right: 0;
+        z-index: -1;
+        border-radius: var(--radius) 0  0 var(--radius);
+
+        @media #{$smlg-device} {
+            display: none;
+        }
+    }
 
     .title {
         margin-bottom: 42px;
         text-align: left;
 
-        @media #{$smlg-device} {
+        @media #{$sm-layout} {
             text-align: center;
         }
     }
@@ -17,7 +38,14 @@
             text-align: right;
             display: inline-block;
             display: block;
-    
+            max-width: 350px;
+            margin-right: auto;
+
+            @media #{$sm-layout} {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
             input {
                 background: var(--color-lightest);
                 border-radius: 44px;
@@ -26,6 +54,7 @@
                 max-width: 350px;
                 font-size: 14px;
                 margin-bottom: 24px;
+
             }
 
             .search-button {
@@ -48,10 +77,11 @@
     .login-button-cont {
         display: flex;
         justify-content: flex-start;
+        margin-top: 42px;
 
-        @media #{$smlg-device} {
+
+        @media #{$sm-layout} {
             justify-content: center;
-            margin-top: 42px;
         }
 
         .axil-button {
@@ -63,12 +93,21 @@
     .signup-text {
         margin-top: 42px;
         
-        @media #{$smlg-device} {
+        @media #{$sm-layout} {
             text-align: center;
         }
 
         a {
             margin-left: 8px;
+        }
+    }
+
+    .login-img {
+        position: relative;
+
+        img {
+            object-fit: cover;
+            border-radius: var(--radius);
         }
     }
 }

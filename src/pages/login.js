@@ -13,9 +13,9 @@ const Login = ({allPosts}) => {
             <div className="login-wrapper">
                 <div className="container">
                     <div className="row">
-                        <div className="col-12 col-md-6 axil-section-gap">
+                        <div className="col-12 col-lg-6 axil-section-gap">
                             <div className="inner">
-                                <h1 className="title">Welcome Back</h1>
+                                <h1 className="title">Welcome Back!</h1>
                                 <form className="login-form">
                                     <div className="axil-login form-group">
                                         <span className="search-button">
@@ -55,6 +55,15 @@ const Login = ({allPosts}) => {
                                         </a>
                                     </Link>
                                 </p>
+                            </div>
+                        </div>
+                        <div className="col-lg-6 login-img">
+                            <div className="row">
+                                <Image
+                                    layout="fill"
+                                    src="/images/others/f1-login.jpg"
+                                    alt="login image"
+                                />
                             </div>
                         </div>
                     </div>
