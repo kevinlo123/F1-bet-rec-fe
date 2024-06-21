@@ -7,17 +7,17 @@ import HeadTitle from "../common/elements/head/HeadTitle";
 
 //https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users
 
-const Login = ({allPosts}) => {
+const Signup = ({allPosts}) => {
     return (
         <>
             <HeadTitle pageTitle="Login" />
             <HeaderFour postData={allPosts} pClass="header-light header-sticky header-with-shadow" />
-            <div className="login-wrapper">
+            <div className="signup-wrapper">
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-lg-6 axil-section-gap">
                             <div className="inner">
-                                <h1 className="title">Welcome Back!</h1>
+                                <h1 className="title">Join us!</h1>
                                 <form className="login-form">
                                     <div className="axil-login form-group">
                                         <span className="search-button">
@@ -41,19 +41,30 @@ const Login = ({allPosts}) => {
                                             required
                                         />
                                     </div>
+                                    <div className="axil-login form-group">
+                                        <span className="search-button">
+                                            <i className="fal fa-user" />
+                                        </span>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            placeholder="User name"
+                                            required
+                                        />
+                                    </div>
                                     <div className="login-button-cont form-group">
                                         <button type="submit" className="axil-button button-rounded hover-flip-item-wrapper">
                                             <span className="hover-flip-item">
-                                                <span data-text="Log in">Log in</span>
+                                                <span data-text="Sign up">Sign up</span>
                                             </span>
                                         </button>
                                     </div>
                                 </form>
                                 <p className="signup-text">
-                                    Don&rsquo;t have an account?
-                                    <Link href="/signup">
+                                    Have an account?
+                                    <Link href="/login">
                                         <a className="primary-color">
-                                            Sign up   
+                                            Log in   
                                         </a>
                                     </Link>
                                 </p>
@@ -63,8 +74,8 @@ const Login = ({allPosts}) => {
                             <div className="row">
                                 <Image
                                     layout="fill"
-                                    src="/images/others/f1-login.jpg"
-                                    alt="login image"
+                                    src="/images/others/f1-signup.jpg"
+                                    alt="signup image"
                                 />
                             </div>
                         </div>
@@ -77,7 +88,7 @@ const Login = ({allPosts}) => {
     );
 }
 
-export default Login;
+export default Signup;
 
 
 export async function getStaticProps() {
