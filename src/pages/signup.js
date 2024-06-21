@@ -4,10 +4,47 @@ import FooterOne from "../common/elements/footer/FooterOne";
 import HeaderFour from "../common/elements/header/HeaderFour";
 import { getAllPosts } from '../../lib/api';
 import HeadTitle from "../common/elements/head/HeadTitle";
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 
-//https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users
 
 const Signup = ({allPosts}) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const router = useRouter();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const userData = {
+            email,
+            password,
+            username
+        };
+
+        try {
+            const response = await fetch('https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            });
+
+            if (response.ok) {
+                // Handle successful response
+                console.log('User signed up successfully!');
+                router.push('/');
+            } else {
+                // Handle errors
+                console.error('Error signing up:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error signing up:', error);
+        }
+    };
+
     return (
         <>
             <HeadTitle pageTitle="Login" />
@@ -18,7 +55,7 @@ const Signup = ({allPosts}) => {
                         <div className="col-12 col-lg-6 axil-section-gap">
                             <div className="inner">
                                 <h1 className="title">Join us!</h1>
-                                <form className="login-form">
+                                <form className="login-form" onSubmit={handleSubmit}>
                                     <div className="axil-login form-group">
                                         <span className="search-button">
                                             <i className="fal fa-user-circle" />
@@ -27,6 +64,8 @@ const Signup = ({allPosts}) => {
                                             type="email"
                                             className="form-control"
                                             placeholder="Email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
                                             required
                                         />
                                     </div>
@@ -38,6 +77,8 @@ const Signup = ({allPosts}) => {
                                             type="password"
                                             className="form-control"
                                             placeholder="Password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
                                             required
                                         />
                                     </div>
@@ -49,6 +90,8 @@ const Signup = ({allPosts}) => {
                                             type="text"
                                             className="form-control"
                                             placeholder="User name"
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
                                             required
                                         />
                                     </div>

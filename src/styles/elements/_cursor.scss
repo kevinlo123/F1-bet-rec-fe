@@ -58,6 +58,10 @@
 	background-color: var(--color-primary);
 	-webkit-transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
 	transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
+
+	@media #{$large-mobile} {
+		display: none;
+	}
 }
 
 .cursor-inner.cursor-hover {
@@ -81,6 +85,10 @@
 	opacity: .5;
 	-webkit-transition: all .08s ease-out;
 	transition: all .08s ease-out;
+
+	@media #{$large-mobile} {
+		display: none;
+	}
 }
 
 .cursor-outer.cursor-hover {
