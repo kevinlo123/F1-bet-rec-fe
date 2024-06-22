@@ -4,10 +4,58 @@ import FooterOne from "../common/elements/footer/FooterOne";
 import HeaderFour from "../common/elements/header/HeaderFour";
 import { getAllPosts } from '../../lib/api';
 import HeadTitle from "../common/elements/head/HeadTitle";
+import { AuthContext } from '../contexts/AuthContext';
+import React, { useState, useContext } from 'react';
+
 
 //https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users
 
 const Login = ({allPosts}) => {
+    const { login } = useContext(AuthContext);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const local = 'http://localhost:3000/users/login'
+    const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/login'
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const userData = {
+            user: {
+                email,
+                password
+            }
+        };
+
+        try {
+            const response = await fetch(prod, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            });
+
+            if (response.ok) {
+                // Handle successful response
+                const data = await response.json();
+                const token = data.token;
+
+                if (token) {
+                    login(data, token); // Save the token and update the authentication state
+                } else {
+                    console.error('No token found in the response');
+                }
+
+            } else {
+                console.error('Error logging in:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error logging in:', error);
+        }
+    };
+
+
     return (
         <>
             <HeadTitle pageTitle="Login" />
@@ -18,7 +66,7 @@ const Login = ({allPosts}) => {
                         <div className="col-12 col-lg-6 axil-section-gap">
                             <div className="inner">
                                 <h1 className="title">Welcome Back!</h1>
-                                <form className="login-form">
+                                <form className="login-form" onSubmit={handleSubmit}>
                                     <div className="axil-login form-group">
                                         <span className="search-button">
                                             <i className="fal fa-user-circle" />
@@ -27,6 +75,8 @@ const Login = ({allPosts}) => {
                                             type="email"
                                             className="form-control"
                                             placeholder="Email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
                                             required
                                         />
                                     </div>
@@ -38,6 +88,8 @@ const Login = ({allPosts}) => {
                                             type="password"
                                             className="form-control"
                                             placeholder="Password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
                                             required
                                         />
                                     </div>

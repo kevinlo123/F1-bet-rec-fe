@@ -14,7 +14,6 @@ const Signup = ({allPosts}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
-    const router = useRouter();
     const local = 'http://localhost:3000/users'
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users'
     
@@ -45,7 +44,7 @@ const Signup = ({allPosts}) => {
                 const token = data.token;
 
                 if (token) {
-                    login(response, token); // Save the token and update the authentication state
+                    login(data, token); // Save the token and update the authentication state
                 } else {
                     console.error('No token found in the response');
                 }
