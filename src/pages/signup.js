@@ -13,18 +13,22 @@ const Signup = ({allPosts}) => {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const router = useRouter();
+    const local = 'http://localhost:3000/users'
+    const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users'
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const userData = {
-            email,
-            password,
-            username
+            user: {
+                email,
+                password,
+                username
+            }
         };
 
         try {
-            const response = await fetch('https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users', {
+            const response = await fetch(prod, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
