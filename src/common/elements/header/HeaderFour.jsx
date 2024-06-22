@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 import Nav from "./Nav";
 import SocialData from "../../../data/social/SocialData.json";
+import { AuthContext } from '../../../contexts/AuthContext';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
   const dateFormate = () => {
@@ -27,9 +30,55 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
 
   const [togglaClass, setTogglaClass] = useState(false);
 
-   const toggleHandler = () => {
-        setTogglaClass(active => !active);
-   }
+  const { isAuthenticated, logout } = useContext(AuthContext);
+
+  const toggleHandler = () => {
+      setTogglaClass(active => !active);
+  }
+
+  const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+    <button
+      ref={ref}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick(e);
+      }}
+    > 
+      <Image
+        width={40}
+        height={40}
+        src="/images/others/author.png"
+        alt="Author Images"
+      />
+      {children}
+    </button>
+  ));
+
+  const CustomMenu = React.forwardRef(
+    ({ children, style, className, 'aria-labelledby': labeledBy }, ref) => {  
+      return (
+        <div
+          ref={ref}
+          style={style}
+          className={className}
+          aria-labelledby={labeledBy}
+        >
+          <ul className="list-unstyled">
+            {React.Children.toArray(children).filter(
+              (child) =>
+                 child.props.children,
+            )}
+          </ul>
+        </div>
+      );
+    },
+  );
+
+  const handleLogout = () => {
+    logout(); // Call the logout method from AuthContext
+  };
+  
+  
 
   return (
     <>
@@ -144,41 +193,54 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                       </div>
                     </form>
                   </div>
-                    <Link href="/login">
-                      <a className="axil-button button-rounded hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
-                          <span data-text="Log in">Log in</span>
-                        </span>
-                      </a>
-                    </Link>                                
-                  {/* <ul className="metabar-block">
-                    <li className="icon">
-                      <Link href="#">
-                        <a>
-                          <i className="fas fa-bookmark" />
+
+                  {isAuthenticated ? (
+                      <ul className="metabar-block">
+                        {/* <li className="icon">
+                          <Link href="#">
+                            <a>
+                              <i className="fas fa-bookmark" />
+                            </a>
+                          </Link>
+                        </li> */}
+                        {/* <li className="icon">
+                          <Link href="#">
+                            <a>
+                              <i className="fas fa-bell" />
+                            </a>
+                          </Link>
+                        </li> */}
+                        <li>
+                          {/* <Link href="#">
+                            <a>
+                              <Image
+                                width={40}
+                                height={40}
+                                src="/images/others/author.png"
+                                alt="Author Images"
+                              />
+                            </a>
+                          </Link> */}
+
+                        <Dropdown>
+                            <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components"></Dropdown.Toggle>
+                            <Dropdown.Menu as={CustomMenu}>
+                              <Dropdown.Item onClick={handleLogout} eventKey="1">
+                                Log out
+                              </Dropdown.Item>
+                            </Dropdown.Menu>
+                          </Dropdown>
+                        </li>
+                      </ul>
+                    ) : (
+                      <Link href="/login">
+                        <a className="axil-button button-rounded hover-flip-item-wrapper">
+                          <span className="hover-flip-item">
+                            <span data-text="Log in">Log in</span>
+                          </span>
                         </a>
-                      </Link>
-                    </li>
-                    <li className="icon">
-                      <Link href="#">
-                        <a>
-                          <i className="fas fa-bell" />
-                        </a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="#">
-                        <a>
-                          <Image
-                            width={40}
-                            height={40}
-                            src="/images/others/author.webp"
-                            alt="Author Images"
-                          />
-                        </a>
-                      </Link>
-                    </li>
-                  </ul> */}
+                      </Link>  
+                    )}        
                   {/* Start Hamburger Menu  */}
                   <div className="hamburger-menu d-block d-xl-none">
                     <div className="hamburger-inner">

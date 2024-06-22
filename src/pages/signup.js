@@ -4,17 +4,20 @@ import FooterOne from "../common/elements/footer/FooterOne";
 import HeaderFour from "../common/elements/header/HeaderFour";
 import { getAllPosts } from '../../lib/api';
 import HeadTitle from "../common/elements/head/HeadTitle";
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
+import { AuthContext } from '../contexts/AuthContext';
 
 
 const Signup = ({allPosts}) => {
+    const { login } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const router = useRouter();
     const local = 'http://localhost:3000/users'
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users'
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -38,10 +41,16 @@ const Signup = ({allPosts}) => {
 
             if (response.ok) {
                 // Handle successful response
-                console.log('User signed up successfully!');
-                router.push('/');
+                const data = await response.json();
+                const token = data.token;
+
+                if (token) {
+                    login(response, token); // Save the token and update the authentication state
+                } else {
+                    console.error('No token found in the response');
+                }
+
             } else {
-                // Handle errors
                 console.error('Error signing up:', response.statusText);
             }
         } catch (error) {

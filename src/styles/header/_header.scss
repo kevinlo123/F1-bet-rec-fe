@@ -554,6 +554,26 @@ button {
                     }
                 }
             }
+            .metabar-block {
+                .dropdown {
+                    button {
+                        border: none;
+                        display: flex;
+                    }
+
+                    .dropdown-menu {
+                        font-size: 14px;
+                        --bs-dropdown-link-active-bg: none;
+                        --bs-dropdown-link-hover-bg: none;
+
+                        a.dropdown-item {
+                            &:hover {
+                                background-color: none !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .header-bottom {

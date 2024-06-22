@@ -462,6 +462,11 @@ body.active-dark-mode .axil-footer-style-1 .footer-top .inner {
     border-bottom-color: #333333;
 }
 
+body.active-dark-mode .header-style-4 .metabar-block .dropdown-menu {
+    border-color: #333333;
+    background: #111111;
+}
+
 @media only screen and (max-width: 575px) {
     body.active-dark-mode .axil-header .header-search .header-search-form .axil-search.form-group .search-button {
         background: #242424;
