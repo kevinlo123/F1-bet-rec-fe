@@ -203,13 +203,13 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                             </a>
                           </Link>
                         </li> */}
-                        {/* <li className="icon">
+                        <li className="icon">
                           <Link href="#">
                             <a>
                               <i className="fas fa-bell" />
                             </a>
                           </Link>
-                        </li> */}
+                        </li> 
                         <li>
                           {/* <Link href="#">
                             <a>
@@ -222,7 +222,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                             </a>
                           </Link> */}
 
-                        <Dropdown>
+                          <Dropdown>
                             <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components"></Dropdown.Toggle>
                             <Dropdown.Menu as={CustomMenu}>
                               <Dropdown.Item onClick={handleLogout} eventKey="1">
