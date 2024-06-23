@@ -10,7 +10,10 @@
         "laps": 57,
         "circuitLength": "5.412km",
         "lapRecord": "1:31.447 - Pedro de la Rosa (2005)",
-        "flag": "<span class=\"fi fi-gr fis\"></span>"
+        "cate": "Middle East",
+        "flag": "<span class=\"fi fi-bh fi\"></span>",
+        "featureImg": "\/images\/circuits\/bahrain.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 2,
@@ -20,7 +23,11 @@
         "date": "2024-03-09",
         "laps": 50,
         "circuitLength": "6.174km",
-        "lapRecord": "1:27.511 - Lewis Hamilton (2021)"
+        "lapRecord": "1:27.511 - Lewis Hamilton (2021)",
+        "cate": "Middle East",
+        "flag": "<span class=\"fi fi-sa fi\"></span>",
+        "featureImg": "\/images\/circuits\/jeddah.jpg",
+        "type": "Traditional Circuits"
       },
       {
         "round": 3,
@@ -30,7 +37,11 @@
         "date": "2024-03-24",
         "laps": 58,
         "circuitLength": "5.278km",
-        "lapRecord": "1:20.486 - Charles Leclerc (2022)"
+        "lapRecord": "1:20.486 - Charles Leclerc (2022)",
+        "cate": "Oceana",
+        "flag": "<span class=\"fi fi-au fi\"></span>",
+        "featureImg": "\/images\/circuits\/melbourne.webp",
+        "type": "Street Circuits"
       },
       {
         "round": 4,
@@ -40,7 +51,11 @@
         "date": "2024-04-07",
         "laps": 53,
         "circuitLength": "5.807km",
-        "lapRecord": "1:30.983 - Lewis Hamilton (2019)"
+        "lapRecord": "1:30.983 - Lewis Hamilton (2019)",
+        "cate": "Asia",
+        "flag": "<span class=\"fi fi-jp fi\"></span>",
+        "featureImg": "\/images\/circuits\/suzuka.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 5,
@@ -50,7 +65,11 @@
         "date": "2024-04-21",
         "laps": 56,
         "circuitLength": "5.451km",
-        "lapRecord": "1:32.238 - Michael Schumacher (2004)"
+        "lapRecord": "1:32.238 - Michael Schumacher (2004)",
+        "cate": "Asia",
+        "flag": "<span class=\"fi fi-cn fi\"></span>",
+        "featureImg": "\/images\/circuits\/china.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 6,
@@ -60,7 +79,11 @@
         "date": "2024-05-05",
         "laps": 57,
         "circuitLength": "5.412km",
-        "lapRecord": "1:31.361 - Max Verstappen (2023)"
+        "lapRecord": "1:31.361 - Max Verstappen (2023)",
+        "cate": "North America",
+        "flag": "<span class=\"fi fi-us fi\"></span>",
+        "featureImg": "\/images\/circuits\/miami.webp",
+        "type": "Street Circuits"
       },
       {
         "round": 7,
@@ -70,7 +93,11 @@
         "date": "2024-05-19",
         "laps": 63,
         "circuitLength": "4.909km",
-        "lapRecord": "1:15.484 - Lewis Hamilton (2020)"
+        "lapRecord": "1:15.484 - Lewis Hamilton (2020)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-it fi\"></span>",
+        "featureImg": "\/images\/circuits\/imola.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 8,
@@ -80,7 +107,11 @@
         "date": "2024-05-26",
         "laps": 78,
         "circuitLength": "3.337km",
-        "lapRecord": "1:12.909 - Lewis Hamilton (2021)"
+        "lapRecord": "1:12.909 - Lewis Hamilton (2021)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-mc fi\"></span>",
+        "featureImg": "\/images\/circuits\/monaco.webp",
+        "type": "Street Circuits"
       },
       {
         "round": 9,
@@ -90,7 +121,11 @@
         "date": "2024-06-09",
         "laps": 70,
         "circuitLength": "4.361km",
-        "lapRecord": "1:13.078 - Valtteri Bottas (2019)"
+        "lapRecord": "1:13.078 - Valtteri Bottas (2019)",
+        "cate": "North America",
+        "flag": "<span class=\"fi fi-ca fi\"></span>",
+        "featureImg": "\/images\/circuits\/canada.jpg",
+        "type": "Street Circuits"
       },
       {
         "round": 10,
@@ -100,7 +135,11 @@
         "date": "2024-06-23",
         "laps": 66,
         "circuitLength": "4.675km",
-        "lapRecord": "1:18.149 - Max Verstappen (2021)"
+        "lapRecord": "1:18.149 - Max Verstappen (2021)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-es fi\"></span>",
+        "featureImg": "\/images\/circuits\/spain.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 11,
@@ -110,7 +149,11 @@
         "date": "2024-06-30",
         "laps": 71,
         "circuitLength": "4.318km",
-        "lapRecord": "1:05.619 - Carlos Sainz (2020)"
+        "lapRecord": "1:05.619 - Carlos Sainz (2020)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-at fi\"></span>",
+        "featureImg": "\/images\/circuits\/austria.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 12,
@@ -120,7 +163,11 @@
         "date": "2024-07-07",
         "laps": 52,
         "circuitLength": "5.891km",
-        "lapRecord": "1:27.097 - Max Verstappen (2020)"
+        "lapRecord": "1:27.097 - Max Verstappen (2020)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-gb fi\"></span>",
+        "featureImg": "\/images\/circuits\/british.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 13,
@@ -130,7 +177,11 @@
         "date": "2024-07-21",
         "laps": 70,
         "circuitLength": "4.381km",
-        "lapRecord": "1:16.627 - Lewis Hamilton (2020)"
+        "lapRecord": "1:16.627 - Lewis Hamilton (2020)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-hu fi\"></span>",
+        "featureImg": "\/images\/circuits\/hungary.jpg",
+        "type": "Traditional Circuits"
       },
       {
         "round": 14,
@@ -140,7 +191,11 @@
         "date": "2024-07-28",
         "laps": 44,
         "circuitLength": "7.004km",
-        "lapRecord": "1:46.286 - Valtteri Bottas (2018)"
+        "lapRecord": "1:46.286 - Valtteri Bottas (2018)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-be fi\"></span>",
+        "featureImg": "\/images\/circuits\/belgium.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 15,
@@ -150,7 +205,11 @@
         "date": "2024-08-25",
         "laps": 72,
         "circuitLength": "4.259km",
-        "lapRecord": "1:11.097 - Lewis Hamilton (2021)"
+        "lapRecord": "1:11.097 - Lewis Hamilton (2021)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-nl fi\"></span>",
+        "featureImg": "\/images\/circuits\/dutch.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 16,
@@ -160,7 +219,11 @@
         "date": "2024-09-01",
         "laps": 53,
         "circuitLength": "5.793km",
-        "lapRecord": "1:21.046 - Rubens Barrichello (2004)"
+        "lapRecord": "1:21.046 - Rubens Barrichello (2004)",
+        "cate": "Europe",
+        "flag": "<span class=\"fi fi-it fi\"></span>",
+        "featureImg": "\/images\/circuits\/monza.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 17,
@@ -170,7 +233,11 @@
         "date": "2024-09-15",
         "laps": 51,
         "circuitLength": "6.003km",
-        "lapRecord": "1:43.009 - Charles Leclerc (2019)"
+        "lapRecord": "1:43.009 - Charles Leclerc (2019)",
+        "cate": "Asia",
+        "flag": "<span class=\"fi fi-az fi\"></span>",
+        "featureImg": "\/images\/circuits\/baku.jpg",
+        "type": "Street Circuits"
       },
       {
         "round": 18,
@@ -180,7 +247,11 @@
         "date": "2024-09-22",
         "laps": 61,
         "circuitLength": "5.063km",
-        "lapRecord": "1:41.905 - Kevin Magnussen (2018)"
+        "lapRecord": "1:41.905 - Kevin Magnussen (2018)",
+        "cate": "Asia",
+        "flag": "<span class=\"fi fi-sg fi\"></span>",
+        "featureImg": "\/images\/circuits\/singapore.webp",
+        "type": "Street Circuits"
       },
       {
         "round": 19,
@@ -190,7 +261,11 @@
         "date": "2024-10-20",
         "laps": 56,
         "circuitLength": "5.513km",
-        "lapRecord": "1:36.169 - Charles Leclerc (2019)"
+        "lapRecord": "1:36.169 - Charles Leclerc (2019)",
+        "cate": "North America",
+        "flag": "<span class=\"fi fi-us fi\"></span>",
+        "featureImg": "\/images\/circuits\/texas.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 20,
@@ -200,7 +275,11 @@
         "date": "2024-10-27",
         "laps": 71,
         "circuitLength": "4.304km",
-        "lapRecord": "1:17.774 - Valtteri Bottas (2021)"
+        "lapRecord": "1:17.774 - Valtteri Bottas (2021)",
+        "cate": "North America",
+        "flag": "<span class=\"fi fi-mx fi\"></span>",
+        "featureImg": "\/images\/circuits\/mexico.jpg",
+        "type": "Traditional Circuits"
       },
       {
         "round": 21,
@@ -210,7 +289,11 @@
         "date": "2024-11-03",
         "laps": 71,
         "circuitLength": "4.309km",
-        "lapRecord": "1:10.540 - Valtteri Bottas (2018)"
+        "lapRecord": "1:10.540 - Valtteri Bottas (2018)",
+        "cate": "South America",
+        "flag": "<span class=\"fi fi-br fi\"></span>",
+        "featureImg": "\/images\/circuits\/brazil.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 22,
@@ -220,7 +303,11 @@
         "date": "2024-11-24",
         "laps": 50,
         "circuitLength": "6.201km",
-        "lapRecord": "1:35.490 - Oscar Piastri (2023)"
+        "lapRecord": "1:35.490 - Oscar Piastri (2023)",
+        "cate": "North America",
+        "flag": "<span class=\"fi fi-us fi\"></span>",
+        "featureImg": "\/images\/circuits\/vegas.webp",
+        "type": "Street Circuits"
       },
       {
         "round": 23,
@@ -230,7 +317,11 @@
         "date": "2024-10-27",
         "laps": 57,
         "circuitLength": "5.380 km",
-        "lapRecord": "1:28.484 - Max Verstappen (2021)"
+        "lapRecord": "1:28.484 - Max Verstappen (2021)",
+        "cate": "Middle East",
+        "flag": "<span class=\"fi fi-qa fi\"></span>",
+        "featureImg": "\/images\/circuits\/qatar.webp",
+        "type": "Traditional Circuits"
       },
       {
         "round": 24,
@@ -240,7 +331,11 @@
         "date": "2024-11-24",
         "laps": 55,
         "circuitLength": "5.554 km",
-        "lapRecord": "1:40.279 - Lewis Hamilton (2019)"
+        "lapRecord": "1:40.279 - Lewis Hamilton (2019)",
+        "cate": "Middle East",
+        "flag": "<span class=\"fi fi-ae fi\"></span>",
+        "featureImg": "\/images\/circuits\/uae.webp",
+        "type": "Street Circuits"
       }
     ]
 }

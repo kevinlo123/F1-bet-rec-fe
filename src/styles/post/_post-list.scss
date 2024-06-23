@@ -349,6 +349,16 @@ Post List Style
             }
             .post-meta-wrapper {
                 margin-top: 22px;
+
+                .fi {
+                    height: 3rem;
+                    width: 3rem;
+
+                    @media #{$md-layout} {
+                        height: 3rem;
+                        width: 4rem;
+                    }
+                }
             }
         }
         

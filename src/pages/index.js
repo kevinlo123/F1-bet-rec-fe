@@ -37,7 +37,7 @@ const HomeDefault = ({allPosts}) => {
       <PostSectionOne postData={allPosts}/>
       <PostSectionTwo postData={allPosts} adBanner={true} />
       <CategoryList cateData={allPosts}/>
-      <PostSectionSix postData={allPosts} />
+      {/* <PostSectionSix postData={allPosts} /> */}
       <SocialOne />
       <PostSectionFive postData={allPosts}/>
       <PostSectionFour postData={allPosts} adBanner={true} />
