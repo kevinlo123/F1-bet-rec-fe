@@ -162,12 +162,11 @@ const Nav = ({posts}) => {
                 </ul>
             </li>
             <li className="menu-item-has-children megamenu-wrapper">
-                <Link href="#">
+                <Link href="/calendar">
                     <a>F1 Calendar</a>
                 </Link>
-                <ul className="megamenu-sub-menu">
+                {/* <ul className="megamenu-sub-menu">
                     <li className="megamenu-item">
-                        {/* Start Verticle Nav  */}
                         <div className="axil-vertical-nav">
                             <ul className="vertical-nav-menu">
                                 {filters.map((data) => (
@@ -181,10 +180,7 @@ const Nav = ({posts}) => {
                                 ))}
                             </ul>
                         </div>
-                        {/* Start Verticle Nav  */}
-                        {/* Start Verticle Menu  */}
                         <div className="axil-vertical-nav-content">
-                            {/* Start One Item  */}
                             <div className="axil-vertical-inner tab-content">
                                 <div className="axil-vertical-single">
                                     <div className="row">
@@ -230,11 +226,9 @@ const Nav = ({posts}) => {
                                     </div>
                                 </div>
                             </div>
-                            {/* End One Item  */}
                         </div>
-                        {/* End Verticle Menu  */}
                     </li>
-                </ul>
+                </ul> */}
             </li>
             <li className="menu-item-has-children">
                 <Link href="/">

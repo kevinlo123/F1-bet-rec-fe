@@ -27,7 +27,9 @@ const filters = [
 
 const defaultActiveCat = slugify(filters[0].cate);
 
-const PostSectionSix = ({ postData }) => {
+const PostSectionSix = ({ postData, scheduleData }) => {
+	console.log(postData)
+	console.log(scheduleData)
   const defaultData = postData.filter(
     (post) => slugify(post.cate) === defaultActiveCat
   );
