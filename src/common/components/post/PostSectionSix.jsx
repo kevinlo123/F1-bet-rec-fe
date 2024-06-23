@@ -148,8 +148,8 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 																				</a>
 																			</h6>
 																			<ul className="post-meta-list">
-																				<li>{data.date}</li>
-																				<li>{data.lapRecord}</li>
+																				<li>Date: {data.date}</li>
+																				<li>Lap Record: {data.lapRecord}</li>
 																			</ul>
 																		</div>
 																	</div>
