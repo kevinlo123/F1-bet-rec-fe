@@ -53,41 +53,7 @@
     },
     {
         "label": "F1 Calendar",
-        "path": "#",
-        "submenu": [
-            {
-                "sublabel": "Post List",
-                "subpath": "/post-list"
-            },
-            {
-                "sublabel": "Post Archive",
-                "subpath": "/category/design"
-            },
-            {
-                "sublabel": "Author Page",
-                "subpath": "/author/rose-mary"
-            },
-            {
-                "sublabel": "About Page",
-                "subpath": "/about"
-            },
-            {
-                "sublabel": "Contact Us",
-                "subpath": "/contact"
-            },
-            {
-                "sublabel": "404 Page",
-                "subpath": "/404"
-            },
-            {
-                "sublabel": "Maintenance",
-                "subpath": "/maintenance"
-            },
-            {
-                "sublabel": "Privacy Policy",
-                "subpath": "/privacy-policy"
-            }
-        ]
+        "path": "/calendar"
     },
     {
         "label": "F1 Standings",
