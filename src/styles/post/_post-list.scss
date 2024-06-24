@@ -1003,9 +1003,14 @@ Post Category
         display: block;
     }
     ul {
+        position: relative;
         &.social-share-transparent {
             @media #{$large-mobile} {
                 justify-content: flex-start !important;
+            }
+
+            li {
+                z-index: 1;
             }
         }
     }

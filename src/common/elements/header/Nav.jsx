@@ -53,113 +53,12 @@ const Nav = ({posts}) => {
     
     return (
         <ul className="mainmenu">
-            <li className="menu-item-has-children"><a href="#">Home</a>
-                <ul className="axil-submenu">
-                    <li>
-                        <Link href="/">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Home Default">Home Default</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/creative-blog">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Home Creative Blog">Home Creative Blog</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/seo-blog">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Home SEO Blog">Home SEO Blog</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/tech-blog">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Home Tech Blog">Home Tech Blog</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/lifestyle-blog">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Home Lifestyle Blog">Home Lifestyle Blog</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <a href="https://new.axilthemes.com/demo/react/blogar-rtl" className="hover-flip-item-wrapper">
-                            <span className="hover-flip-item">
-                                <span data-text="RTL Version">RTL Version</span>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+            <li><a href="/">Home</a>
             </li>
-            <li className="menu-item-has-children">
-                <Link href="/">
+            <li>
+                <Link href="/news">
                     <a>F1 News</a>
                 </Link>
-                <ul className="axil-submenu">
-                    <li>
-                        <Link href="/post/beauty-of-deep-space-billions-of-galaxies-in-the-universe.">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Post Format Standard">Post Format Standard</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/post/flutter-the-good-the-bad-and-the-ugly">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Post Format Video">Post Format Video</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/post/fashion-young-handsome-man-in-casual-watch">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Post Format Gallery">Post Format Gallery</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/post/lightweight-grippable-and-ready-to-go">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Post Format Audio">Post Format Audio</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/post/new-freehand-templates-built-for-the-whole-team">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Post Format Quote">Post Format Quote</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                </ul>
             </li>
             <li className="menu-item-has-children megamenu-wrapper">
                 <Link href="/calendar">

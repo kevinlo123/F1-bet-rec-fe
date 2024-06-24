@@ -91,7 +91,7 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 	};
 
 	return (
-		<div className="axil-trending-post-area axil-section-gap bg-color-white">
+		<div className="axil-trending-post-area axil-section-gap bg-color-grey">
 			<div className="container">
 				<SectionTitleOne title="2024 Formula 1 Calendar" />
 				<div className="row">

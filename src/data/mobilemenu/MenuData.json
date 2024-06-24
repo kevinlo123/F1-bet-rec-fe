@@ -27,29 +27,7 @@
     },
     {
         "label": "F1 News",
-        "path": "#",
-        "submenu": [
-            {
-                "sublabel": "Post Format Standard",
-                "subpath": "/post/beauty-of-deep-space-billions-of-galaxies-in-the-universe."
-            },
-            {
-                "sublabel": "Post Format Video",
-                "subpath": "/post/flutter-the-good-the-bad-and-the-ugly"
-            },
-            {
-                "sublabel": "Post Format Gallery",
-                "subpath": "/post/fashion-young-handsome-man-in-casual-watch"
-            },
-            {
-                "sublabel": "Post Format Audio",
-                "subpath": "/post/lightweight-grippable-and-ready-to-go"
-            },
-            {
-                "sublabel": "Post Format Quote",
-                "subpath": "/post/new-freehand-templates-built-for-the-whole-team"
-            }
-        ]
+        "path": "/news"
     },
     {
         "label": "F1 Calendar",

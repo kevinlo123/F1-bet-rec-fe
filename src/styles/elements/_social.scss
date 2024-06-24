@@ -227,7 +227,7 @@ ul {
 ul {
     &.social-share-transparent {
         @extend %liststyle;
-        margin: 0 -5px;
+        margin: 0;
         display: flex;
         flex-wrap: wrap;
         li {
