@@ -135,73 +135,19 @@ const Nav = ({posts}) => {
                 </Link>
                 <ul className="axil-submenu">
                     <li>
-                        <Link href="/post-list">
+                        <Link href="/driver-standings">
                             <a className="hover-flip-item-wrapper">
                                 <span className="hover-flip-item">
-                                    <span data-text="Post List">Post List</span>
+                                    <span data-text="Drivers">Drivers</span>
                                 </span>
                             </a>
                         </Link>
                     </li>
                     <li>
-                        <Link href="/category/design">
+                        <Link href="/constructor-standings">
                             <a className="hover-flip-item-wrapper">
                                 <span className="hover-flip-item">
-                                    <span data-text="Post Archive">Post Archive</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/author/rose-mary">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Author Page">Author Page</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/about">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="About Page">About Page</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/contact">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Contact Us">Contact Us</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/404">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="404 Page">404 Page</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/maintenance">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Maintenance">Maintenance</span>
-                                </span>
-                            </a>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="/privacy-policy">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Privacy Policy">Privacy Policy</span>
+                                    <span data-text="Constructors">Constructors</span>
                                 </span>
                             </a>
                         </Link>
