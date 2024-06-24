@@ -13,7 +13,8 @@
         "cate": "Middle East",
         "flag": "<span class=\"fi fi-bh fi\"></span>",
         "featureImg": "\/images\/circuits\/bahrain.webp",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://www.youtube.com/watch?v=9Y5wMpKXNK4"
       },
       {
         "round": 2,
@@ -27,7 +28,8 @@
         "cate": "Middle East",
         "flag": "<span class=\"fi fi-sa fi\"></span>",
         "featureImg": "\/images\/circuits\/jeddah.jpg",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://www.youtube.com/watch?v=OJ56MAGFPGM"
       },
       {
         "round": 3,
@@ -41,7 +43,8 @@
         "cate": "Oceana",
         "flag": "<span class=\"fi fi-au fi\"></span>",
         "featureImg": "\/images\/circuits\/melbourne.webp",
-        "type": "Street Circuits"
+        "type": "Street Circuits",
+        "highlights": "https://www.youtube.com/watch?v=9z8sEadieXA"
       },
       {
         "round": 4,
@@ -55,7 +58,8 @@
         "cate": "Asia",
         "flag": "<span class=\"fi fi-jp fi\"></span>",
         "featureImg": "\/images\/circuits\/suzuka.webp",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://www.youtube.com/watch?v=Z3-IulIyBtU"
       },
       {
         "round": 5,
@@ -69,7 +73,8 @@
         "cate": "Asia",
         "flag": "<span class=\"fi fi-cn fi\"></span>",
         "featureImg": "\/images\/circuits\/china.webp",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://www.youtube.com/watch?v=hh4prBn66Dc"
       },
       {
         "round": 6,
@@ -83,7 +88,8 @@
         "cate": "North America",
         "flag": "<span class=\"fi fi-us fi\"></span>",
         "featureImg": "\/images\/circuits\/miami.webp",
-        "type": "Street Circuits"
+        "type": "Street Circuits",
+        "highlights": "https://www.youtube.com/watch?v=9wiQqcKUahc"
       },
       {
         "round": 7,
@@ -97,7 +103,8 @@
         "cate": "Europe",
         "flag": "<span class=\"fi fi-it fi\"></span>",
         "featureImg": "\/images\/circuits\/imola.webp",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://www.youtube.com/watch?v=wya4iAJLlzs"
       },
       {
         "round": 8,
@@ -111,7 +118,8 @@
         "cate": "Europe",
         "flag": "<span class=\"fi fi-mc fi\"></span>",
         "featureImg": "\/images\/circuits\/monaco.webp",
-        "type": "Street Circuits"
+        "type": "Street Circuits",
+        "highlights": "https://www.youtube.com/watch?v=aeCI0ObFY8M&t=19s"
       },
       {
         "round": 9,
@@ -125,7 +133,8 @@
         "cate": "North America",
         "flag": "<span class=\"fi fi-ca fi\"></span>",
         "featureImg": "\/images\/circuits\/canada.jpg",
-        "type": "Street Circuits"
+        "type": "Street Circuits",
+        "highlights": "https://www.youtube.com/watch?v=dLw1ao4-Akk"
       },
       {
         "round": 10,
@@ -139,7 +148,8 @@
         "cate": "Europe",
         "flag": "<span class=\"fi fi-es fi\"></span>",
         "featureImg": "\/images\/circuits\/spain.webp",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://www.youtube.com/watch?v=ojUQLuSqV4s"
       },
       {
         "round": 11,

@@ -122,35 +122,38 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 															<span className="post-order-list">R{data.round}</span>
 															<div className="post-content" style={{ flexGrow: '1' }}>
 																<div className="post-cat">
-																	<div className="post-cat-list">
-																		<a className="hover-flip-item-wrapper">
-																			<span className="hover-flip-item">
-																				<span data-text={data.cate}>
-																					{data.cate}
-																				</span>
-																			</span>
-																		</a>
-																	</div>
+																	<p className="category">
+																		{data.cate}
+																	</p>
 																</div>
 																<h3 className="title">
-																	<a>{data.raceName}</a>
+																	<span>{data.raceName}</span>
 																</h3>
 																<div className="post-meta-wrapper">
 																	<div className="post-meta">
 																		<div className="content">
-																			<h6 className="post-author-name">
-																				<a className="hover-flip-item-wrapper">
-																					<span className="hover-flip-item">
-																						<span data-text={data.location}>
-																							{data.location}
+																			<p className="post-author-name">
+																				<span data-text={data.location}>
+																					{data.location}
+																				</span>
+																			</p>
+																			<ul className="post-meta-list">
+																				<li>Date: {data.date}</li>
+																				<li>Record: {data.lapRecord}</li>
+																			</ul>
+																			{data.highlights ? (
+																				<a target="_blank" href={data.highlights}>
+																					<span className="hover-flip-item-wrapper">
+																						<span className="hover-flip-item">
+																							<span data-text={'View the highlights'}>
+																								View the highlights
+																							</span>
 																						</span>
 																					</span>
 																				</a>
-																			</h6>
-																			<ul className="post-meta-list">
-																				<li>Date: {data.date}</li>
-																				<li>Lap Record: {data.lapRecord}</li>
-																			</ul>
+																			) : 
+																				<p style={{marginTop: '7.5px', marginBottom: '15px'}}>Upcoming</p>
+																			}
 																		</div>
 																	</div>
 																	{data.flag ? (
@@ -163,7 +166,7 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 														</div>
 														{data.featureImg ? (
 															<div className="post-thumbnail">
-																<a>
+																<>
 																	<Image
 																		src={data.featureImg}
 																		alt={data.raceName}
@@ -171,7 +174,7 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 																		width={510}
 																		priority={true}
 																	/>
-																</a>
+																</>
 															</div>
 														) : ""}
 													</div>

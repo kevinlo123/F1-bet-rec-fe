@@ -343,6 +343,10 @@ Post List Style
         .post-content {
             .post-cat {
                 margin-bottom: 15px;
+
+                .category {
+                    color: var(--color-primary);
+                }
             }
             .title {
                 margin-bottom: 0;
@@ -359,6 +363,11 @@ Post List Style
                         width: 4rem;
                     }
                 }
+            }
+
+            .hover-flip-item-wrapper {
+                margin-top: 7.5px;
+                margin-bottom: 15px;
             }
         }
         
@@ -996,7 +1005,6 @@ Post Category
     ul {
         &.social-share-transparent {
             @media #{$large-mobile} {
-                margin-top: 12px;
                 justify-content: flex-start !important;
             }
         }
