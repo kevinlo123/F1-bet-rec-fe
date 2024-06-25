@@ -130,25 +130,19 @@ const Nav = ({posts}) => {
                 </ul> */}
             </li>
             <li className="menu-item-has-children">
-                <Link href="/">
-                    <a>F1 Standings</a>
-                </Link>
+                <span>F1 Standings</span>
                 <ul className="axil-submenu">
                     <li>
                         <Link href="/driver-standings">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Drivers">Drivers</span>
-                                </span>
+                            <a>
+                                Drivers
                             </a>
                         </Link>
                     </li>
                     <li>
                         <Link href="/constructor-standings">
-                            <a className="hover-flip-item-wrapper">
-                                <span className="hover-flip-item">
-                                    <span data-text="Constructors">Constructors</span>
-                                </span>
+                            <a>
+                                Constructors
                             </a>
                         </Link>
                     </li>

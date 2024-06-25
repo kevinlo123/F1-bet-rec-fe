@@ -35,7 +35,6 @@
     },
     {
         "label": "F1 Standings",
-        "path": "#",
         "submenu": [
             {
                 "sublabel": "Drivers",
@@ -43,7 +42,7 @@
             },
             {
                 "sublabel": "Constructors",
-                "subpath": "/driver-standings"
+                "subpath": "/constructor-standings"
             }
         ]
     },

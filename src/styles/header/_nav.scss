@@ -19,10 +19,10 @@ Navigation Css
                 @media #{$lg-layout} {
                     margin: 0 12px;
                 }
-                > a {
+                > a, span {
                     font-size: var(--font-size-b2);
                     line-height: var(--line-height-b2);
-                    color: var(--color-midgray);
+                    color: var(--color-midgray) !important;
                     font-weight: var(--p-medium);
                     @extend %transition;
                     height: 80px;
@@ -46,7 +46,7 @@ Navigation Css
                     }
                 }
                 &:hover {
-                    > a {
+                    > a, span {
                         &::after {
                             width: 100%;
                         }

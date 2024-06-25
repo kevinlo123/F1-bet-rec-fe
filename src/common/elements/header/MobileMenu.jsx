@@ -48,7 +48,11 @@ const MobileMenu = ({menuShow, menuHide}) => {
          <ul className="mainmenu">
             {MenuData.map((data, index) => (
                 <li className={`${data.submenu ? "menu-item-has-children" :""}`} key={index}>
-                <a href={data.path} onClick={MenuToggleHandler}>{data.label}</a>
+                {data.path ?
+                    <a href={data.path} onClick={MenuToggleHandler}>{data.label}</a>
+                :
+                    <span onClick={MenuToggleHandler}>{data.label}</span>
+                }
                 {data.submenu ? 
                 <ul className="axil-submenu">
                     {data.submenu.map((submenu, index)=> (
