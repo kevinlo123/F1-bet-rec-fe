@@ -40,7 +40,10 @@
             }
 
             .constructor-image {
-                pointer-events: none;
+                img {
+                    pointer-events: none;
+                    user-select: none;
+                }
             }
 
             .constructor-position {
