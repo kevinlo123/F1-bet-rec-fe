@@ -5,6 +5,7 @@
         @media #{$smlg-device} {
             overflow-x: auto;
             white-space: nowrap; // Ensures elements stay on one line
+            overflow-y: hidden;
         }
 
         .constructor-container {
@@ -43,6 +44,7 @@
                 img {
                     pointer-events: none;
                     user-select: none;
+
                 }
             }
 
