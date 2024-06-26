@@ -6,6 +6,7 @@ import HeaderFour from "../common/elements/header/HeaderFour";
 import { getAllPosts } from '../../lib/api';
 import HeadTitle from "../common/elements/head/HeadTitle";
 import constructorData from '../data/constructors/constructor-standings.json'
+import Nav from "react-bootstrap/Nav";
 
 const ConstructorStandings = ({allPosts}) => {
     return (
@@ -19,6 +20,18 @@ const ConstructorStandings = ({allPosts}) => {
                             <div className="inner">
                                 <h1 className="section-title mb--20">2024 Formula 1 Team Standings</h1>
                             </div>
+                            <Nav className="axil-tab-button nav nav-tabs mt--20">
+                                <Nav.Item>
+                                    <Nav.Link href="/driver-standings">
+                                        Driver Standings
+                                    </Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link className="active" href="/constructor-standings">
+                                        Constructor Standings
+                                    </Nav.Link>
+                                </Nav.Item>
+                            </Nav>
                         </div>
                     </div>
 
