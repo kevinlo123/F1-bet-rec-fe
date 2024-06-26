@@ -39,6 +39,10 @@
                 text-align: center;
             }
 
+            .constructor-image {
+                pointer-events: none;
+            }
+
             .constructor-position {
                 padding-right: 10px;
                 font-size: var(--font-size-b2);
