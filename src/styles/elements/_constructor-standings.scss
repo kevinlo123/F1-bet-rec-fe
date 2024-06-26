@@ -1,0 +1,62 @@
+.constructor-standings-wrapper {
+    .constructor-standings-container {
+        box-shadow: var(--shadow-primary);
+
+        @media #{$smlg-device} {
+            overflow-x: auto;
+            white-space: nowrap; // Ensures elements stay on one line
+        }
+
+        .constructor-container {
+            padding: 2rem;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 5px;
+            padding-bottom: 1rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            @media #{$smlg-device} {
+                min-width: 650px; // Ensures it doesn't wrap, adjust as needed
+            }
+
+            .constructor-teamColor {
+                position: absolute;
+                width: 7.5px;
+                left: 0;
+                height: 100%;
+            }
+
+            span,
+            .constructor-image
+            {
+                flex: 1 1;
+                text-align: center;
+            }
+
+            .constructor-position {
+                padding-right: 10px;
+                font-size: var(--font-size-b2);
+                color: black;
+                display: inline-block;
+                font-weight: var(--p-medium);
+            }
+
+            .constructor {
+                justify-self: flex-start;
+            }
+
+            .constructor-drivers {
+                @media #{$smlg-device} {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+  

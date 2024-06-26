@@ -481,15 +481,15 @@ body.active-dark-mode .header-style-4 .metabar-block .dropdown-menu {
 }
 
 body.active-dark-mode {
-    .driver-standings-wrapper {
-        .driver-standings-container {
-            border: none;
+    .driver-standings-wrapper, .constructor-standings-wrapper  {
+        .driver-standings-container, .constructor-standings-container {
+            border: none; 
             box-shadow: var(--shadow-primary) !important;
-            .driver-container {
+            .driver-container, .constructor-container {
                 background: #1A1A1A;
                 color: var(--color-midgray);
 
-                .driver-position {
+                .driver-position, .constructor-position {
                     color: white;
                 }
             }
