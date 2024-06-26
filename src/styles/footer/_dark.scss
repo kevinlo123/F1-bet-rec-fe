@@ -479,3 +479,20 @@ body.active-dark-mode .header-style-4 .metabar-block .dropdown-menu {
         color: #ffffff;
     }
 }
+
+body.active-dark-mode {
+    .driver-standings-wrapper {
+        .driver-standings-container {
+            border: none;
+            box-shadow: var(--shadow-primary) !important;
+            .driver-container {
+                background: #1A1A1A;
+                color: var(--color-midgray);
+
+                .driver-position {
+                    color: white;
+                }
+            }
+        }
+    }
+}

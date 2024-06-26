@@ -93,7 +93,7 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 	return (
 		<div className="axil-trending-post-area axil-section-gap bg-color-grey">
 			<div className="container">
-				<SectionTitleOne title="2024 Formula 1 Calendar" />
+				<h1 className="section-title">2024 Formula 1 Calendar</h1>
 				<div className="row">
 					<div className="col-lg-12 mb--150">
 						<Tab.Container id="axilTab" defaultActiveKey={activeNav}>

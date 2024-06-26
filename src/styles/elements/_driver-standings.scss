@@ -1,0 +1,52 @@
+.driver-standings-wrapper {
+    .driver-standings-container {
+      box-shadow: var(--shadow-primary);
+      border: 1px solid var(--color-lighter);
+      border-radius: var(--radius-small);
+
+        @media #{$smlg-device} {
+            overflow-x: auto;
+            white-space: nowrap; // Ensures elements stay on one line
+        }
+  
+      .driver-container {
+        padding: 2rem;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 5px;
+
+        @media #{$smlg-device} {
+            min-width: 850px; // Ensures it doesn't wrap, adjust as needed
+        }
+
+        .driver-teamColor {
+            position: absolute;
+            width: 7.5px;
+            left: 0;
+            height: 100%;
+        }
+  
+        span {
+          flex: 1 1;
+          text-align: center;
+        }
+  
+        .driver-position {
+          padding-right: 10px;
+          font-size: var(--font-size-b2);
+          color: black;
+          display: inline-block;
+          font-weight: var(--p-medium);
+        }
+  
+        .driver {
+          text-align: left;
+          justify-self: flex-start;
+        }
+      }
+    }
+  }
+  

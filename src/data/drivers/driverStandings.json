@@ -12,7 +12,7 @@
         {
             "position": 2,
             "driver": "Lando Norris",
-            "team": "McLaren Mercedes",
+            "team": "McLaren",
             "points": 150,
             "nationality": "GBR",
             "flag": "<span class=\"fi fi-gb fi\"></span>",
@@ -48,7 +48,7 @@
         {
             "position": 6,
             "driver": "Oscar Piastri",
-            "team": "McLaren Mercedes",
+            "team": "McLaren",
             "points": 87,
             "nationality": "AUS",
             "flag": "<span class=\"fi fi-au fi\"></span>",
@@ -75,7 +75,7 @@
         {
             "position": 9,
             "driver": "Fernando Alonso",
-            "team": "Aston Martin Aramco Mercedes",
+            "team": "Aston Martin",
             "points": 41,
             "nationality": "ESP",
             "flag": "<span class=\"fi fi-es fi\"></span>",
@@ -93,7 +93,7 @@
         {
             "position": 11,
             "driver": "Lance Stroll",
-            "team": "Aston Martin Aramco Mercedes",
+            "team": "Aston MartinS",
             "points": 17,
             "nationality": "CAN",
             "flag": "<span class=\"fi fi-ca fi\"></span>",
