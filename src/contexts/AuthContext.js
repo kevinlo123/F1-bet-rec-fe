@@ -18,15 +18,19 @@ const AuthProvider = ({ children }) => {
     const login = (res, token) => {
         localStorage.setItem('jwtToken', token);
         setIsAuthenticated(true);
-        router.push('/'); 
         toast.success(`${res.message}`);
+        setTimeout(() => {
+            router.push('/');
+        }, 1000);
     };
 
     const logout = () => {
         localStorage.removeItem('jwtToken');
         setIsAuthenticated(false);
-        router.push('/login'); 
         toast.success('Logged out successfully');
+        setTimeout(() => {
+            router.push('/login');
+        }, 1000);
     };
 
     return (
