@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
             <AuthProvider>
                 <ColorSwitcher />
                 <Component {...pageProps} />
-                <Toaster position="bottom-center" />
+                <Toaster position="top-center" />
             </AuthProvider>
         </>
     )
