@@ -6,7 +6,7 @@ import { getAllPosts } from '../../lib/api';
 import HeadTitle from "../common/elements/head/HeadTitle";
 import { AuthContext } from '../contexts/AuthContext';
 import React, { useState, useContext } from 'react';
-
+import toast from 'react-hot-toast';
 
 //https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users
 
@@ -35,23 +35,31 @@ const Login = ({allPosts}) => {
                 },
                 body: JSON.stringify(userData)
             });
-
+        
             if (response.ok) {
-                // Handle successful response
                 const data = await response.json();
                 const token = data.token;
-
+        
                 if (token) {
                     login(data, token); // Save the token and update the authentication state
                 } else {
                     console.error('No token found in the response');
                 }
-
             } else {
-                console.error('Error logging in:', response.statusText);
+                // Handle error responses from Rails API
+                const errorMessage = await response.json();
+                console.error('Error logging in:', errorMessage);
+
+                setTimeout(() => {
+                    toast.error(`${errorMessage.error}`);
+                }, 1000);
             }
         } catch (error) {
-            console.error('Error logging in:', error);
+            console.error('Network error:', error);
+
+            setTimeout(() => {
+                toast.error('Network error');
+            }, 1000);
         }
     };
 

@@ -50,10 +50,20 @@ const Signup = ({allPosts}) => {
                 }
 
             } else {
-                console.error('Error signing up:', response.statusText);
+                const errorMessage = await response.json();
+                console.error('Error signing up:', errorMessage);
+
+                setTimeout(() => {
+                    toast.error(`${errorMessage.error}`);
+                }, 1000);
             }
         } catch (error) {
-            console.error('Error signing up:', error);
+            console.error('Network error:', error);
+
+
+            setTimeout(() => {
+                toast.error('Network error');
+            }, 1000);
         }
     };
 
