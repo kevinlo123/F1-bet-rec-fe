@@ -35,15 +35,6 @@ const PostAuthor = ({dataAuthor}) => {
             <p className="b1 description">
                 {dataAuthor.author_bio}
             </p>
-            <ul className="social-share-transparent size-md">
-            { dataAuthor.author_social.map((social) => (
-                <li key={social.url}>
-                    <a href={social.url}>
-                    <i className={social.icon} />
-                    </a>
-                </li>
-            ))}
-            </ul>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Signup = ({allPosts}) => {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const local = 'http://localhost:3000/users'
-    const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/users'
+    const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/users'
     
 
     const handleSubmit = async (e) => {
