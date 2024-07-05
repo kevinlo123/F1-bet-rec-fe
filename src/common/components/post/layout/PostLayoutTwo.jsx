@@ -75,15 +75,6 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
                   </ul>
                 </div>
               </div>
-              <ul className="social-share-transparent justify-content-end">
-                {data.author_social.map((social) => (
-                  <li key={social.url}>
-                    <a href={social.url}>
-                      <i className={social.icon} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>

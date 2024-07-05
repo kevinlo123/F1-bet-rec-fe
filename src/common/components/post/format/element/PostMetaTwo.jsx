@@ -52,15 +52,6 @@ const PostMetaTwo = ({metaData}) => {
                         </ul>
                       </div>
                     </div>
-                    <ul className="social-share-transparent justify-content-end">
-                        { metaData.author_social.map((social) => (
-                            <li key={social.url}>
-                             <a href={social.url}>
-                               <i className={social.icon} />
-                             </a>
-                           </li>
-                        ))}
-                    </ul>
                   </div>
                 </div>
                 {/* End Post Content  */}

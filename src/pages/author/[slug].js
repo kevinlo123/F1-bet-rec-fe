@@ -42,11 +42,6 @@ const AuthorArchive = ({ authorData, allPosts }) => {
                                         </div>
                                         <div className="content">
                                             <p className="b1 description">{authorData[0].author_bio}</p>
-                                            <ul className="social-share-transparent size-md">
-                                                {authorData[0].author_social.map((social) => (
-                                                    <li key={social.url}><a href={social.url}><i className={social.icon} /></a></li>
-                                                ))}
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
