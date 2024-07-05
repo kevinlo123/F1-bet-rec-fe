@@ -14,7 +14,7 @@ const PostMetaOne = ({metaData}) => {
                 {/* Start Post Thumbnail  */}
                 <div className="post-thumbnail">
                 <Image
-                    src={metaData.featureImg}
+                    src={metaData.feature_img}
                     alt={metaData.title}
                     height={720}
                     width={1440}

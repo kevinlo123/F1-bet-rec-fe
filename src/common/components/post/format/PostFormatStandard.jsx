@@ -14,13 +14,13 @@ const PostFormatStandard = ({ postData, allData}) => {
 
   return (
     <>
-    {postData.featureImg ? <PostMetaOne metaData={postData} /> : ""}
+    {postData.feature_img ? <PostMetaOne metaData={postData} /> : ""}
 
       <div className="post-single-wrapper axil-section-gap bg-color-white">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              {postData.featureImg ? "" : <PostMetaTwo metaData={postData} />}
+              {postData.feature_img ? "" : <PostMetaTwo metaData={postData} />}
               <div className="axil-post-details">
                 <div className="post-details-content" dangerouslySetInnerHTML={{ __html: postContent }}></div>
                 {/* <PostTagShare postTags={postData}/> */}

@@ -7,7 +7,7 @@ const WidgetPostList = ({ postData }) => {
       <h5 className="widget-title">Popular on Blogar</h5>
       <div className="post-medium-block">
         {postData.slice(0, 3).map((data) => (
-          <div className="content-block post-medium mb--20" key={data.slug}>
+          <div className="content-block post-medium mb--20" key={data.id}>
 			  {data.featureImg ? 
             <div className="post-thumbnail">
               <Link href={`/post/${data.slug}`}>

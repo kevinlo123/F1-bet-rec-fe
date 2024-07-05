@@ -1,7 +1,7 @@
 import { getPosts, getPostBySlug } from '../../../lib/postsService';
 import markdownToHtml from '../../../lib/markdownToHtml';
 import HeadTitle from '../../common/elements/head/HeadTitle';
-import HeaderOne from '../../common/elements/header/HeaderOne';
+import HeaderFour from '../../common/elements/header/HeaderFour';
 import FooterOne from '../../common/elements/footer/FooterOne';
 import PostFormatStandard from '../../common/components/post/format/PostFormatStandard';
 import InstagramOne from '../../common/components/instagram/InstagramOne';
@@ -27,7 +27,7 @@ const PostDetails = ({ post, allPosts }) => {
 
   return (
     <>
-      <HeaderOne postData={allPosts} pClass="header-light header-sticky header-with-shadow" />
+      <HeaderFour postData={allPosts} />
       <HeadTitle pageTitle={post.title} />
 	  <PostFormatStandard postData={post} allData={allPosts} />
 	  <InstagramOne parentClass="bg-color-extra03" />
