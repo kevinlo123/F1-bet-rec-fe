@@ -9,35 +9,52 @@ import CategoryList from '../common/components/category/CategoryList';
 import PostSectionTwelve from '../common/components/post/PostSectionTwelve';
 import { slugify } from "../common/utils";
 import HeaderFour from "../common/elements/header/HeaderFour";
+import { getPosts } from '../../lib/postsService';
+import React, { useState, useEffect } from 'react';
 
+const HomeDefault = ({ allPosts }) => {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchPostsData = async () => {
+      try {
+        const postsData = await getPosts();
+        setPosts(postsData);
+        setLoading(false);  // Set loading to false after data is fetched
+      } catch (error) {
+        console.error('Error loading posts:', error);
+        setLoading(false);  // Set loading to false even if there's an error
+      }
+    };
 
-
-
-const HomeDefault = ({allPosts}) => {
+    fetchPostsData();
+  }, []);
 
   const videoPost = allPosts.filter(post => post.postFormat === "video");
   const PageSlug = "lifestyle-blog";
   const lifestylePost = allPosts.filter(post => slugify(post.pCate) === PageSlug);
+  const latestPosts = posts.sort((a, b) => b.id - a.id).slice(0, 5);
 
- 
-  return ( 
+  return (
     <>
       <HeadTitle pageTitle="Home" />
       <HeaderFour postData={allPosts} />
-      <PostSectionTwelve postData={lifestylePost} />
-      <PostSectionThree postData={videoPost} heading="Featured Video"/>
-      <PostSectionOne postData={allPosts}/>
+      {loading ? (
+        <div>Loading...</div>  // Display loading indicator while fetching data
+      ) : (
+        <PostSectionTwelve postData={latestPosts} />  // Pass latestPosts to PostSectionTwelve
+      )}
+      <PostSectionThree postData={videoPost} heading="Featured Video" />
+      <PostSectionOne postData={allPosts} />
       <PostSectionTwo postData={allPosts} />
-      <CategoryList cateData={allPosts}/>
+      <CategoryList cateData={allPosts} />
       <FooterOne />
-      
     </>
-   );
-}
- 
-export default HomeDefault;
+  );
+};
 
+export default HomeDefault;
 
 export async function getStaticProps() {
   const allPosts = getAllPosts([
@@ -57,12 +74,9 @@ export async function getStaticProps() {
     'post_views',
     'read_time',
     'author_social',
-  ])
+  ]);
 
   return {
-    props: { allPosts }
-  }
+    props: { allPosts },
+  };
 }
-
-
-

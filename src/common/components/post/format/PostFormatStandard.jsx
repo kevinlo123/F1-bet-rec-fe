@@ -10,6 +10,8 @@ const PostFormatStandard = ({ postData, allData}) => {
   
   const postContent = postData.content.replaceAll('/images/', basePathLink + '/images/');
 
+  console.log(postData)
+
   return (
     <>
     {postData.featureImg ? <PostMetaOne metaData={postData} /> : ""}
@@ -21,7 +23,7 @@ const PostFormatStandard = ({ postData, allData}) => {
               {postData.featureImg ? "" : <PostMetaTwo metaData={postData} />}
               <div className="axil-post-details">
                 <div className="post-details-content" dangerouslySetInnerHTML={{ __html: postContent }}></div>
-                <PostTagShare postTags={postData}/>
+                {/* <PostTagShare postTags={postData}/> */}
                 <PostAuthor dataAuthor={postData} />
                 <PostComment />
               </div>

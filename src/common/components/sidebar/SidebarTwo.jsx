@@ -5,7 +5,6 @@ import WidgetNewsletter from "./WidgetNewsletter";
 import WidgetPostList from "./WidgetPostList";
 import WidgetSearch from "./WidgetSearch";
 import WidgetSocialShare from "./WidgetSocialShare";
-import WidgetTags from "./WidgetTags";
 
 const SidebarTwo = ({ dataPost, tagData }) => {
   return (
@@ -22,7 +21,6 @@ const SidebarTwo = ({ dataPost, tagData }) => {
       />
       <WidgetSocialShare />
       <WidgetInstagramPost />
-      <WidgetTags postTag={tagData}/>
       <WidgetAd
         url="https://example.com/"
         image="/images/add-banner/banner-02.webp"
