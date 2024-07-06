@@ -3,8 +3,41 @@ import Image from "next/image";
 import { slugify } from "../../utils";
 import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
 import AddBanner from "../ad-banner/AddBanner";
+import Modal from 'react-bootstrap/Modal';
+import React from "react";
+import Button from 'react-bootstrap/Button'
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Modal heading
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>Centered Modal</h4>
+        <p>
+          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+          consectetur ac, vestibulum at eros.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 
 const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
+  const [modalShow, setModalShow] = React.useState(false);
 
   const firstPost = postData[0];
 
@@ -26,7 +59,7 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
             <div className="content-block post-default image-rounded mt--30">
             {firstPost.featureImg ? 
               <div className="post-thumbnail">
-                <Link href={`/post/${firstPost.slug}`}>
+                <div onClick={() => setModalShow(true)}>
                   <a>
                     <Image
                       src={firstPost.featureImg}
@@ -36,18 +69,18 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
                       priority={true}
                     />
                   </a>
-                </Link>
-                {firstPost.postFormat === 'video' ? <Link href={`/post/${firstPost.slug}`}>
                   <a className="video-popup position-top-center">
                     <span className="play-icon" />
                   </a>
-                </Link> : ""}
-               
+                </div>
+                <MyVerticallyCenteredModal
+                  show={modalShow}
+                  onHide={() => setModalShow(false)}
+                />         
               </div>:""}
               <div className="post-content">
                 <div className="post-cat">
                   <div className="post-cat-list">
-                    <Link href={`/category/${slugify(firstPost.cate)}`}>
                       <a className="hover-flip-item-wrapper">
                         <span className="hover-flip-item">
                           <span data-text={firstPost.cate}>
@@ -55,19 +88,15 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
                           </span>
                         </span>
                       </a>
-                    </Link>
                   </div>
                 </div>
                 <h3 className="title">
-                  <Link href={`/post/${firstPost.slug}`}>
                     <a>{firstPost.title}</a>
-                  </Link>
                 </h3>
                 <div className="post-meta-wrapper">
                   <div className="post-meta">
                     <div className="content">
                       <h6 className="post-author-name">
-                        <Link href={`/author/${slugify(firstPost.author_name)}`}>
                           <a className="hover-flip-item-wrapper">
                             <span className="hover-flip-item">
                               <span data-text={firstPost.author_name}>
@@ -75,7 +104,6 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
                               </span>
                             </span>
                           </a>
-                        </Link>
                       </h6>
                       <ul className="post-meta-list">
                         <li>{firstPost.date}</li>
@@ -83,15 +111,6 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
                       </ul>
                     </div>
                   </div>
-                  <ul className="social-share-transparent justify-content-end">
-                    {firstPost.author_social.map((social) =>(
-                      <li key={social.url}>
-                        <a href={social.url}>
-                          <i className={social.icon} />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </div>
@@ -103,29 +122,29 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
                   <div className="content-block post-default image-rounded mt--30">
                   {data.featureImg ? 
                     <div className="post-thumbnail">
-                      <Link href={`/post/${data.slug}`}>
-                      <a>
-                        <Image
-                          src={data.featureImg}
-                          alt={data.title}
-                          height={190}
-                          width={285}
-                          priority={true}
-                        />
-                      </a>
-                    </Link>
-                    {data.postFormat === 'video' ? <Link href={`/post/${data.slug}`}>
-                      <a className="video-popup size-medium position-top-center">
-                        <span className="play-icon" />
-                      </a>
-                    </Link> : ""}
-                    
+                      <div onClick={() => setModalShow(true)}>
+                          <a>
+                            <Image
+                              src={data.featureImg}
+                              alt={data.title}
+                              height={190}
+                              width={285}
+                              priority={true}
+                            />
+                          </a>
+                          <a className="video-popup size-medium position-top-center">
+                            <span className="play-icon" />
+                          </a>
+                      </div>
+                      <MyVerticallyCenteredModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                      />
                     </div>
                     :""}
                     <div className="post-content">
                       <div className="post-cat">
                         <div className="post-cat-list">
-                        <Link href={`/category/${slugify(data.cate)}`}>
                           <a className="hover-flip-item-wrapper">
                             <span className="hover-flip-item">
                               <span data-text={data.cate}>
@@ -133,13 +152,10 @@ const PostSectionThree = ({ postData, adBanner, bgColor, heading }) => {
                               </span>
                             </span>
                           </a>
-                        </Link>
                         </div>
                       </div>
                       <h5 className="title">
-                      <Link href={`/post/${data.slug}`}>
                         <a>{data.title}</a>
-                      </Link>
                       </h5>
                     </div>
                   </div>
