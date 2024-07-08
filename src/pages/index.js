@@ -5,6 +5,7 @@ import { getAllPosts } from '../../lib/api';
 import PostSectionOne from '../common/components/post/PostSectionOne';
 import PostSectionTwo from '../common/components/post/PostSectionTwo';
 import PostSectionThree from '../common/components/post/PostSectionThree';
+import PostSectionTen from '../common/components/post/PostSectionTen';
 import CategoryList from '../common/components/category/CategoryList';
 import PostSectionTwelve from '../common/components/post/PostSectionTwelve';
 import { slugify } from "../common/utils";
@@ -45,7 +46,8 @@ const HomeDefault = ({ allPosts }) => {
       ) : (
         <PostSectionTwelve postData={latestPosts} />  // Pass latestPosts to PostSectionTwelve
       )}
-      <PostSectionThree postData={videoPost} heading="Featured Video" />
+      <PostSectionTen postData={allPosts} />
+      {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
       <PostSectionOne postData={allPosts} />
       <PostSectionTwo postData={allPosts} />
       <CategoryList cateData={allPosts} />

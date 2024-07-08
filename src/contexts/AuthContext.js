@@ -6,6 +6,7 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -15,8 +16,10 @@ const AuthProvider = ({ children }) => {
         }
     }, []);
 
-    const login = (res, token) => {
+    const login = (res, token, adminData) => {
         localStorage.setItem('jwtToken', token);
+        localStorage.setItem('admin', adminData);
+        setIsAdmin(adminData);
         setIsAuthenticated(true);
         toast.success(`${res.message}`);
         setTimeout(() => {
@@ -26,7 +29,9 @@ const AuthProvider = ({ children }) => {
 
     const logout = () => {
         localStorage.removeItem('jwtToken');
+        localStorage.removeItem('admin');
         setIsAuthenticated(false);
+        setIsAdmin(false);
         toast.success('Logged out successfully');
         setTimeout(() => {
             router.push('/login');
@@ -34,7 +39,7 @@ const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated, isAdmin, login, logout }}>
             {children}
         </AuthContext.Provider>
     );

@@ -30,7 +30,9 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
 
   const [togglaClass, setTogglaClass] = useState(false);
 
-  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { isAuthenticated, isAdmin ,logout } = useContext(AuthContext);
+
+
 
   const toggleHandler = () => {
       setTogglaClass(active => !active);
@@ -228,6 +230,12 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                               <Dropdown.Item onClick={handleLogout} eventKey="1">
                                 Log out
                               </Dropdown.Item>
+
+                              {isAdmin && (
+                                <Dropdown.Item href="/admin" eventKey="2">
+                                  Admin Actions
+                                </Dropdown.Item>
+                              )}
                             </Dropdown.Menu>
                           </Dropdown>
                         </li>
