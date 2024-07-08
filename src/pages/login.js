@@ -14,7 +14,7 @@ const Login = ({allPosts}) => {
     const { login } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const local = 'http://localhost:3000/users/login'
+    const local = 'http://localhost:3000/api/v1/login'
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/login'
 
     const handleSubmit = async (e) => {
@@ -41,7 +41,7 @@ const Login = ({allPosts}) => {
                 const token = data.token;
         
                 if (token) {
-                    login(data, token, data.user.admin);
+                    login(data, token, data.user.admin, data.user.id);
                 } else {
                     console.error('No token found in the response');
                 }

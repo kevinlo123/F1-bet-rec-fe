@@ -7,6 +7,7 @@ import HeadTitle from "../common/elements/head/HeadTitle";
 import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { AuthContext } from '../contexts/AuthContext';
+import toast from 'react-hot-toast';
 
 
 const Signup = ({allPosts}) => {
@@ -14,7 +15,7 @@ const Signup = ({allPosts}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
-    const local = 'http://localhost:3000/users'
+    const local = 'http://localhost:3000/api/v1/users'
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/users'
     
 
@@ -44,7 +45,7 @@ const Signup = ({allPosts}) => {
                 const token = data.token;
 
                 if (token) {
-                    login(data, token); // Save the token and update the authentication state
+                    login(data, token, data.new_user.admin, data.new_user.id); // Save the token and update the authentication state
                 } else {
                     console.error('No token found in the response');
                 }

@@ -227,12 +227,15 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                           <Dropdown>
                             <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components"></Dropdown.Toggle>
                             <Dropdown.Menu as={CustomMenu}>
-                              <Dropdown.Item onClick={handleLogout} eventKey="1">
+                              <Dropdown.Item href="/profile" eventKey="1">
+                                Profile
+                              </Dropdown.Item>
+                              <Dropdown.Item onClick={handleLogout} eventKey="2">
                                 Log out
                               </Dropdown.Item>
 
                               {isAdmin && (
-                                <Dropdown.Item href="/admin" eventKey="2">
+                                <Dropdown.Item href="/admin" eventKey="3">
                                   Admin Actions
                                 </Dropdown.Item>
                               )}
