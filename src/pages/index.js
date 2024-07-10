@@ -46,8 +46,8 @@ const HomeDefault = ({ allPosts }) => {
       ) : (
         <PostSectionTwelve postData={latestPosts} />  // Pass latestPosts to PostSectionTwelve
       )}
+      <PostSectionThree postData={videoPost} heading="Featured Video" />
       <PostSectionTen postData={allPosts} />
-      {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
       <PostSectionOne postData={allPosts} />
       <PostSectionTwo postData={allPosts} />
       <CategoryList cateData={allPosts} />

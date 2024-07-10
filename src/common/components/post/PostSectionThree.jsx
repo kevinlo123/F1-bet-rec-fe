@@ -9,23 +9,23 @@ import Button from 'react-bootstrap/Button'
 
 const videos = [
   {
-    "title": "British Grand Prix Highlights",
+    "title": "Video 1",
     "src": "https://www.youtube.com/embed/yPvoKz6tyJs?si=R7NNbOm2UGGEB-Ku"
   },
   {
-    "title": "Austrian Grand Prix Highlights",
+    "title": "Video 2",
     "src": "https://www.youtube.com/embed/b0yb1zH2m7c?si=oErK8_Ew-AcfYgVU"
   },
   {
-    "title": "Spanish Grand Prix Highlights",
+    "title": "Video 3",
     "src": "https://www.youtube.com/embed/ojUQLuSqV4s?si=dqv54z9rTfEZPpcR"
   },
   {
-    "title": "Canadian Grand Prix Highlights",
+    "title": "Video 4",
     "src": "https://www.youtube.com/embed/dLw1ao4-Akk?si=6zSBabs-qrEscmeX"
   },
   {
-    "title": "Monaco Grand Prix Highlights",
+    "title": "Video 5",
     "src": "https://www.youtube.com/embed/aeCI0ObFY8M?si=6XGhiC7qSjL1CChu"
   }
 ]
