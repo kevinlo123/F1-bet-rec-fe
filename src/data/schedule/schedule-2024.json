@@ -163,7 +163,8 @@
         "cate": "Europe",
         "flag": "<span class=\"fi fi-at fi\"></span>",
         "featureImg": "\/images\/circuits\/austria.webp",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://youtu.be/b0yb1zH2m7c?si=FjTjKOop5eUWcFOt"
       },
       {
         "round": 12,
@@ -177,7 +178,8 @@
         "cate": "Europe",
         "flag": "<span class=\"fi fi-gb fi\"></span>",
         "featureImg": "\/images\/circuits\/british.webp",
-        "type": "Traditional Circuits"
+        "type": "Traditional Circuits",
+        "highlights": "https://youtu.be/yPvoKz6tyJs?si=tC0nB24q2l803upU"
       },
       {
         "round": 13,

@@ -3,7 +3,7 @@
         {
             "position": 1,
             "team": "Red Bull Racing",
-            "points": 330,
+            "points": 373,
             "logoImg": "\/images\/team-logos\/redbull-logo.png",
             "drivers": "M. Verstappen, S. Perez",
             "teamColor": "#00017d",
@@ -12,7 +12,7 @@
         {
             "position": 2,
             "team": "Ferrari",
-            "points": 270,
+            "points": 302,
             "logoImg": "\/images\/team-logos\/ferrari-logo.png",
             "drivers": "C. Leclerc, C. Sainz",
             "teamColor": "#E8002D",
@@ -21,7 +21,7 @@
         {
             "position": 3,
             "team": "McLaren",
-            "points": 237,
+            "points": 295,
             "logoImg": "\/images\/team-logos\/mclaren-logo.png",
             "drivers": "L. Norris, O. Piastri",
             "teamColor": "#FF8000",
@@ -30,7 +30,7 @@
         {
             "position": 4,
             "team": "Mercedes",
-            "points": 151,
+            "points": 221,
             "logoImg": "\/images\/team-logos\/mercedes-logo.png",
             "drivers": "G. Russell, L. Hamilton",
             "teamColor": "#27F4D2",
@@ -39,7 +39,7 @@
         {
             "position": 5,
             "team": "Aston Martin",
-            "points": 58,
+            "points": 68,
             "logoImg": "\/images\/team-logos\/aston-martin-logo.png",
             "drivers": "F. Alonso, L. stroll",
             "teamColor": "#229971",
@@ -48,7 +48,7 @@
         {
             "position": 6,
             "team": "Visa Cashapp RB",
-            "points": 28,
+            "points": 31,
             "logoImg": "\/images\/team-logos\/visa-rb-logo.png",
             "drivers": "Y. Tsunoda, D. Ricciardo",
             "teamColor": "#6692FF",
@@ -56,26 +56,26 @@
         },
         {
             "position": 7,
-            "team": "Alpine Renault",
-            "points": 8,
-            "logoImg": "\/images\/team-logos\/alpine-logo.png",
-            "drivers": "E. Ocon, P. Gasly",
-            "teamColor": "#FF87BC",
-            "customImageWidth": "50x"
-        },
-        {
-            "position": 8,
             "team": "Haas F1 team",
-            "points": 7,
+            "points": 27,
             "logoImg": "\/images\/team-logos\/haas-logo.png",
             "drivers": "N. Hülkenberg, K. Magnussen",
             "teamColor": "#B6BABD",
             "customImageWidth": "42.5px"
         },
         {
+            "position": 8,
+            "team": "Alpine Renault",
+            "points": 9,
+            "logoImg": "\/images\/team-logos\/alpine-logo.png",
+            "drivers": "E. Ocon, P. Gasly",
+            "teamColor": "#FF87BC",
+            "customImageWidth": "50x"
+        },
+        {
             "position": 9,
             "team": "Williams Racing",
-            "points": 2,
+            "points": 4,
             "logoImg": "\/images\/team-logos\/williams-logo.png",
             "drivers": "A. Albon, L. Sargaent",
             "teamColor": "#64C4FF",
