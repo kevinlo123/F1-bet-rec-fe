@@ -1,0 +1,66 @@
+.profile-top {
+    .breadcrumb {
+        padding-top: 80px;
+
+
+        @media #{$smlg-device} {
+            padding-top: 60px;
+        }
+    }
+
+    .about-author { 
+        .media-body {
+            .author-info {
+                form {
+                    .prof-image-input {
+                        border: none;
+                    }
+                };
+            }
+        }
+    }
+}
+
+.profile-content {
+    .subscription--standard {
+        padding: 15px;
+        border-radius: 5px;
+        max-width: 500px;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+
+        .subscription-inner { 
+            border-radius: 5px;
+            border: 2px solid;
+        }
+
+        .subscription-content {
+            padding: 20px;
+
+            .username, .team-text {
+                font-weight: bold;
+                font-size: 20px;
+                margin-bottom: 0;
+            }
+
+            .subscription-content-top {
+                margin-bottom: 75px;
+            }
+
+            .subscription-content-bottom, .subscription-content-top {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+                .tier {
+                    margin-bottom: 0;
+
+                    span {
+                        font-weight: bold;
+                        font-size: 20px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
