@@ -31,7 +31,6 @@ const Profile = ({allPosts}) => {
                     setTier(userData.user.subscription_tier);
                     setTeam(userData.user.favorite_f1_team);
                     setBio(userData.user.bio);
-                    console.log(userData.user)
                 } catch (error) {
                     console.error('Error fetching user data:', error);
                 }
@@ -77,7 +76,7 @@ const Profile = ({allPosts}) => {
                                             <h2 className="title">{username}</h2>
                                         </div>
                                         <div className="content">
-                                            <p className="b1 description">{bio || 'You have not added a bio yet. Edit your profile to add one'}</p>
+                                            <p className="b1 description">{bio === '\n' || bio === null || bio === '' ? 'You have not added a bio yet. Edit your profile to add one' : bio}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -122,9 +122,8 @@ const EditProfile = ({allPosts}) => {
                                 <textarea
                                     className="form-control"
                                     placeholder="Bio"
-                                    value={bio || ''}
+                                    value={bio === '\n' || bio === null ? '' : bio}
                                     onChange={(e) => setBio(e.target.value)}
-                                    required
                                 ></textarea>
                             </div>
                             {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button">
