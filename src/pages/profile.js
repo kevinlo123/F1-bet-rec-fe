@@ -70,7 +70,7 @@ const Profile = ({allPosts}) => {
                                         <Image
                                             width={100}
                                             height={100}
-                                            src={profilePic !== '' ? `${prod}/${profilePic}` : `/images/others/author.png`}
+                                            src={profilePic === '' || profilePic === null ? `/images/others/author.png` :`${prod}/${profilePic}`}
                                             alt="User profile picture"
                                         />
                                     </div>
