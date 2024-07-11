@@ -12,13 +12,14 @@ import { useRouter } from 'next/router';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
-const EditProfile = ({allPosts}) => {
+const EditProfile = ({ allPosts }) => {
     const { getUserData } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [bio, setBio] = useState('');
-    const local = 'http://localhost:3000/api/v1/login'
-    const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/users'
+    const [selectedFile, setSelectedFile] = useState(null);
+    const local = 'http://localhost:3000/api/v1/login';
+    const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/users';
     const router = useRouter();
 
     useEffect(() => {
@@ -41,34 +42,38 @@ const EditProfile = ({allPosts}) => {
         fetchData();
     }, []);
 
+    const handleFileChange = (event) => {
+        setSelectedFile(event.target.files[0]);
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const userData = {
-            user: {
-                email,
-                username,
-                bio
-            }
-        };
+        const formData = new FormData();
+        formData.append('user[email]', email);
+        formData.append('user[username]', username);
+        formData.append('user[bio]', bio);
+        if (selectedFile) {
+            formData.append('user[profile_picture]', selectedFile);
+        }
 
         try {
             const response = await fetch(`${prod}/${localStorage.getItem('userId')}`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
-                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(userData)
+                body: formData,
             });
-        
+
             if (response.ok) {
                 const data = await response.json();
                 toast.success(`${data.message}`);
+                console.log(data);
 
                 setTimeout(() => {
                     router.push('/profile');
-                }, 1000)
+                }, 1000);
             } else {
                 // Handle error responses from Rails API
                 const errorMessage = await response.json();
@@ -92,6 +97,16 @@ const EditProfile = ({allPosts}) => {
                             <h1>Edit your Profile</h1>
                         </div>
                         <form className="profile-edit-form" onSubmit={handleSubmit}>
+                            <div className="form-group-img-upload">
+                                <span>Change your profile picture</span>
+                                <input
+                                    type="file"
+                                    className="profile-edit-image"
+                                    id="profilePicture"
+                                    onChange={handleFileChange}
+                                    accept="image/*"
+                                />
+                            </div>
                             <div className="form-group">
                                 <span className="search-button">
                                     <i className="fal fa-user-circle" />
@@ -169,8 +184,10 @@ export async function getStaticProps() {
         'read_time',
         'author_social',
     ]);
-  
+
     return {
-      props: { allPosts }
+        props: { allPosts }
     }
-  }
+}
+
+

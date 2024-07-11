@@ -5,7 +5,10 @@ const nextConfig = {
   // images: {
   //   loader: 'akamai',
   //   path: process.env.NEXT_PUBLIC_URL,
-  // },  
+  // },
+  images: {
+    domains: ['limitless-escarpment-05345-1ca012576c29.herokuapp.com'],
+  }
 }
 
 module.exports = nextConfig

@@ -17,7 +17,14 @@
         }
     }
 
-    .about-author { 
+    .about-author {
+        .media {
+            .thumbnail {
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
         .media-body {
             .author-info {
                 form {

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
@@ -9,6 +9,29 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 
 const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
+  const [profilePic, setProfilePic] = useState('');
+  const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/';
+  const { getUserData } = useContext(AuthContext);
+
+  useEffect(() => {
+    const fetchData = async () => {
+        const token = localStorage.getItem('jwtToken');
+        const userId = localStorage.getItem('userId');
+
+        if (token && userId) {
+            try {
+                const userData = await getUserData(token, userId);
+                setProfilePic(userData.user.profile_picture.url)
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        }
+    };
+
+    fetchData();
+  }, []);
+
+
   const dateFormate = () => {
     var day = new Date().getDate();
     var month = new Date().toLocaleString("en-US", { month: "long" });
@@ -49,8 +72,8 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
       <Image
         width={40}
         height={40}
-        src="/images/others/author.png"
-        alt="Author Images"
+        src={profilePic !== '' ? `${prod}/${profilePic}` : `/images/others/author.png`}
+        alt="User profile picture"
       />
       {children}
     </button>

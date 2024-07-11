@@ -18,6 +18,8 @@ const Profile = ({allPosts}) => {
     const [tier, setTier] = useState('');
     const [team, setTeam] = useState('');
     const [bio, setBio] = useState('');
+    const [profilePic, setProfilePic] = useState('');
+    const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/';
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,6 +33,7 @@ const Profile = ({allPosts}) => {
                     setTier(userData.user.subscription_tier);
                     setTeam(userData.user.favorite_f1_team);
                     setBio(userData.user.bio);
+                    setProfilePic(userData.user.profile_picture.url)
                 } catch (error) {
                     console.error('Error fetching user data:', error);
                 }
@@ -67,8 +70,8 @@ const Profile = ({allPosts}) => {
                                         <Image
                                             width={100}
                                             height={100}
-                                            src="/images/others/author.png"
-                                            alt="Author Images"
+                                            src={profilePic !== '' ? `${prod}/${profilePic}` : `/images/others/author.png`}
+                                            alt="User profile picture"
                                         />
                                     </div>
                                     <div className="media-body">

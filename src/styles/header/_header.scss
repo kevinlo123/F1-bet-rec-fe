@@ -247,6 +247,14 @@ button {
         @media #{$sm-layout} {
             margin-left: 10px;
         }
+
+        
+        .dropdown {
+            img {
+                object-fit: cover;
+            }
+        }
+        
         &.icon {
             a {
                 background: var(--color-lightest); 

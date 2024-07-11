@@ -513,3 +513,13 @@ body.active-dark-mode {
         }
     }
 }
+
+body.active-dark-mode {
+    .profile-edit-form {
+        .form-group-img-upload {
+            input {
+                color: white;
+            }
+        }
+    }
+}
