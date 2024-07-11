@@ -17,6 +17,7 @@ const Profile = ({allPosts}) => {
     const [username, setUsername] = useState('');
     const [tier, setTier] = useState('');
     const [team, setTeam] = useState('');
+    const [bio, setBio] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,8 +28,10 @@ const Profile = ({allPosts}) => {
                 try {
                     const userData = await getUserData(token, userId);
                     setUsername(userData.user.username);
-                    setTier(userData.user.subscription_tier)
-                    setTeam(userData.user.favorite_f1_team)
+                    setTier(userData.user.subscription_tier);
+                    setTeam(userData.user.favorite_f1_team);
+                    setBio(userData.user.bio);
+                    console.log(userData.user)
                 } catch (error) {
                     console.error('Error fetching user data:', error);
                 }
@@ -74,7 +77,7 @@ const Profile = ({allPosts}) => {
                                             <h2 className="title">{username}</h2>
                                         </div>
                                         <div className="content">
-                                            <p className="b1 description">You have not added a bio yet. Edit your profile to add one!</p>
+                                            <p className="b1 description">{bio || 'You have not added a bio yet. Edit your profile to add one'}</p>
                                         </div>
                                     </div>
                                 </div>

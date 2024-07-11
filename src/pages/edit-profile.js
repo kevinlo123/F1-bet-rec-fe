@@ -9,11 +9,14 @@ import { AuthContext } from '../contexts/AuthContext';
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/router';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const EditProfile = ({allPosts}) => {
     const { getUserData } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
+    const [bio, setBio] = useState('');
     const local = 'http://localhost:3000/api/v1/login'
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/users'
     const router = useRouter();
@@ -27,7 +30,8 @@ const EditProfile = ({allPosts}) => {
                 try {
                     const userData = await getUserData(token, userId);
                     setEmail(userData.user.email);
-                    setUsername(userData.user.username)
+                    setUsername(userData.user.username);
+                    setBio(userData.user.bio);
                 } catch (error) {
                     console.error('Error fetching user data:', error);
                 }
@@ -43,7 +47,8 @@ const EditProfile = ({allPosts}) => {
         const userData = {
             user: {
                 email,
-                username
+                username,
+                bio
             }
         };
 
@@ -102,7 +107,7 @@ const EditProfile = ({allPosts}) => {
                             </div>
                             <div className="form-group">
                                 <span className="search-button">
-                                    <i className="fal fa-key" />
+                                    <i className="fal fa-user" />
                                 </span>
                                 <input
                                     type="text"
@@ -113,6 +118,20 @@ const EditProfile = ({allPosts}) => {
                                     required
                                 />
                             </div>
+                            <div className="axil-login form-group">
+                                <textarea
+                                    className="form-control"
+                                    placeholder="Bio"
+                                    value={bio || ''}
+                                    onChange={(e) => setBio(e.target.value)}
+                                    required
+                                ></textarea>
+                            </div>
+                            {/* <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                            </DropdownButton> */}
                             <div className="edit-info-button-cont form-group">
                                 <button type="submit" className="axil-button button-rounded hover-flip-item-wrapper">
                                     <span className="hover-flip-item">

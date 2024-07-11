@@ -382,7 +382,14 @@ body.active-dark-mode .about-author {
 }
 body.active-dark-mode .form-group textarea {
     background-color: #242424;
+    border: 1px solid var(--color-lighter);
+    color: white;
 }
+
+body.active-dark-mode .form-group textarea::placeholder {
+    color: white;
+}
+
 
 body.active-dark-mode input[type="checkbox"] ~ label::before, 
 body.active-dark-mode input[type="radio"] ~ label::before {
