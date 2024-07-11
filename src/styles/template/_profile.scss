@@ -1,10 +1,19 @@
 .profile-top {
-    .breadcrumb {
+    h1 {
         padding-top: 80px;
+        margin-bottom: 60px;
 
 
         @media #{$smlg-device} {
             padding-top: 60px;
+        }
+    }
+
+    .breadcrumb {
+        margin-bottom: 20px;
+
+        .hover-flip-item {
+            color: var(--color-secondary);
         }
     }
 

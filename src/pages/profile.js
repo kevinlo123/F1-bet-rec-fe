@@ -17,7 +17,6 @@ const Profile = ({allPosts}) => {
     const [username, setUsername] = useState('');
     const [tier, setTier] = useState('');
     const [team, setTeam] = useState('');
-    const [selectedFile, setSelectedFile] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -48,8 +47,9 @@ const Profile = ({allPosts}) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
+                            <h1>User Profile</h1>
                             <div className="breadcrumb">
-                                <Link href="/settings">
+                                <Link href="/edit-profile">
                                     <a className="hover-flip-item-wrapper">
                                         <span className="hover-flip-item">
                                             <span data-text={'Edit Profile'}>
@@ -71,7 +71,7 @@ const Profile = ({allPosts}) => {
                                     </div>
                                     <div className="media-body">
                                         <div className="author-info">
-                                            <h1 className="title">{username}</h1>
+                                            <h2 className="title">{username}</h2>
                                         </div>
                                         <div className="content">
                                             <p className="b1 description">You have not added a bio yet. Edit your profile to add one!</p>
