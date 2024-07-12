@@ -7,16 +7,18 @@ import CategoryList from '../common/components/category/CategoryList';
 import HeadTitle from "../common/elements/head/HeadTitle";
 import { AuthContext } from '../contexts/AuthContext';
 import React, { useContext, useEffect, useState } from 'react';
+import constructorData from '../data/constructors/constructor-standings.json';
 
 const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-const Profile = ({allPosts}) => {
+const Profile = ({ allPosts }) => {
     const { getUserData } = useContext(AuthContext);
     const [username, setUsername] = useState('');
     const [tier, setTier] = useState('');
     const [team, setTeam] = useState('');
+    const [teamDetails, setTeamDetails] = useState(null);
     const [bio, setBio] = useState('');
     const [profilePic, setProfilePic] = useState('');
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/';
@@ -31,9 +33,9 @@ const Profile = ({allPosts}) => {
                     const userData = await getUserData(token, userId);
                     setUsername(userData.user.username);
                     setTier(userData.user.subscription_tier);
-                    setTeam(userData.user.favorite_f1_team);
                     setBio(userData.user.bio);
-                    setProfilePic(userData.user.profile_picture.url)
+                    setProfilePic(userData.user.profile_picture.url);
+                    setTeam(userData.user.favorite_f1_team);
                 } catch (error) {
                     console.error('Error fetching user data:', error);
                 }
@@ -41,8 +43,19 @@ const Profile = ({allPosts}) => {
         };
 
         fetchData();
-    }, []);
+    }, [getUserData]);
 
+    useEffect(() => {
+        if (team) {
+            const getTeamDetails = (teamName) => {
+                const team = constructorData.standings.find((standing) => standing.team === teamName);
+                return team ? { logoImg: team.logoImg, customImageWidth: team.customImageWidth } : null;
+            };
+
+            const details = getTeamDetails(team);
+            setTeamDetails(details);
+        }
+    }, [team]);
 
     return (
         <>
@@ -79,7 +92,7 @@ const Profile = ({allPosts}) => {
                                             <h2 className="title">{username}</h2>
                                         </div>
                                         <div className="content">
-                                            <p className="b1 description">{bio === '\n' || bio === null || bio === '' ? 'You have not added a bio yet. Edit your profile to add one' : bio}</p>
+                                            <p className="b1 description">{bio === '\n' || bio === null || bio === '' || bio === 'null' ? 'You have not added a bio yet. Edit your profile to add one' : bio}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -92,23 +105,22 @@ const Profile = ({allPosts}) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
-                            <h2>Your Subscribtion:</h2>
+                            <h2>Your Subscription:</h2>
                             <div className="subscription--standard bg-color-grey">
                                 <div className="subscription-inner">
                                     <div className="subscription-content">
                                         <div className="subscription-content-top">
                                             <p className="username">{username}</p>
-                                            {/* needs to be updated once editing is done swap the operator to ===*/}
-                                            {team !== null ? (
-                                                // <p>{'N/A - set a team'}</p>
-                                                <p className="team-text">Team: N/A</p>
-                                            ) : (
+                                            {teamDetails ? (
                                                 <Image
-                                                    src={'/images/team-logos/mercedes-logo.png'}
+                                                    src={teamDetails.logoImg}
                                                     height={40}
-                                                    width={40}
+                                                    width={parseInt(teamDetails.customImageWidth, 10)}
                                                     priority={true}
+                                                    alt={`${team} logo`}
                                                 />
+                                            ) : (
+                                                <p className="team-text">Team: N/A</p>
                                             )}
                                         </div>
                                         <div className="subscription-content-bottom">
@@ -130,7 +142,7 @@ const Profile = ({allPosts}) => {
             <FooterOne />
         </>
     );
-}
+};
 
 export default Profile;
 
@@ -153,8 +165,8 @@ export async function getStaticProps() {
         'read_time',
         'author_social',
     ]);
-  
+
     return {
-      props: { allPosts }
-    }
-  }
+        props: { allPosts },
+    };
+}

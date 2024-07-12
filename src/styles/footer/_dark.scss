@@ -472,6 +472,12 @@ body.active-dark-mode .axil-footer-style-1 .footer-top .inner {
 body.active-dark-mode .header-style-4 .metabar-block .dropdown-menu {
     border-color: #333333;
     background: #111111;
+
+    ul {
+        a:hover {
+            color: var(--color-primary);
+        }
+    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -519,6 +525,15 @@ body.active-dark-mode {
         .form-group-img-upload {
             input {
                 color: white;
+            }
+        }
+
+        .dropdown-menu {
+            border-color: #333333;
+            background: #111111;
+            
+            a:hover {
+                color: var(--color-primary);
             }
         }
     }

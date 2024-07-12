@@ -53,7 +53,7 @@ const Signup = ({allPosts}) => {
             } else {
                 const errorMessage = await response.json();
                 console.error('Error signing up:', errorMessage);
-                toast.error(`${errorMessage.error}`);
+                toast.error(`${errorMessage.errors[0]}`);
             }
         } catch (error) {
             console.error('Network error:', error);
