@@ -12,6 +12,7 @@ import { slugify } from "../common/utils";
 import HeaderFour from "../common/elements/header/HeaderFour";
 import { getPosts } from '../../lib/postsService';
 import React, { useState, useEffect } from 'react';
+// import { ProtectedRoute } from '../contexts/AuthContext';
 
 const HomeDefault = ({ allPosts }) => {
   const [posts, setPosts] = useState([]);

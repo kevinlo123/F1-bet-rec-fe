@@ -8,6 +8,7 @@ import HeadTitle from "../common/elements/head/HeadTitle";
 import { AuthContext } from '../contexts/AuthContext';
 import React, { useContext, useEffect, useState } from 'react';
 import constructorData from '../data/constructors/constructor-standings.json';
+import ProtectedRoute from '../common/utils/ProtectedRoute'; // Import from utils
 
 const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -21,7 +22,9 @@ const Profile = ({ allPosts }) => {
     const [teamDetails, setTeamDetails] = useState(null);
     const [bio, setBio] = useState('');
     const [profilePic, setProfilePic] = useState('');
+    const local = 'http://localhost:3000';
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/';
+    const apiUrl = window.location.hostname === 'localhost' ? local : prod;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -58,7 +61,7 @@ const Profile = ({ allPosts }) => {
     }, [team]);
 
     return (
-        <>
+        <ProtectedRoute>
             <HeadTitle pageTitle="Your Profile" />
             <HeaderFour postData={allPosts} />
             <div className="axil-author-area axil-author-banner bg-color-grey profile-top">
@@ -83,7 +86,7 @@ const Profile = ({ allPosts }) => {
                                         <Image
                                             width={100}
                                             height={100}
-                                            src={profilePic === '' || profilePic === null ? `/images/others/author.png` :`${prod}/${profilePic}`}
+                                            src={profilePic === '' || profilePic === null ? `/images/others/author.png` :`${apiUrl}/${profilePic}`}
                                             alt="User profile picture"
                                         />
                                     </div>
@@ -140,7 +143,7 @@ const Profile = ({ allPosts }) => {
             </div>
             <CategoryList cateData={allPosts} />
             <FooterOne />
-        </>
+        </ProtectedRoute>
     );
 };
 

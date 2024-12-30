@@ -10,7 +10,10 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
   const [profilePic, setProfilePic] = useState('');
+  const local = 'http://localhost:3000';
   const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/';
+  const apiUrl = window.location.hostname === 'localhost' ? local : prod;
+
   const { getUserData } = useContext(AuthContext);
 
   useEffect(() => {
@@ -72,7 +75,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
       <Image
         width={40}
         height={40}
-        src={profilePic === '' || profilePic === null ? `/images/others/author.png` :`${prod}/${profilePic}`}
+        src={profilePic === '' || profilePic === null ? `/images/others/author.png` :`${apiUrl}/${profilePic}`}
         alt="User profile picture"
       />
       {children}

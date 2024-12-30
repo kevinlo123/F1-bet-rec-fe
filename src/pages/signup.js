@@ -17,7 +17,8 @@ const Signup = ({allPosts}) => {
     const [username, setUsername] = useState('');
     const local = 'http://localhost:3000/api/v1/users'
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/users'
-    
+    const apiUrl = window.location.hostname === 'localhost' ? local : prod;
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,7 +32,7 @@ const Signup = ({allPosts}) => {
         };
 
         try {
-            const response = await fetch(prod, {
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

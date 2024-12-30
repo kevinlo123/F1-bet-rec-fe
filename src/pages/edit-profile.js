@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import constructorData from '../data/constructors/constructor-standings.json'
+import ProtectedRoute from '../common/utils/ProtectedRoute'; // Import from utils
 
 const EditProfile = ({ allPosts }) => {
     const { getUserData } = useContext(AuthContext);
@@ -20,8 +21,9 @@ const EditProfile = ({ allPosts }) => {
     const [bio, setBio] = useState('');
     const [selectedFile, setSelectedFile] = useState(null);
     const [selectedTeam, setSelectedTeam] = useState('Select your team');
-    const local = 'http://localhost:3000/api/v1/login';
+    const local = 'http://localhost:3000/api/v1/users';
     const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/users';
+    const apiUrl = window.location.hostname === 'localhost' ? local : prod;
     const router = useRouter();
     const teamNames = constructorData.standings.map((standing) => standing.team);
 
@@ -68,7 +70,7 @@ const EditProfile = ({ allPosts }) => {
         }
 
         try {
-            const response = await fetch(`${prod}/${localStorage.getItem('userId')}`, {
+            const response = await fetch(`${apiUrl}/${localStorage.getItem('userId')}`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
@@ -94,7 +96,7 @@ const EditProfile = ({ allPosts }) => {
     };
 
     return (
-        <>
+        <ProtectedRoute>
             <HeadTitle pageTitle="Edit Your Profile" />
             <HeaderFour postData={allPosts} />
             <div className="axil-section-gap edit-profile">
@@ -170,7 +172,7 @@ const EditProfile = ({ allPosts }) => {
             </div>
             <CategoryList cateData={allPosts} />
             <FooterOne />
-        </>
+        </ProtectedRoute>
     );
 }
 

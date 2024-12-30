@@ -53,7 +53,10 @@ const Nav = ({posts}) => {
     
     return (
         <ul className="mainmenu">
-            <li><a href="/">Home</a>
+            <li>
+                <Link href="/">
+                    <a>Home</a>                
+                </Link>
             </li>
             <li>
                 <Link href="/news">
