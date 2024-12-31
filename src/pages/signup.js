@@ -46,7 +46,7 @@ const Signup = ({allPosts}) => {
                 const token = data.token;
 
                 if (token) {
-                    login(data, token, data.new_user.admin, data.new_user.id); // Save the token and update the authentication state
+                    login(data, token, data.new_user.admin, data.new_user.id, 'Account created successfully!'); // Save the token and update the authentication state
                 } else {
                     console.error('No token found in the response');
                 }

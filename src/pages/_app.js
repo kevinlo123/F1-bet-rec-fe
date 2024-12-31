@@ -10,7 +10,12 @@ function MyApp({ Component, pageProps }) {
             <AuthProvider>
                 <ColorSwitcher />
                 <Component {...pageProps} />
-                <Toaster position="bottom-center" />
+                <Toaster position="bottom-center"           
+                    toastOptions={{
+                        duration: 1500, 
+                        style: { animation: 'none' },
+                    }}
+                />
             </AuthProvider>
         </>
     )

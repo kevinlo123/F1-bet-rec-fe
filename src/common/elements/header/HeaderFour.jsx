@@ -58,6 +58,8 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
 
   const { isAuthenticated, isAdmin ,logout } = useContext(AuthContext);
 
+  console.log(isAdmin)
+
 
 
   const toggleHandler = () => {
