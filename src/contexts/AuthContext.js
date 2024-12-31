@@ -76,7 +76,9 @@ const AuthProvider = ({ children }) => {
         }
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+            const local = 'http://localhost:3000/'
+            const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com'
+            const apiUrl = window.location.hostname === 'localhost' ? local : prod;
 
             const response = await fetch(`${apiUrl}/api/v1/users/${userId}`, {
                 method: 'GET',
