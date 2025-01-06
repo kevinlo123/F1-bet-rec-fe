@@ -107,7 +107,7 @@ const EditProfile = ({ allPosts }) => {
                         </div>
                         <form className="profile-edit-form" onSubmit={handleSubmit}>
                             <div className="form-group-img-upload">
-                                <span>Change your profile picture</span>
+                                <span>Change your profile picture:</span>
                                 <input
                                     type="file"
                                     className="profile-edit-image"
@@ -116,48 +116,60 @@ const EditProfile = ({ allPosts }) => {
                                     accept="image/*"
                                 />
                             </div>
-                            <DropdownButton id="dropdown-basic-button" title={selectedTeam}>
-                                <ul className="list-unstyled">
-                                    {teamNames.map((team, index) => (
-                                        <Dropdown.Item key={index} onClick={() => handleTeamSelect(team)}>
-                                            {team}
-                                        </Dropdown.Item>
-                                    ))}
-                                </ul>
-                            </DropdownButton>
-                            <div className="form-group">
-                                <span className="search-button">
-                                    <i className="fal fa-user-circle" />
-                                </span>
-                                <input
-                                    type="email"
-                                    className="form-control"
-                                    placeholder="Email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
+                            <div>
+                                <label>Favorite team:</label>
+                                <DropdownButton id="dropdown-basic-button" title={selectedTeam}>
+                                    <ul className="list-unstyled">
+                                        {teamNames.map((team, index) => (
+                                            <Dropdown.Item key={index} onClick={() => handleTeamSelect(team)}>
+                                                {team}
+                                            </Dropdown.Item>
+                                        ))}
+                                    </ul>
+                                </DropdownButton>
                             </div>
-                            <div className="form-group">
-                                <span className="search-button">
-                                    <i className="fal fa-user" />
-                                </span>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="User name"
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                    required
-                                />
+                            <div>
+                                <label>Email:</label>
+                                <div className="form-group">
+                                    <span className="search-button">
+                                        <i className="fal fa-user-circle" />
+                                    </span>
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        placeholder="Email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                    />
+                                </div>
                             </div>
-                            <div className="axil-login form-group">
-                                <textarea
-                                    className="form-control"
-                                    placeholder="Bio"
-                                    value={bio === '\n' || bio === null || bio === 'null' ? '' : bio}
-                                    onChange={(e) => setBio(e.target.value)}
-                                ></textarea>
+                            <div>
+                                <label>Username:</label>
+                                <div className="form-group">
+                                    <span className="search-button">
+                                        <i className="fal fa-user" />
+                                    </span>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="User name"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label>Bio:</label>
+                                <div className="axil-login form-group">
+                                    <textarea
+                                        className="form-control"
+                                        placeholder="Bio"
+                                        value={bio === '\n' || bio === null || bio === 'null' ? '' : bio}
+                                        onChange={(e) => setBio(e.target.value)}
+                                    ></textarea>
+                                </div>
                             </div>
                             <div className="edit-info-button-cont form-group">
                                 <button type="submit" className="axil-button button-rounded hover-flip-item-wrapper">

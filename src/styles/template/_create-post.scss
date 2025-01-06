@@ -1,0 +1,23 @@
+.create-post {
+    &__dropdowns {
+        display: flex;
+
+        @media #{$smlg-device} {
+            display: block;
+        }
+
+
+        button {
+            width: 235px;
+        }
+    }
+
+    .group-lta {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            width: fit-content;
+        }
+    }
+}

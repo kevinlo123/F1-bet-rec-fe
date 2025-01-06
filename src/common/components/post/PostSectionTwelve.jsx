@@ -3,6 +3,10 @@ import Image from "next/image";
 import { slugify } from "../../utils";
 
 const PostSectionTwelve = ({ postData }) => {
+  const local = 'http://localhost:3000';
+  const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com';
+  const apiUrl = window.location.hostname === 'localhost' ? local : prod;
+
   if (!postData || postData.length === 0) {
     return <div>Loading...</div>; // or any other loading indicator
   }
@@ -12,8 +16,6 @@ const PostSectionTwelve = ({ postData }) => {
   if (!firstPost) {
     return <div>No posts available</div>; // or any other message for empty posts
   }
-
-  console.log(slugify(firstPost.title));
 
   return (
     <div className="slider-area bg-color-grey pt--60 pb--80">
@@ -26,7 +28,7 @@ const PostSectionTwelve = ({ postData }) => {
                   <Link href={`/post/${firstPost.id}`}>
                     <a>
                       <Image
-                        src={firstPost.feature_img}
+                        src={`${apiUrl}${firstPost.feature_img.url}`}
                         alt={firstPost.title}
                         height={467}
                         width={615}
@@ -69,8 +71,8 @@ const PostSectionTwelve = ({ postData }) => {
                       <div className="post-thumbnail">
                         <Link href={`/post/${data.id})}`}>
                           <a>
-                            <Image
-                              src={data.feature_img}
+                          <Image
+                              src={`${apiUrl}${data.feature_img.url}`}
                               alt={data.title}
                               height={225}
                               width={300}

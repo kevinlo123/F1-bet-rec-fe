@@ -1,4 +1,4 @@
-import { getPosts, getPostBySlug } from '../../../lib/postsService';
+// import { getPosts, getPostBySlug } from '../../../lib/postsService';
 import markdownToHtml from '../../../lib/markdownToHtml';
 import HeadTitle from '../../common/elements/head/HeadTitle';
 import HeaderFour from '../../common/elements/header/HeaderFour';
@@ -40,9 +40,22 @@ export async function getServerSideProps(context) {
   const { params } = context;
   const { slug } = params;
 
+  // Decide API URL based on environment
+  const local = 'http://localhost:3000/api/v1/';
+  const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/';
+
+  // Use environment variable for production or fallback to local
+  const apiUrl = process.env.NODE_ENV === 'production' ? prod : local;
+
   try {
-    const post = await getPostBySlug(slug);
-    const allPosts = await getPosts();
+    const response = await fetch(`${apiUrl}/posts/${slug}`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const post = await response.json(); // Fetch post data
+    const allPostsResponse = await fetch(`${apiUrl}/posts`);
+    const allPosts = await allPostsResponse.json(); // Fetch all posts
 
     // Convert markdown to HTML if needed
     post.content = await markdownToHtml(post.content || '');
@@ -60,5 +73,7 @@ export async function getServerSideProps(context) {
     };
   }
 }
+
+
 
 export default PostDetails;

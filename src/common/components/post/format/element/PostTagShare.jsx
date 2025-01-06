@@ -2,16 +2,19 @@ import Link from "next/link";
 import { slugify } from "../../../../utils";
 
 const PostTagShare = ({postTags}) => {
+  let tags = postTags.tags
+  const tagsArray = tags.split(", ");
+
   return (
     <>
       <div className="tagcloud">
-        {postTags.tags.map((data, index) => (
+        {tagsArray.map((data, index) => (
           <Link href={`/tag/${slugify(data)}`} key={index}>
             <a>{data}</a>
           </Link>
         ))}
       </div>
-      <div className="social-share-block">
+      {/* <div className="social-share-block">
         <div className="post-like">
           <link href="#" />
           <a>
@@ -41,7 +44,7 @@ const PostTagShare = ({postTags}) => {
             </a>
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -3,6 +3,9 @@ import Link from "next/link";
 import {slugify} from '../../../../utils';
 
 const PostMetaOne = ({metaData}) => {
+  const local = 'http://localhost:3000';
+  const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/';
+  const apiUrl = window.location.hostname === 'localhost' ? local : prod;
 
     return (
       <div className="banner banner-single-post post-formate post-standard alignwide">
@@ -14,7 +17,7 @@ const PostMetaOne = ({metaData}) => {
                 {/* Start Post Thumbnail  */}
                 <div className="post-thumbnail">
                 <Image
-                    src={metaData.feature_img}
+                    src={`${apiUrl}${metaData.feature_img.url}`}
                     alt={metaData.title}
                     height={720}
                     width={1440}
@@ -38,28 +41,13 @@ const PostMetaOne = ({metaData}) => {
                   {/* Post Meta  */}
                   <div className="post-meta-wrapper">
                     <div className="post-meta">
-                      <div className="post-author-avatar border-rounded">
-                      <Image
-                            src={metaData.author_img}
-                            alt={metaData.author_name}
-                            height={50}
-                            width={50}
-                        />
-                      </div>
                       <div className="content">
                         <h6 className="post-author-name">
-                            <Link href={`/author/${slugify(metaData.author_name)}`}>
-                                <a
-                                    className="hover-flip-item-wrapper">
-                                    <span className="hover-flip-item">
-                                    <span data-text={metaData.author_name}>{metaData.author_name}</span>
-                                    </span>
-                                </a>
-                            </Link>
+                            <span>5 min. read</span>
                         </h6>
                         <ul className="post-meta-list">
-                          <li>{metaData.date}</li>
-                          <li>{metaData.post_views}</li>
+                          <li>Published: {metaData.date}</li>
+                          <li>{metaData.post_views} Views</li>
                         </ul>
                       </div>
                     </div>

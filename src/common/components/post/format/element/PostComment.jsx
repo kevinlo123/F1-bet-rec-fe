@@ -17,71 +17,9 @@ const PostComment = () => {
             </Link>
         </div>
       </div>
-      {/* Start Comment Respond  */}
-      <div className="comment-respond">
-        <h4 className="title">Post a comment</h4>
-        <form action="#">
-          <p className="comment-notes">
-            <span id="email-notes">
-              Your email address will not be published.
-            </span>
-            Required fields are marked <span className="required">*</span>
-          </p>
-          <div className="row row--10">
-            <div className="col-lg-4 col-md-4 col-12">
-              <div className="form-group">
-                <label htmlFor="name">Your Name</label>
-                <input id="name" type="text" />
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-4 col-12">
-              <div className="form-group">
-                <label htmlFor="email">Your Email</label>
-                <input id="email" type="email" />
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-4 col-12">
-              <div className="form-group">
-                <label htmlFor="website">Your Website</label>
-                <input id="website" type="text" />
-              </div>
-            </div>
-            <div className="col-12">
-              <div className="form-group">
-                <label htmlFor="message">Leave a Reply</label>
-                <textarea id="message" name="message" />
-              </div>
-            </div>
-            <div className="col-lg-12">
-              <p className="comment-form-cookies-consent">
-                <input
-                  id="wp-comment-cookies-consent"
-                  name="wp-comment-cookies-consent"
-                  type="checkbox"
-                />
-                <label htmlFor="wp-comment-cookies-consent">
-                  Save my name, email, and website in this browser for the next
-                  time I comment.
-                </label>
-              </p>
-            </div>
-            <div className="col-lg-12">
-              <div className="form-submit cerchio">
-                <input
-                  name="submit"
-                  type="submit"
-                  id="submit"
-                  className="axil-button button-rounded"
-                />
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      {/* End Comment Respond  */}
       {/* Start Comment Area  */}
       <div className="axil-comment-area">
-        <h4 className="title">2 comments</h4>
+        <h4 className="title mt--20">2 comments</h4>
         <ul className="comment-list">
           {/* Start Single Comment  */}
           <li className="comment">
@@ -247,6 +185,50 @@ const PostComment = () => {
         </ul>
       </div>
       {/* End Comment Area  */}
+      {/* Start Comment Respond  */}
+      <div className="comment-respond">
+        <h4 className="title">Post a comment</h4>
+        <form action="#">
+          <p className="comment-notes">
+            <span id="email-notes">
+              Your email address will not be published.
+            </span>
+            Required fields are marked <span className="required">*</span>
+          </p>
+          <div className="row row--10">
+            <div className="col-12">
+              <div className="form-group">
+                <label htmlFor="message">Leave a Reply</label>
+                <textarea id="message" name="message" />
+              </div>
+            </div>
+            <div className="col-lg-12">
+              <p className="comment-form-cookies-consent">
+                <input
+                  id="wp-comment-cookies-consent"
+                  name="wp-comment-cookies-consent"
+                  type="checkbox"
+                />
+                <label htmlFor="wp-comment-cookies-consent">
+                  Save my name, email, and website in this browser for the next
+                  time I comment.
+                </label>
+              </p>
+            </div>
+            <div className="col-lg-12">
+              <div className="form-submit cerchio">
+                <input
+                  name="submit"
+                  type="submit"
+                  id="submit"
+                  className="axil-button button-rounded"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      {/* End Comment Respond  */}
     </div>
   );
 };

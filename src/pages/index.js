@@ -10,7 +10,7 @@ import CategoryList from '../common/components/category/CategoryList';
 import PostSectionTwelve from '../common/components/post/PostSectionTwelve';
 import { slugify } from "../common/utils";
 import HeaderFour from "../common/elements/header/HeaderFour";
-import { getPosts } from '../../lib/postsService';
+// import { getPosts } from '../../lib/postsService';
 import React, { useState, useEffect } from 'react';
 // import { ProtectedRoute } from '../contexts/AuthContext';
 
@@ -21,15 +21,26 @@ const HomeDefault = ({ allPosts }) => {
   useEffect(() => {
     const fetchPostsData = async () => {
       try {
-        const postsData = await getPosts();
-        setPosts(postsData);
+        const local = 'http://localhost:3000/api/v1';
+        const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1';
+        const apiUrl = window.location.hostname === 'localhost' ? local : prod;
+  
+        // Use apiUrl here instead of url
+        const response = await fetch(`${apiUrl}/posts`);        
+        
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+  
+        const postsData = await response.json();  // This is where postsData gets assigned
+        setPosts(postsData);  // Set the fetched posts to the state
         setLoading(false);  // Set loading to false after data is fetched
       } catch (error) {
         console.error('Error loading posts:', error);
         setLoading(false);  // Set loading to false even if there's an error
       }
     };
-
+  
     fetchPostsData();
   }, []);
 

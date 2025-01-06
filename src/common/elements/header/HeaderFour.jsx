@@ -58,10 +58,6 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
 
   const { isAuthenticated, isAdmin ,logout } = useContext(AuthContext);
 
-  console.log(isAdmin)
-
-
-
   const toggleHandler = () => {
       setTogglaClass(active => !active);
   }
@@ -263,9 +259,14 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                               </Dropdown.Item>
 
                               {isAdmin && (
-                                <Dropdown.Item href="/admin" eventKey="3">
-                                  Admin Actions
-                                </Dropdown.Item>
+                                <>   
+                                  <Dropdown.Item href="/admin" eventKey="3">
+                                    Admin Actions
+                                  </Dropdown.Item>
+                                  <Dropdown.Item href="/create-post" eventKey="3">
+                                    Create a post
+                                  </Dropdown.Item>
+                                </>
                               )}
                             </Dropdown.Menu>
                           </Dropdown>
