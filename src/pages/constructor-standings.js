@@ -7,6 +7,7 @@ import { getAllPosts } from '../../lib/api';
 import HeadTitle from "../common/elements/head/HeadTitle";
 import constructorData from '../data/constructors/constructor-standings.json'
 import Nav from "react-bootstrap/Nav";
+import PostComment from "../common/components/post/format/element/PostComment";
 
 const ConstructorStandings = ({allPosts}) => {
     return (
@@ -53,6 +54,9 @@ const ConstructorStandings = ({allPosts}) => {
                                 <span>{data.points}pts</span>                                
                             </div>
                         ))}
+                    </div>
+                    <div className='mt--80'>
+                        <PostComment />
                     </div>
                 </div>
             </div>

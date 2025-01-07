@@ -5,6 +5,7 @@ import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
 import { HoverActiveClass, slugify } from "../../utils";
+import trophy from '../../../../public/images/others/trophy.png';
 
 const filters = [
 	{
@@ -126,9 +127,28 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 																		{data.cate}
 																	</p>
 																</div>
-																<h3 className="title">
-																	<span>{data.raceName}</span>
-																</h3>
+																<div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+																	<h3 className="title">
+																		<span>{data.raceName}</span>
+																	</h3>
+																	{
+																		data.winner ? 
+																		<div className="trophy-wrapper">
+																			<div className="img-wrapper">
+																				<Image
+																					src={trophy}
+																					alt={'trophy'}
+																					height={55}
+																					width={55}
+																					priority={true}
+																				/>
+																			</div>
+																			<span>{data.winner}</span> 
+																		</div>
+																		:
+																		 ''
+																	}
+																</div>
 																<div className="post-meta-wrapper">
 																	<div className="post-meta">
 																		<div className="content">

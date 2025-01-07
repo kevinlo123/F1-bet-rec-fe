@@ -14,7 +14,8 @@
         "flag": "<span class=\"fi fi-bh fi\"></span>",
         "featureImg": "\/images\/circuits\/bahrain.webp",
         "type": "Traditional Circuits",
-        "highlights": "https://www.youtube.com/watch?v=9Y5wMpKXNK4"
+        "highlights": "https://www.youtube.com/watch?v=9Y5wMpKXNK4",
+        "winner": "Max Verstappen"
       },
       {
         "round": 2,
@@ -29,7 +30,8 @@
         "flag": "<span class=\"fi fi-sa fi\"></span>",
         "featureImg": "\/images\/circuits\/jeddah.jpg",
         "type": "Traditional Circuits",
-        "highlights": "https://www.youtube.com/watch?v=OJ56MAGFPGM"
+        "highlights": "https://www.youtube.com/watch?v=OJ56MAGFPGM",
+        "winner": "Max Verstappen"
       },
       {
         "round": 3,
@@ -44,7 +46,8 @@
         "flag": "<span class=\"fi fi-au fi\"></span>",
         "featureImg": "\/images\/circuits\/melbourne.webp",
         "type": "Street Circuits",
-        "highlights": "https://www.youtube.com/watch?v=9z8sEadieXA"
+        "highlights": "https://www.youtube.com/watch?v=9z8sEadieXA",
+        "winner": "Max Verstappen"
       },
       {
         "round": 4,
@@ -59,7 +62,8 @@
         "flag": "<span class=\"fi fi-jp fi\"></span>",
         "featureImg": "\/images\/circuits\/suzuka.webp",
         "type": "Traditional Circuits",
-        "highlights": "https://www.youtube.com/watch?v=Z3-IulIyBtU"
+        "highlights": "https://www.youtube.com/watch?v=Z3-IulIyBtU",
+        "winner": "Max Verstappen"
       },
       {
         "round": 5,
