@@ -58,6 +58,10 @@ const PostSectionTwelve = ({ postData }) => {
                       <a>{firstPost.title}</a>
                     </Link>
                   </h3>
+                  <ul className="post-meta-list mt--0">
+                    <li style={{color: 'white'}}>{firstPost.date}</li>
+                    <li style={{color: 'white'}}>{firstPost.post_views} Views</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -102,6 +106,10 @@ const PostSectionTwelve = ({ postData }) => {
                             <a>{data.title}</a>
                           </Link>
                         </h5>
+                        <ul className="post-meta-list mt--0">
+                          <li style={{color: 'white'}}>{data.date}</li>
+                          <li style={{color: 'white'}}>{data.post_views} Views</li>
+                        </ul>
                       </div>
                     </div>
                   </div>
