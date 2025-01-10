@@ -75,7 +75,6 @@
 
 
 
-
 /**************************************
 	Header Styles
 ***************************************/
@@ -101,6 +100,7 @@
 /**************************************
 	Template Styles
 ***************************************/
+@import 'template/_map.scss';
 @import 'template/_create-post.scss';
 @import 'template/_edit-profile.scss';
 @import 'template/_profile.scss';

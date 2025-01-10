@@ -1,0 +1,64 @@
+.map-component {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto; /* Center the map */
+    background-color: grey; /* Example background */
+
+    svg {
+        position: relative;
+        left: -13%;
+        width: 123%;
+    }
+
+    .map-buttons {
+        position: absolute;
+        z-index: 3;
+        left: 7%;
+        bottom: 5%; 
+        width: 50px;
+        
+        button {
+            &:first-of-type {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.United-States {
+    &:hover {
+        cursor: pointer;
+        fill: red;
+    }
+}
+
+.Australia {
+    fill: blue;
+}
+
+.Italy {
+    fill: green;
+}
+
+.brazil {
+    fill: purple;
+}
+
+.Japan {
+    fill: brown;
+}
+
+.Canada {
+    fill: burlywood;
+}
+
+.miami-marker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border-radius: 50%;
+    top: 80%; /* Adjust to Miami's approximate location */
+    left: 88%; /* Adjust to Miami's approximate location */
+    transform: translate(-50%, -50%);
+}

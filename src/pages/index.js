@@ -12,6 +12,7 @@ import { slugify } from "../common/utils";
 import HeaderFour from "../common/elements/header/HeaderFour";
 // import { getPosts } from '../../lib/postsService';
 import React, { useState, useEffect } from 'react';
+import MapComponent from '../common/components/map-component/MapComponent';
 // import { ProtectedRoute } from '../contexts/AuthContext';
 
 const HomeDefault = ({ allPosts }) => {
@@ -58,6 +59,7 @@ const HomeDefault = ({ allPosts }) => {
       ) : (
         <PostSectionTwelve postData={latestPosts} />  // Pass latestPosts to PostSectionTwelve
       )}
+      <MapComponent />
       <PostSectionThree postData={videoPost} heading="Featured Video" />
       <PostSectionTen postData={allPosts} />
       <PostSectionOne postData={allPosts} />
