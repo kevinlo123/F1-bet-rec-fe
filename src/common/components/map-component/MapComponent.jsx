@@ -2,129 +2,124 @@ import { ReactSVG } from "react-svg";
 import { useState, useRef, useEffect } from "react";
 
 const MapComponent = () => {
-  const [scale, setScale] = useState(1); 
-  const [isDragging, setIsDragging] = useState(false); 
-  const [offset, setOffset] = useState({ x: 0, y: 0 }); 
-  const mapRef = useRef(null); 
+  const [scale, setScale] = useState(1); // Initial scale
+  const [isDragging, setIsDragging] = useState(false); // Dragging state
+  const [startPos, setStartPos] = useState(null); // Initial touch/mouse position
+  const [offset, setOffset] = useState({ x: 0, y: 0 }); // Current offset
+  const mapRef = useRef(null); // Reference to the map container
 
+  // Zoom In
   const zoomIn = () => {
-    setScale((prevScale) => Math.min(prevScale + 0.1, 3));  
+    setScale((prevScale) => Math.min(prevScale + 0.1, 3)); // Max scale
   };
 
-  // Zoom out function
+  // Zoom Out
   const zoomOut = () => {
-    setScale((prevScale) => Math.max(prevScale - 0.1, 0.5));  
+    setScale((prevScale) => Math.max(prevScale - 0.1, 0.5)); // Min scale
   };
 
-  // Mouse drag handlers
-  const handleMouseDown = (e) => {
+  // Handle drag start
+  const handleStart = (e) => {
+    e.preventDefault();
+    const pos = e.touches
+      ? { x: e.touches[0].clientX, y: e.touches[0].clientY }
+      : { x: e.clientX, y: e.clientY };
+
+    setStartPos(pos);
     setIsDragging(true);
-    document.body.style.cursor = "grabbing"; 
+    document.body.style.cursor = "grabbing";
   };
 
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      setOffset({
-        x: offset.x + e.movementX,
-        y: offset.y + e.movementY,
-      });
-    }
+  // Handle drag move
+  const handleMove = (e) => {
+    if (!isDragging || !startPos) return;
+
+    const pos = e.touches
+      ? { x: e.touches[0].clientX, y: e.touches[0].clientY }
+      : { x: e.clientX, y: e.clientY };
+
+    const deltaX = pos.x - startPos.x;
+    const deltaY = pos.y - startPos.y;
+
+    setOffset((prevOffset) => ({
+      x: prevOffset.x + deltaX,
+      y: prevOffset.y + deltaY,
+    }));
+
+    setStartPos(pos); // Update start position for smooth drag
   };
 
-  const handleMouseUp = () => {
+  // Handle drag end
+  const handleEnd = () => {
     setIsDragging(false);
     document.body.style.cursor = "grab";
-  };
-
-  const handleMouseOver = () => {
-    if (!isDragging) {
-      document.body.style.cursor = "grab"; 
-    }
-  };
-
-  const handleMouseOut = () => {
-    if (!isDragging) {
-      document.body.style.cursor = "default"; 
-    }
-  };
-
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    document.body.style.cursor = "grabbing"; 
-  };
-
-  const handleTouchMove = (e) => {
-    if (isDragging) {
-      const touch = e.touches[0];
-      setOffset({
-        x: offset.x + touch.clientX - (offset.x || touch.clientX),
-        y: offset.y + touch.clientY - (offset.y || touch.clientY),
-      });
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-    document.body.style.cursor = "grab"; 
   };
 
   useEffect(() => {
     const mapElement = mapRef.current;
 
-    mapElement.addEventListener("touchstart", handleTouchStart);
-    mapElement.addEventListener("touchmove", handleTouchMove);
-    mapElement.addEventListener("touchend", handleTouchEnd);
+    if (!mapElement) return;
+
+    mapElement.addEventListener("touchstart", handleStart, { passive: false });
+    mapElement.addEventListener("touchmove", handleMove, { passive: false });
+    mapElement.addEventListener("touchend", handleEnd);
 
     return () => {
-      mapElement.removeEventListener("touchstart", handleTouchStart);
-      mapElement.removeEventListener("touchmove", handleTouchMove);
-      mapElement.removeEventListener("touchend", handleTouchEnd);
+      mapElement.removeEventListener("touchstart", handleStart);
+      mapElement.removeEventListener("touchmove", handleMove);
+      mapElement.removeEventListener("touchend", handleEnd);
     };
-  }, [isDragging, offset]);
+  }, [isDragging, startPos]);
 
   return (
-    <div className="map-component bg-color-grey pt--60 pb--60" style={{ position: "relative", overflow: "hidden" }}>
-        <div className="map-buttons">
-            <button
-                onClick={zoomIn}
-                style={{
-                    zIndex: 10,
-                    padding: "10px 20px",
-                    background: "#fff",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                }}
-            >
-                -
-            </button>
-            <button
-                onClick={zoomOut}
-                style={{
-                    zIndex: 10,
-                    padding: "10px 20px",
-                    background: "#fff",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                }}
-            >
-                +
-            </button>
-        </div>
-        <div
-            ref={mapRef}
-            style={{
-                transform: `scale(${scale}) translate(${offset.x}px, ${offset.y}px)`,
-                cursor: isDragging ? "grabbing" : "grab",
-                transition: "transform 0.2s ease", 
-            }}
-            onMouseDown={handleMouseDown}  
-            onMouseMove={handleMouseMove}  
-            onMouseUp={handleMouseUp}      
-            onMouseLeave={handleMouseOut} 
-            onMouseOver={handleMouseOver} 
+    <div
+      className="map-component bg-color-grey pt--60 pb--60"
+      style={{ position: "relative", overflow: "hidden", touchAction: "none" }}
+    >
+      {/* Zoom Buttons */}
+      <div className="map-buttons">
+        <button
+          onClick={zoomIn}
+          style={{
+            zIndex: 10,
+            padding: "10px 20px",
+            background: "#fff",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+          }}
         >
-            <ReactSVG src="/images/others/map.svg" />
-        </div>
+          +
+        </button>
+        <button
+          onClick={zoomOut}
+          style={{
+            zIndex: 10,
+            padding: "10px 20px",
+            background: "#fff",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+          }}
+        >
+          -
+        </button>
+      </div>
+
+      {/* SVG Map */}
+      <div
+        ref={mapRef}
+        style={{
+          transform: `scale(${scale}) translate(${offset.x}px, ${offset.y}px)`,
+          transformOrigin: "center center",
+          cursor: isDragging ? "grabbing" : "grab",
+          transition: isDragging ? "none" : "transform 0.2s ease", // Smooth zoom
+        }}
+        onMouseDown={handleStart} // Start dragging
+        onMouseMove={handleMove} // Dragging
+        onMouseUp={handleEnd} // End dragging
+        onMouseLeave={handleEnd} // Reset on leave
+      >
+        <ReactSVG src="/images/others/map.svg" />
+      </div>
     </div>
   );
 };
