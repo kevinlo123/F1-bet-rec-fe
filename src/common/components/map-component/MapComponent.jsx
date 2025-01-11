@@ -1,5 +1,6 @@
 import { ReactSVG } from "react-svg";
 import { useState, useRef, useEffect } from "react";
+import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
 
 const MapComponent = () => {
   const [scale, setScale] = useState(1); // Initial scale
@@ -52,7 +53,7 @@ const MapComponent = () => {
   // Handle drag end
   const handleEnd = () => {
     setIsDragging(false);
-    document.body.style.cursor = "grab";
+    document.body.style.cursor = "";
   };
 
   useEffect(() => {
@@ -72,7 +73,13 @@ const MapComponent = () => {
   }, [isDragging, startPos]);
 
   return (
-    <div
+    <>
+        <div className=" bg-color-grey  pb--30">
+            <div className="container">
+                <SectionTitleOne title="2025 season overview" />
+            </div>
+        </div>
+        <div
       className="map-component bg-color-grey pt--60 pb--60"
       style={{ position: "relative", overflow: "hidden", touchAction: "none" }}
     >
@@ -82,30 +89,26 @@ const MapComponent = () => {
           onClick={zoomIn}
           style={{
             zIndex: 10,
-            padding: "10px 20px",
-            background: "#fff",
-            border: "1px solid #ccc",
+            padding: "10px 10px",
             borderRadius: "5px",
           }}
         >
-          +
+        <i class="fal fa-plus"></i>
         </button>
         <button
           onClick={zoomOut}
           style={{
             zIndex: 10,
-            padding: "10px 20px",
-            background: "#fff",
-            border: "1px solid #ccc",
+            padding: "10px 10px",
             borderRadius: "5px",
           }}
         >
-          -
+        <i class="fal fa-minus"></i>
         </button>
       </div>
 
       {/* SVG Map */}
-      <div
+      {/* <div
         ref={mapRef}
         style={{
           transform: `scale(${scale}) translate(${offset.x}px, ${offset.y}px)`,
@@ -119,8 +122,25 @@ const MapComponent = () => {
         onMouseLeave={handleEnd} // Reset on leave
       >
         <ReactSVG src="/images/others/map.svg" />
-      </div>
+      </div> */}
+
+      <div
+        ref={mapRef}
+        style={{
+            transform: `scale(${scale}) translate(${offset.x}px, ${offset.y}px)`,
+            transformOrigin: "center center",
+            cursor: isDragging ? "grabbing" : "grab", // Localized cursor
+            transition: isDragging ? "none" : "transform 0.2s ease", // Smooth zoom
+        }}
+        onMouseDown={handleStart} // Start dragging
+        onMouseMove={handleMove} // Dragging
+        onMouseUp={handleEnd} // End dragging
+        onMouseLeave={handleEnd} // Reset on leave
+        >
+        <ReactSVG src="/images/others/map.svg" />
     </div>
+    </div>
+    </>
   );
 };
 

@@ -10,6 +10,11 @@ body {
         }
         .bg-color-grey {
             background: #212121;
+
+            .map {
+                fill: #1A1A1A;
+                stroke: dimgray;
+            }
         }
         .bg-color-white {
             background: #1A1A1A;
