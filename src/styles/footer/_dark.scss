@@ -543,3 +543,19 @@ body.active-dark-mode {
         }
     }
 }
+
+body.active-dark-mode {
+    .map-component {
+        border-top: 1px solid #333333;
+        svg {
+            path {
+                fill: cornsilk;
+
+                &:hover {
+                    // fill: #2e2e2e80;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

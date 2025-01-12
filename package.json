@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.3.1",
     "bootstrap": "^5.3.3",
     "flag-icons": "^7.2.3",
     "framer-motion": "^6.5.1",
@@ -28,6 +31,7 @@
     "react-slick": "^0.29.0",
     "react-svg": "^16.2.0",
     "react-svg-worldmap": "^2.0.0-alpha.16",
+    "react-tooltip": "^5.28.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "sass": "^1.52.3",

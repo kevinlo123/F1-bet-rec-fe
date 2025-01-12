@@ -1,6 +1,7 @@
 import { ReactSVG } from "react-svg";
 import { useState, useRef, useEffect } from "react";
 import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
+import { useRouter } from "next/router";
 
 const MapComponent = () => {
   const [scale, setScale] = useState(1); // Initial scale
@@ -8,6 +9,7 @@ const MapComponent = () => {
   const [startPos, setStartPos] = useState(null); // Initial touch/mouse position
   const [offset, setOffset] = useState({ x: 0, y: 0 }); // Current offset
   const mapRef = useRef(null); // Reference to the map container
+  const router = useRouter();
 
   // Zoom In
   const zoomIn = () => {
@@ -72,17 +74,84 @@ const MapComponent = () => {
     };
   }, [isDragging, startPos]);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const testy = document.querySelectorAll(".clickable-flag");
+  
+      if (testy.length === 0) return; // Ensure elements exist
+  
+      testy.forEach((flag) => {
+        // Ensure only one listener is added per element
+        if (!flag.getAttribute("data-listener-attached")) {
+          const handleClick = (e) => {
+            e.preventDefault(); // Prevent default behavior for parent <g> click
+  
+            const target = e.currentTarget; // The clicked <g> element
+  
+            // Select the inner elements to show
+            const rect = target.querySelector(".tooltip-bg");
+            const text = target.querySelector(".tooltip-flag");
+            const linkText = target.querySelector(".flag-link text");
+  
+            // Set the visibility to 'visible' for each of the elements inside the <g> element
+            if (rect) rect.setAttribute("visibility", "visible");
+            if (text) text.setAttribute("visibility", "visible");
+            if (linkText) linkText.setAttribute("visibility", "visible");
+  
+            const handleOutsideClick = (e) => {
+              if (!target.contains(e.target)) {
+                // Reset visibility to hidden when clicking outside
+                if (rect) rect.setAttribute("visibility", "hidden");
+                if (text) text.setAttribute("visibility", "hidden");
+                if (linkText) linkText.setAttribute("visibility", "hidden");
+  
+                // Remove the outside click event listener after hiding the tooltip
+                document.removeEventListener("click", handleOutsideClick);
+              }
+            };
+  
+            // Attach the outside click event listener
+            document.addEventListener("click", handleOutsideClick);
+          };
+  
+          flag.addEventListener("click", handleClick);
+          flag.setAttribute("data-listener-attached", "true");
+  
+          // Handle click on the anchor itself, allow it to navigate to the URL
+          const linkText = flag.querySelector(".flag-link");
+          if (linkText) {
+            linkText.addEventListener("click", (e) => {
+              // Allow the link to work as expected
+              setTimeout(() => {
+                router.push(e.target.parentElement.href.animVal);
+              }, 100);
+              return true
+            });
+          }
+  
+          // Cleanup function for this specific flag
+          return () => {
+            flag.removeEventListener("click", handleClick);
+          };
+        }
+      });
+  
+      clearInterval(intervalId); // Stop polling once the elements are found
+    }, 200); // Poll every 200ms
+  }, []);
+  
+
   return (
     <>
-        <div className=" bg-color-grey  pb--30">
-            <div className="container">
-                <SectionTitleOne title="2025 season overview" />
-            </div>
+      <div className=" bg-color-grey  pb--30">
+        <div className="container">
+          <SectionTitleOne title="2025 season overview" />
         </div>
-        <div
-      className="map-component bg-color-grey pt--60 pb--60"
-      style={{ position: "relative", overflow: "hidden", touchAction: "none" }}
-    >
+      </div>
+      <div
+        className="map-component bg-color-grey pt--60 pb--60"
+        style={{ position: "relative", overflow: "hidden", touchAction: "none" }}
+      >
       {/* Zoom Buttons */}
       <div className="map-buttons">
         <button
@@ -93,7 +162,7 @@ const MapComponent = () => {
             borderRadius: "5px",
           }}
         >
-        <i class="fal fa-plus"></i>
+        <i className="fal fa-plus"></i>
         </button>
         <button
           onClick={zoomOut}
@@ -103,43 +172,26 @@ const MapComponent = () => {
             borderRadius: "5px",
           }}
         >
-        <i class="fal fa-minus"></i>
+        <i className="fal fa-minus"></i>
         </button>
       </div>
-
-      {/* SVG Map */}
-      {/* <div
-        ref={mapRef}
-        style={{
-          transform: `scale(${scale}) translate(${offset.x}px, ${offset.y}px)`,
-          transformOrigin: "center center",
-          cursor: isDragging ? "grabbing" : "grab",
-          transition: isDragging ? "none" : "transform 0.2s ease", // Smooth zoom
-        }}
-        onMouseDown={handleStart} // Start dragging
-        onMouseMove={handleMove} // Dragging
-        onMouseUp={handleEnd} // End dragging
-        onMouseLeave={handleEnd} // Reset on leave
-      >
-        <ReactSVG src="/images/others/map.svg" />
-      </div> */}
 
       <div
         ref={mapRef}
         style={{
             transform: `scale(${scale}) translate(${offset.x}px, ${offset.y}px)`,
             transformOrigin: "center center",
-            cursor: isDragging ? "grabbing" : "grab", // Localized cursor
-            transition: isDragging ? "none" : "transform 0.2s ease", // Smooth zoom
+            cursor: isDragging ? "grabbing" : "grab", 
+            transition: isDragging ? "none" : "transform 0.2s ease", 
         }}
-        onMouseDown={handleStart} // Start dragging
-        onMouseMove={handleMove} // Dragging
-        onMouseUp={handleEnd} // End dragging
-        onMouseLeave={handleEnd} // Reset on leave
+        onMouseDown={handleStart} 
+        onMouseMove={handleMove} 
+        onMouseUp={handleEnd} 
+        onMouseLeave={handleEnd} 
         >
-        <ReactSVG src="/images/others/map.svg" />
-    </div>
-    </div>
+          <ReactSVG src="/images/others/map.svg" />
+        </div>
+      </div>
     </>
   );
 };
