@@ -10,7 +10,6 @@ const MapComponent = () => {
   const [offset, setOffset] = useState({ x: 0, y: 0 }); // Current offset
   const mapRef = useRef(null); // Reference to the map container
   const router = useRouter();
-  const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
   // Zoom In
   const zoomIn = () => {
@@ -85,6 +84,8 @@ const MapComponent = () => {
         // Ensure only one listener is added per element
         if (!flag.getAttribute("data-listener-attached")) {
           const handleClick = (e) => {
+            if (isDragging) return; // Ignore clicks if dragging
+
             e.preventDefault(); // Prevent default behavior for parent <g> click
   
             const target = e.currentTarget; // The clicked <g> element
@@ -115,23 +116,8 @@ const MapComponent = () => {
             document.addEventListener("click", handleOutsideClick);
           };
   
-          const handleMouseLeave = () => {
-            const rect = flag.querySelector(".tooltip-bg");
-            const text = flag.querySelector(".tooltip-flag");
-            const linkText = flag.querySelector(".flag-link text");
-  
-            // Hide tooltip elements when leaving the area
-            if (rect) rect.setAttribute("visibility", "hidden");
-            if (text) text.setAttribute("visibility", "hidden");
-            if (linkText) linkText.setAttribute("visibility", "hidden");
-          };
-  
-          if (isMobile()) {
-            flag.addEventListener("mouseenter", handleClick); // Only for mobile
-            flag.addEventListener("mouseleave", handleMouseLeave); // Only for mobile
-          }
-  
           flag.addEventListener("click", handleClick);
+          flag.addEventListener("touchend", handleClick);
           flag.setAttribute("data-listener-attached", "true");
   
           // Handle click on the anchor itself, allow it to navigate to the URL
@@ -142,17 +128,13 @@ const MapComponent = () => {
               setTimeout(() => {
                 router.push(e.target.parentElement.href.animVal);
               }, 100);
-              return true;
+              return true
             });
           }
   
           // Cleanup function for this specific flag
           return () => {
             flag.removeEventListener("click", handleClick);
-            if (isMobile()) {
-              flag.removeEventListener("mouseenter", handleClick);
-              flag.removeEventListener("mouseleave", handleMouseLeave);
-            }
           };
         }
       });
@@ -160,7 +142,6 @@ const MapComponent = () => {
       clearInterval(intervalId); // Stop polling once the elements are found
     }, 200); // Poll every 200ms
   }, []);
-  
   
 
   return (
