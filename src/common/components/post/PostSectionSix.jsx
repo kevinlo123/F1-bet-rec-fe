@@ -115,6 +115,7 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 											{tabPostData.map((data, index) => (
 												<div className="col-12" key={index}>
 													<div
+														id={`${data.raceName}`}
 														className={`content-block trend-post post-order-list ${hoveredIndex === index ? "is-active" : "axil-control"}`}
 														onMouseEnter={() => setHoveredIndex(index)}
 														onMouseLeave={() => setHoveredIndex(null)}

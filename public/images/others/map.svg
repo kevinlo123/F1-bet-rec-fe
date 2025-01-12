@@ -989,9 +989,14 @@ THE SOFTWARE.
      <a href="#" class="vegas-gp clickable-flag">
    <image x="370" y="235" width="30" height="30" href="/images/others/flag.png" />
    </a>
-    <a href="#" class="miami-gp clickable-flag">
-   <image x="540" y="305" width="30" height="30" href="/images/others/flag.png" />
-   </a>
+   <g class="miami-gp clickable-flag">
+    <image x="540" y="305" width="30" height="30" href="/images/others/flag.png" />
+    <rect x="530" y="235" width="150" height="60" fill="black" visibility="hidden" class="tooltip-bg" />
+    <text x="605" y="260" class="tooltip-flag" visibility="hidden" text-anchor="middle" color="white" fill="white">Miami Grand Prix</text>
+    <a href="/calendar" class="flag-link" style="cursor:pointer;">
+      <text x="592"  y="280"  text-anchor="middle" stroke="#e10600" visibility="hidden" font-size="14">View details</text>
+    </a>
+   </g>
 
    <a href="#" class="mexico-gp clickable-flag">
    <image x="430" y="345" width="30" height="30" href="/images/others/flag.png" />
@@ -1005,6 +1010,8 @@ THE SOFTWARE.
       <text x="584"  y="150"  text-anchor="middle" stroke="#e10600" visibility="hidden" font-size="14">View details</text>
     </a>
    </g>
+
+
    <a href="#" class="brazil-gp clickable-flag">
     <image x="728" y="620" width="30" height="30" href="/images/others/flag.png" />
    </a>
