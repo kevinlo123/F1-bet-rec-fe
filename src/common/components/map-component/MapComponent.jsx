@@ -120,17 +120,25 @@ const MapComponent = () => {
           flag.addEventListener("touchend", handleClick);
           flag.setAttribute("data-listener-attached", "true");
   
-          // Handle click on the anchor itself, allow it to navigate to the URL
           const linkText = flag.querySelector(".flag-link");
           if (linkText) {
-            linkText.addEventListener("click", (e) => {
-              // Allow the link to work as expected
+            const handleLinkClick = (e) => {
+              if (isDragging) return; // Ignore clicks if dragging
+          
+              // Navigate after a short delay to ensure smooth interaction
               setTimeout(() => {
-                router.push(e.target.parentElement.href.animVal);
+                const href = e.target.parentElement.href.animVal;
+                if (href) {
+                  router.push(href);
+                }
               }, 100);
-              return true
-            });
+            };
+          
+            // Add both click and touchend event listeners
+            linkText.addEventListener("click", handleLinkClick);
+            linkText.addEventListener("touchend", handleLinkClick);
           }
+          
   
           // Cleanup function for this specific flag
           return () => {
