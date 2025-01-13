@@ -22,43 +22,31 @@
 
             &:hover {
                 fill: #2e2e2e80;
-                cursor: pointer;
             }
         }
 
         .clickable-flag {
             transition: all 0.4s ease-out 0s;
 
-            // &:hover {
-            //     transform: translateY(-10px); 
-            // }
+            &:hover {
+                cursor: pointer;
+            }
         }
 
+        .glow {
+            animation: pulsate 1.5s infinite;
+          }
           
-        .tooltip-flag {
-            font-size: 14px;
-            stroke: white;
-            background-color: rgba(0, 0, 0, 0.75);
-            padding: 5px;
-            border-radius: 4px;
-            text-anchor: middle;
-        }
-
-        .tooltip-flag {
-            font-size: 14px;
-            pointer-events: none; /* Prevents the tooltip from interfering with other elements */
-        }
-          
-        .tooltip-bg {
-            rx: 5; /* Rounded corners */
-            ry: 5;
-        }
-          
-        // .canada-gp:hover .tooltip-flag,
-        // .canada-gp:hover .tooltip-bg,
-        // .canada-gp:hover .flag-link  {
-        //     visibility: visible;
-        // }
+          @keyframes pulsate {
+            0%, 100% {
+              r: 20; /* Original radius */
+              opacity: 0.25;
+            }
+            50% {
+              r: 25; /* Increased radius */
+              opacity: 0.5;
+            }
+          }
     }
 
     .map-buttons {

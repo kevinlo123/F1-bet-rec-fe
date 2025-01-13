@@ -983,36 +983,120 @@ THE SOFTWARE.
  </circle>
  <circle cx="1798.2" cy="719.3" id="2">
  </circle>
-  <a href="#" class="us-gp clickable-flag">
-   <image x="450" y="275" width="30" height="30" href="/images/others/flag.png" />
-   </a>
-     <a href="#" class="vegas-gp clickable-flag">
-   <image x="370" y="235" width="30" height="30" href="/images/others/flag.png" />
-   </a>
-   <g class="miami-gp clickable-flag">
-    <image x="540" y="305" width="30" height="30" href="/images/others/flag.png" />
-    <rect x="530" y="235" width="150" height="60" fill="black" visibility="hidden" class="tooltip-bg" />
-    <text x="605" y="260" class="tooltip-flag" visibility="hidden" text-anchor="middle" color="white" fill="white">Miami Grand Prix</text>
-    <a href="/calendar" class="flag-link" style="cursor:pointer;">
-      <text x="592"  y="280"  text-anchor="middle" stroke="#e10600" visibility="hidden" font-size="14">View details</text>
-    </a>
-   </g>
 
-   <a href="#" class="mexico-gp clickable-flag">
-   <image x="430" y="345" width="30" height="30" href="/images/others/flag.png" />
-   </a>
 
-   <g class="canada-gp clickable-flag">
+  <g class="us-gp clickable-flag">
+    <circle cx="464" cy="288" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="450" y="275" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="vegas-gp clickable-flag">
+    <circle cx="384" cy="248" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="370" y="235" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="miami-gp clickable-flag">
+    <circle cx="554" cy="318" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="540" y="305" width="30" height="30" href="/images/others/flag.png" />    
+  </g>
+
+  <g class="mexico-gp clickable-flag">
+    <circle cx="444" cy="358" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="430" y="345" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="canada-gp clickable-flag">
+    <circle cx="618" cy="189" r="20" fill="#e10600" opacity="0.5" class="glow" />
     <image x="605" y="175" width="30" height="30" href="/images/others/flag.png" />
-    <rect x="530" y="105" width="150" height="60" fill="black" visibility="hidden" class="tooltip-bg" />
-    <text x="605" y="130" class="tooltip-flag" visibility="hidden" text-anchor="middle" color="white" fill="white">Canada Grand Prix</text>
-    <a href="/calendar" class="flag-link" style="cursor:pointer;">
-      <text x="584"  y="150"  text-anchor="middle" stroke="#e10600" visibility="hidden" font-size="14">View details</text>
-    </a>
-   </g>
+  </g>
 
-
-   <a href="#" class="brazil-gp clickable-flag">
+  <g class="brazil-gp clickable-flag">
+    <circle cx="741" cy="634" r="20" fill="#e10600" opacity="0.5" class="glow" />
     <image x="728" y="620" width="30" height="30" href="/images/others/flag.png" />
-   </a>
+  </g>
+
+  <g class="imola-gp clickable-flag">
+    <circle cx="1054" cy="201" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1041" y="187" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+  
+  <g class="monaco-gp clickable-flag">
+    <circle cx="1024" cy="206" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1010" y="192" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="spanish-gp clickable-flag">
+    <circle cx="995" cy="226" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="982" y="212" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="austrian-gp clickable-flag">
+    <circle cx="1070" cy="187" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1057" y="173" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="british-gp clickable-flag">
+    <circle cx="988" cy="151" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="975" y="137" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="chinese-gp clickable-flag">
+    <circle cx="1651" cy="286" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1638" y="272" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="australian-gp clickable-flag">
+    <circle cx="1767" cy="724" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1753" y="710" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="japanese-gp clickable-flag">
+    <circle cx="1728" cy="264" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1715" y="250" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="bahrain-gp clickable-flag">
+    <circle cx="1271" cy="324" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1258" y="310" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+  
+  <g class="saudi-gp clickable-flag">
+    <circle cx="1216" cy="349" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1203" y="335" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="spa-gp clickable-flag">
+    <circle cx="1025" cy="165" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1012" y="151" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="hunagarian-gp clickable-flag">
+    <circle cx="1124" cy="189" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1111" y="175" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="zandvoort-gp clickable-flag">
+    <circle cx="1028" cy="149" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1015" y="135" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="baku-gp clickable-flag">
+    <circle cx="1255" cy="227" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1242" y="213" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="singapore-gp clickable-flag">
+    <circle cx="1582" cy="472" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1569" y="458" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="qatar-gp clickable-flag">
+    <circle cx="1280" cy="327" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1267" y="313" width="30" height="30" href="/images/others/flag.png" />
+  </g>
+
+  <g class="abudabi-gp clickable-flag">
+    <circle cx="1296" cy="332" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <image x="1283" y="318" width="30" height="30" href="/images/others/flag.png" />
+  </g>
 </svg>
