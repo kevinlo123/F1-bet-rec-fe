@@ -118,15 +118,16 @@
   position: relative;
   &::before {
     content: '';
-    background-color: black;
+    background-color: #CED0D4;
     height: 1px;
-    width: 100px;
+    width: 200px;
     display: block;
     position: absolute;
     bottom: -100px;
-    left: calc(50% - 30px);
+    left: 0;
     right: 0;
     transform: rotate(90deg);
+    margin: 0 auto;
   }
 }
 
@@ -134,14 +135,15 @@
   position: relative;
   &::before {
     content: '';
-    background-color: black;
+    background-color: #CED0D4;
     height: 1px;
-    width: 100px;
+    width: 200px;
     display: block;
     position: absolute;
     bottom: -100px;
-    left: calc(50% - 30px);
+    left: 0;
     right: 0;
+    margin: 0 auto;
     transform: rotate(90deg);
   }
 }
@@ -153,7 +155,7 @@
       position: relative;
       &::after {
         content: '';
-        background-color: black;
+        background-color: #CED0D4;
         height: 1px;
         width: 100px;
         display: block;
@@ -161,10 +163,12 @@
         bottom: -100px;
         left: 70%;
         transform: rotate(-40deg);
+        right: 0;
+        margin: 0;
       }
       &::before {
         content: '';
-        background-color: black;
+        background-color: #CED0D4;
         height: 1px;
         width: 100px;
         display: block;
@@ -172,6 +176,8 @@
         bottom: -100px;
         left: 20%;
         transform: rotate(40deg);
+        right: 0;
+        margin: 0;
       }
     }
   
@@ -179,7 +185,7 @@
       position: relative;
       &::after {
         content: '';
-        background-color: black;
+        background-color: #CED0D4;
         height: 1px;
         width: 100px;
         display: block;
@@ -187,10 +193,12 @@
         bottom: -100px;
         left: 70%;
         transform: rotate(-40deg);
+        right: 0;
+        margin: 0;
       }
       &::before {
         content: '';
-        background-color: black;
+        background-color: #CED0D4;
         height: 1px;
         width: 100px;
         display: block;
@@ -198,6 +206,8 @@
         bottom: -100px;
         left: 20%;
         transform: rotate(40deg);
+        right: 0;
+        margin: 0;
       }
     }
   }
