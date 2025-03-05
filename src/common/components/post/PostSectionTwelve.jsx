@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { slugify } from "../../utils";
-import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
+
 
 const PostSectionTwelve = ({ postData }) => {
   const local = 'http://localhost:3000';
@@ -22,7 +22,7 @@ const PostSectionTwelve = ({ postData }) => {
     <div className="slider-area bg-color-grey pt--80 pb--80">
       <div className="axil-slide slider-style-2 plr--135 plr_lg--30 plr_md--30 plr_sm--30">
         <div className="row row--10">
-        <SectionTitleOne title="Latest News" />
+          <h1 className="section-title mb--20">Latest News</h1>
           <div className="col-lg-12 col-xl-6 col-md-12 col-12 mt--20">
             <div className="content-block post-grid post-grid-transparent post-overlay-bottom">
               {firstPost.feature_img && (

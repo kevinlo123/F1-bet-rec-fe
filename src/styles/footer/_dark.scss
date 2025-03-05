@@ -562,7 +562,7 @@ body.active-dark-mode {
         border-top: 1px solid #333333;
         border-bottom: 1px solid #333333;
         svg {
-            path {
+            path:not(.pulsating-line) {
                 fill: cornsilk;
 
                 &:hover {

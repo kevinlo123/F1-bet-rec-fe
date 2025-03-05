@@ -986,61 +986,83 @@ THE SOFTWARE.
 
 
   <g class="us-gp clickable-flag">
-    <circle cx="464" cy="288" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <!-- <path d="M464,288 Q455,323 444,358" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america" /> -->
+
+    <!-- <circle cx="464" cy="288" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="450" y="275" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="vegas-gp clickable-flag">
-    <circle cx="384" cy="248" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  <!-- <path d="M741,634 Q562,491 384,248" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line south-america" /> -->
+<!-- <path d="M384,248 Q840,290 1296,332" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line south-america-to-europe" /> -->
+
+    <!-- <circle cx="384" cy="248" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="370" y="235" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="miami-gp clickable-flag">
-    <circle cx="554" cy="318" r="20" fill="#e10600" opacity="0.5" class="glow" />
-    <image x="540" y="305" width="30" height="30" href="/images/others/flag.png" />    
+    <!-- <path d="M554,318 Q800,150 1054,201" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-europe" /> -->
+    <!-- <path d="M1216,349 Q900,150 554,318" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america" /> -->
+    <!-- <circle cx="554" cy="318" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
+    <image x="540" y="305" width="30" height="30" href="/images/others/flag.png" />   
   </g>
 
   <g class="mexico-gp clickable-flag">
-    <circle cx="444" cy="358" r="20" fill="#e10600" opacity="0.5" class="glow" />
+<!-- <path d="M444,358 Q592,696 741,634" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-south-america" /> -->
+
+    <!-- <circle cx="444" cy="358" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="430" y="345" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="canada-gp clickable-flag">
-    <circle cx="618" cy="189" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  <!-- <path d="M618,189 Q840,180 1070,187" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-europe-detail-3" /> -->
+
+  <!-- <path d="M995,226 Q850,200 618,189" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-europe-detail-2" /> -->
+    <!-- <circle cx="618" cy="189" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="605" y="175" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="brazil-gp clickable-flag">
-    <circle cx="741" cy="634" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <!-- <circle cx="741" cy="634" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="728" y="620" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="imola-gp clickable-flag">
-    <circle cx="1054" cy="201" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  <!-- <path d="M554,318 Q800,150 1054,201" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-europe" /> -->
+    <!-- <circle cx="1054" cy="201" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1041" y="187" width="30" height="30" href="/images/others/flag.png" />
   </g>
   
   <g class="monaco-gp clickable-flag">
-    <circle cx="1024" cy="206" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <!-- <path d="M1024,206 Q1010,216 995,226" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-europe-detail" />
+    <path d="M1054,201 Q1039,230 1024,206" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-europe-detail" /> -->
+    <!-- <circle cx="1024" cy="206" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1010" y="192" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="spanish-gp clickable-flag">
-    <circle cx="995" cy="226" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <!-- <circle cx="995" cy="226" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="982" y="212" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="austrian-gp clickable-flag">
-    <circle cx="1070" cy="187" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  
+    <!-- <circle cx="1070" cy="187" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1057" y="173" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="british-gp clickable-flag">
-    <circle cx="988" cy="151" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  <!-- <path d="M1070,187 Q1020,170 988,151" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line europe-to-europe" />
+  <path d="M988,151 Q1008,145 1028,149" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line europe-to-europe-detail" /> -->
+
+    <!-- <circle cx="988" cy="151" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="975" y="137" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="chinese-gp clickable-flag">
+    <path d="M1651,286 Q1690,270  1728,264" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+    <path d="M1767,724 Q1500,100 1651,286" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line current-race"/>
+
     <circle cx="1651" cy="286" r="20" fill="#e10600" opacity="0.5" class="glow" />
     <image x="1638" y="272" width="30" height="30" href="/images/others/flag.png" />
   </g>
@@ -1051,52 +1073,90 @@ THE SOFTWARE.
   </g>
 
   <g class="japanese-gp clickable-flag">
+    <path d="M1728,264 Q1500,500 1271,324" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
     <circle cx="1728" cy="264" r="20" fill="#e10600" opacity="0.5" class="glow" />
     <image x="1715" y="250" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="bahrain-gp clickable-flag">
+    <!-- <path d="M1271,324 Q1240,340 1216,349" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/> -->
     <circle cx="1271" cy="324" r="20" fill="#e10600" opacity="0.5" class="glow" />
     <image x="1258" y="310" width="30" height="30" href="/images/others/flag.png" />
   </g>
   
   <g class="saudi-gp clickable-flag">
-    <circle cx="1216" cy="349" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <!-- <circle cx="1216" cy="349" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1203" y="335" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="spa-gp clickable-flag">
-    <circle cx="1025" cy="165" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <!-- <circle cx="1025" cy="165" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1012" y="151" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="hunagarian-gp clickable-flag">
-    <circle cx="1124" cy="189" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  <!-- <path d="M1028,149 Q1076,169 1124,189" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line europe-to-europe-detail" /> -->
+
+    <!-- <circle cx="1124" cy="189" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1111" y="175" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="zandvoort-gp clickable-flag">
-    <circle cx="1028" cy="149" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  <!-- <path d="M1124,189 Q1076,169 1028,149" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line europe-to-europe-detail-2" /> -->
+
+    <!-- <circle cx="1028" cy="149" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1015" y="135" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="baku-gp clickable-flag">
-    <circle cx="1255" cy="227" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  <!-- <path d="M1255,227 Q1400,300 1582,472" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line europe" /> -->
+
+    <!-- <circle cx="1255" cy="227" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1242" y="213" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="singapore-gp clickable-flag">
-    <circle cx="1582" cy="472" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  
+<!-- <path d="M1582,472 Q1000,380 464,288" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line america-to-europe-final-2" /> -->
+    <!-- <circle cx="1582" cy="472" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1569" y="458" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="qatar-gp clickable-flag">
-    <circle cx="1280" cy="327" r="20" fill="#e10600" opacity="0.5" class="glow" />
+  
+    <!-- <circle cx="1280" cy="327" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1267" y="313" width="30" height="30" href="/images/others/flag.png" />
   </g>
 
   <g class="abudabi-gp clickable-flag">
-    <circle cx="1296" cy="332" r="20" fill="#e10600" opacity="0.5" class="glow" />
+    <!-- <circle cx="1296" cy="332" r="20" fill="#e10600" opacity="0.5" class="glow" /> -->
     <image x="1283" y="318" width="30" height="30" href="/images/others/flag.png" />
   </g>
+
+
+<!-- Connecting to Japan (Suzuka) -->
+    <!-- <path d="M1651,286 Q1690,270  1728,264" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1728,264 Q1500,500 1271,324" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1271,324 Q1240,340 1216,349" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+
+<path d="M1216,349 Q900,150 554,318" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M554,318 Q800,150 1054,201" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1054,201 Q1039,190 1024,206" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1024,206 Q1010,216 995,226" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M995,226 Q850,200 618,189" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M618,189 Q840,180 1070,187" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1070,187 Q1020,170 988,151" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M988,151 Q1008,145 1028,149" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1028,149 Q1076,169 1124,189" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1124,189 Q1076,169 1028,149" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1028,149 Q1050,175 1054,201" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1054,201 Q1150,210 1255,227" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1255,227 Q1400,300 1582,472" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M1582,472 Q1000,380 464,288" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M464,288 Q455,323 444,358" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M444,358 Q592,696 741,634" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M741,634 Q562,491 384,248" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/>
+<path d="M384,248 Q840,290 1296,332" stroke="#e10600" stroke-width="5" fill="none" class="pulsating-line"/> -->
+
+
 </svg>

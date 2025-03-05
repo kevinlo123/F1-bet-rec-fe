@@ -106,8 +106,17 @@ const MapComponent = () => {
   return (
     <>
       <div className=" bg-color-grey pb--40">
-        <div className="container" style={{textAlign: 'center'}}>
+        <div className="plr--135 plr_lg--30 plr_md--30 plr_sm--30">
           <SectionTitleOne title="2025 Formula 1 world championship season overview" />
+          <div>
+            <span>Explore the Formula 1 season like never before with our interactive map! Follow the journey race to race as the season unfolds in real time race after race.</span>  
+          </div>
+          <div>
+            <span style={{color: "#e10600"}}>Current: R1 - Australian Grand Prix on <span style={{textDecoration: 'underline'}}>Sun, Mar 16, 12:00 AM</span></span>
+          </div>
+          <div>
+            <span style={{color: "#e10600"}}>Next: R2 - Chinese Grand Prix on <span style={{textDecoration: 'underline'}}>Sun, Mar 23, 3:00 AM</span></span>
+          </div>
         </div>
       </div>
       <div

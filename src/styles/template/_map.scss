@@ -17,8 +17,9 @@
         @media (max-width: 1440px) {
             left: -14%;
         }
-        path {
+        path:not(.pulsating-line) {
             transition: all 0.4s ease-out 0s;
+            z-index: -1;
 
             &:hover {
                 fill: #2e2e2e80;
