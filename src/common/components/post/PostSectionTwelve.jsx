@@ -19,7 +19,7 @@ const PostSectionTwelve = ({ postData }) => {
   }
 
   return (
-    <div className="slider-area bg-color-grey pt--60 pb--80">
+    <div className="slider-area bg-color-grey pt--80 pb--80">
       <div className="axil-slide slider-style-2 plr--135 plr_lg--30 plr_md--30 plr_sm--30">
         <div className="row row--10">
         <SectionTitleOne title="Latest News" />

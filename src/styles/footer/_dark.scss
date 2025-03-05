@@ -499,7 +499,7 @@ body.active-dark-mode .header-style-4 .metabar-block .dropdown-menu {
 }
 
 body.active-dark-mode {
-    .driver-standings-wrapper, .constructor-standings-wrapper  {
+    .leaderboard, .driver-standings-wrapper, .constructor-standings-wrapper  {
         .driver-standings-container, .constructor-standings-container {
             border: none; 
             box-shadow: var(--shadow-primary) !important;
@@ -510,6 +510,19 @@ body.active-dark-mode {
                 .driver-position, .constructor-position {
                     color: white;
                 }
+            }
+        }
+    }
+}
+
+body.active-dark-mode {
+    .leaderboard {
+        .driver-container, .constructor-container {
+            background: #1A1A1A;
+            color: var(--color-midgray);
+
+            .driver-position, .constructor-position {
+                color: white;
             }
         }
     }
@@ -547,6 +560,7 @@ body.active-dark-mode {
 body.active-dark-mode {
     .map-component {
         border-top: 1px solid #333333;
+        border-bottom: 1px solid #333333;
         svg {
             path {
                 fill: cornsilk;
@@ -555,6 +569,16 @@ body.active-dark-mode {
                     // fill: #2e2e2e80;
                     cursor: pointer;
                 }
+            }
+        }
+    }
+}
+
+body.active-dark-mode {
+    .leaderboard {
+        .top-three, .midfield {
+            &::after, &::before {
+                background-color: #f1f1f1;
             }
         }
     }

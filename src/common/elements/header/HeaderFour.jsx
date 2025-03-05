@@ -6,13 +6,16 @@ import Nav from "./Nav";
 import SocialData from "../../../data/social/SocialData.json";
 import { AuthContext } from '../../../contexts/AuthContext';
 import Dropdown from 'react-bootstrap/Dropdown';
-
+// import logoWhite from '/images/logo/logo-white-bg.png';
+// import logoBlack from '/images/logo/black-bg.png';
+import { useColorMode } from '../../../contexts/ColorModeContext'; // Import the custom hook
 
 const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
   const [profilePic, setProfilePic] = useState('');
   const local = 'http://localhost:3000';
   const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/';
   const apiUrl = window.location.hostname === 'localhost' ? local : prod;
+  const { colorMode } = useColorMode(); // Get the current color mode
 
   const { getUserData } = useContext(AuthContext);
 
@@ -45,9 +48,9 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
     return todayDate;
   };
 
-  if (typeof window !== "undefined") {
-    var colorMode = window.localStorage.getItem("color-mode");
-  }
+  // if (typeof window !== "undefined") {
+  //   var colorMode = window.localStorage.getItem("color-mode");
+  // }
 
   const [showMMenu, SetShowMMenu] = useState(false);
 
@@ -176,7 +179,12 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                   <div className="logo">
                     <Link href="/">
                       <a>
-                         <h2 className="title">F1 Press News</h2>
+                         <Image 
+                            src={colorMode === "dark" ? '/images/logo/logo-black-bg.png' : '/images/logo/logo-white-bg.png'}
+                            alt="F1 press news logo"
+                            height={200}
+                            width={125}
+                         />
                       </a>
                     </Link>
                   </div>

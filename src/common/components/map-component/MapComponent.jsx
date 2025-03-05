@@ -105,9 +105,9 @@ const MapComponent = () => {
 
   return (
     <>
-      <div className=" bg-color-grey  pb--30">
-        <div className="container">
-          <SectionTitleOne title="2025 season overview" />
+      <div className=" bg-color-grey pb--40">
+        <div className="container" style={{textAlign: 'center'}}>
+          <SectionTitleOne title="2025 Formula 1 world championship season overview" />
         </div>
       </div>
       <div

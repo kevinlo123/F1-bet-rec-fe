@@ -168,6 +168,7 @@ Header Styles
         a {
             display: block;
             line-height: 1;
+            display: flex;
             img {
                 max-height: 37px;
             }
@@ -601,6 +602,10 @@ button {
                 @media #{$sm-layout} {
                     margin-right: 0;
                     text-align: center;
+                }
+
+                span {
+                    width: 125px !important;
                 }
             }
         }

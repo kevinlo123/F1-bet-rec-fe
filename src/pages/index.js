@@ -14,6 +14,7 @@ import HeaderFour from "../common/elements/header/HeaderFour";
 import React, { useState, useEffect } from 'react';
 import MapComponent from '../common/components/map-component/MapComponent';
 // import { ProtectedRoute } from '../contexts/AuthContext';
+import Leaderboard from '../common/components/leaderboard/leaderboard';
 
 const HomeDefault = ({ allPosts }) => {
   const [posts, setPosts] = useState([]);
@@ -60,7 +61,8 @@ const HomeDefault = ({ allPosts }) => {
         <PostSectionTwelve postData={latestPosts} />  // Pass latestPosts to PostSectionTwelve
       )}
       <MapComponent />
-      <PostSectionThree postData={videoPost} heading="Featured Video" />
+      <Leaderboard />
+      {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
       <PostSectionTen postData={allPosts} />
       <PostSectionOne postData={allPosts} />
       <PostSectionTwo postData={allPosts} />
