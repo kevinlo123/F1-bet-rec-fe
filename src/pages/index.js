@@ -63,7 +63,7 @@ const HomeDefault = ({ allPosts }) => {
       <MapComponent />
       <Leaderboard />
       {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
-      <PostSectionTen postData={allPosts} />
+      <PostSectionTen postData={posts} />
       <PostSectionOne postData={allPosts} />
       <PostSectionTwo postData={allPosts} />
       <CategoryList cateData={allPosts} />

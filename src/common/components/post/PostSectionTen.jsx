@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Tab from "react-bootstrap/Tab";
@@ -7,53 +7,40 @@ import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
 import { slugify } from "../../utils";
 
 const filters = [
-  {
-    id: 1,
-    cate: "Gadget",
-  },
-  {
-    id: 2,
-    cate: "Technology",
-  },
-  {
-    id: 3,
-    cate: "Design",
-  },
-  {
-    id: 4,
-    cate: "Products",
-  },
+  { id: 1, cate: "News and updates" },
+  { id: 2, cate: "Races and Events" },
+  { id: 3, cate: "Lifestyle and culture" },
+  { id: 4, cate: "Beyond the grid" },
+  { id: 5, cate: "History and Legacy" },
 ];
 
-const defaultActiveCat = slugify(filters[0].cate);
-
 const PostSectionTen = ({ postData }) => {
-  const defaultData = postData.filter(
-    (post) => slugify(post.cate) === defaultActiveCat
-  );
+  const local = "http://localhost:3000";
+  const prod = "https://limitless-escarpment-05345-1ca012576c29.herokuapp.com";
+  const apiUrl = typeof window !== "undefined" && window.location.hostname === "localhost" ? local : prod;
 
-  const [activeNav, setActiveNav] = useState(defaultActiveCat);
-  const [tabPostData, setTabPostData] = useState(defaultData);
+  const [activeNav, setActiveNav] = useState(slugify(filters[0].cate));
+  const [tabPostData, setTabPostData] = useState([]);
+
+  useEffect(() => {
+    if (postData.length > 0) {
+      const defaultData = postData.filter(
+        (post) => slugify(post.cate) === activeNav
+      );
+      setTabPostData(defaultData);
+    }
+  }, [postData]); // Runs whenever postData changes
 
   const handleChange = (e) => {
     let filterText = slugify(e.target.textContent);
     setActiveNav(filterText);
 
-    let tempData = [];
+    const filteredData = postData.filter(
+      (item) => slugify(item.cate) === filterText
+    );
 
-    for (let i = 0; i < postData.length; i++) {
-      const element = postData[i];
-      let categories = element["cate"];
-
-      if (slugify(categories).includes(filterText)) {
-        tempData.push(element);
-      }
-    }
-
-    setTabPostData(tempData);
+    setTabPostData(filteredData);
   };
-
-  const firstPost = tabPostData[0];
 
   return (
     <div className="axil-post-grid-area axil-section-gap bg-color-white">
@@ -65,10 +52,7 @@ const PostSectionTen = ({ postData }) => {
               <Nav className="axil-tab-button nav nav-tabs mt--20">
                 {filters.map((data) => (
                   <Nav.Item key={data.id}>
-                    <Nav.Link
-                      onClick={handleChange}
-                      eventKey={slugify(data.cate)}
-                    >
+                    <Nav.Link onClick={handleChange} eventKey={slugify(data.cate)}>
                       {data.cate}
                     </Nav.Link>
                   </Nav.Item>
@@ -79,45 +63,39 @@ const PostSectionTen = ({ postData }) => {
                 <Tab.Pane className="single-post-grid" eventKey={activeNav}>
                   <div className="row mt--40">
                     <div className="col-xl-12 col-lg-12 col-md-12 col-12">
-                        {tabPostData.slice(1, 5).map((data) => (
-							<div className="content-block post-medium post-medium-border border-thin" key={data.slug}>
-								<div className="post-thumbnail">
-								<Link href={`/post/${data.slug}`}>
-									<a>
-									<Image
-										src={data.featureImg}
-										alt={data.title}
-										height={100}
-										width={100}
-										priority={true}
-									/>
-									</a>
-								</Link>
-								</div>
-								<div className="post-content">
-									<div className="post-cat">
-									<div className="post-cat-list">
-										<Link
-										href={`/category/${slugify(data.cate)}`}
-										>
-										<a className="hover-flip-item-wrapper">
-											<span className="hover-flip-item">
-											<span data-text={data.cate}>
-												{data.cate}
-											</span>
-											</span>
-										</a>
-										</Link>
-									</div>
-									</div>
-									<h4 className="title">
-									<Link href={`/post/${data.slug}`}>
-										<a>{data.title}</a>
-									</Link>
-									</h4>
-								</div>
-							</div>
-                        ))}
+                      {tabPostData.length > 0 ? (
+                        tabPostData.slice(0, 4).map((data) => (
+                          <div className="content-block post-medium post-medium-border border-thin" key={data.id}>
+                            <div className="post-thumbnail">
+                              <Link href={`/post/${data.id}`}>
+                                <Image
+                                  src={`${apiUrl}${data.feature_img.url}`}
+                                  alt={data.title}
+                                  height={100}
+                                  width={100}
+                                  priority
+                                />
+                              </Link>
+                            </div>
+                            <div className="post-content">
+                              <div className="post-cat">
+                                <div className="post-cat-list">
+                                  <Link href={`/category/${slugify(data.cate)}`}>
+                                    <span className="hover-flip-item">
+                                      <span data-text={data.cate}>{data.cate}</span>
+                                    </span>
+                                  </Link>
+                                </div>
+                              </div>
+                              <h4 className="title">
+                                <Link href={`/post/${data.id}`}>{data.title}</Link>
+                              </h4>
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <p>No posts available.</p>
+                      )}
                     </div>
                   </div>
                 </Tab.Pane>
