@@ -8,58 +8,53 @@ import AddBanner from "../ad-banner/AddBanner";
 import Slider from "react-slick";
 import { slugify } from "../../utils";
 
-const filters = [
- 
+const drivers = [
   {
     id: 1,
-    cate: "Gadget",
+    name: "Lewis Hamilton",
+    img: "/images/drivers/lewham01.avif",
+    team: "Ferrari"
   },
   {
     id: 2,
-    cate: "Design",
+    name: "Charles Leclerc",
+    img: "/images/drivers/chalec01.avif",
+    team: "Ferrari"
   },
   {
     id: 3,
-    cate: "Marketing",
+    name: "Max Verstappen",
+    img: "/images/drivers/maxver01.avif",
+    team: "Red Bull"
   },
   {
     id: 4,
-    cate: "Technology",
+    name: "Liam Lawson",
+    img: "/images/drivers/lialaw01.avif",
+    team: "Red Bull"
   },
+  {
+    id: 5,
+    name: "Lando Norris",
+    img: "/images/drivers/lannor01.avif",
+    team: "Mclaren"
+  },
+  {
+    id: 6,
+    name: "Oscar Piastri",
+    img: "/images/drivers/oscpia01.avif",
+    team: "Mclaren"
+  }
 ];
-const defaultActiveCat = slugify(filters[0].cate);
 
-const PostSectionTwo = ({ postData, adBanner, headingTitle }) => {
-  const defaultData = postData.filter(
-    (post) => slugify(post.cate) === defaultActiveCat
-  );
-
-  const [activeNav, setActiveNav] = useState(defaultActiveCat);
-  const [tabPostData, setTabPostData] = useState(defaultData);
-
-  const handleChange = (e) => {
-    let filterText = slugify(e.target.textContent);
-    setActiveNav(filterText);
-
-    let tempData = [];
-
-    for (let i = 0; i < postData.length; i++) {
-      const element = postData[i];
-      let categories = element["cate"];
-
-      if (slugify(categories).includes(filterText)) {
-        tempData.push(element);
-      }
-    }
-
-    setTabPostData(tempData);
-  };
+const PostSectionTwo = ({ adBanner, headingTitle }) => {
 
   function SlickNextArrow(props) {
-    const { className, onClick } = props;
+    const { className, style, onClick } = props;
     return (
       <button
-        className={`slide-arrow next-arrow ${className}`}
+        className={`${className} slide-arrow next-arrow`}
+        style={{ ...style }}
         onClick={onClick}
       >
         <i className="fal fa-arrow-right"></i>
@@ -68,10 +63,11 @@ const PostSectionTwo = ({ postData, adBanner, headingTitle }) => {
   }
 
   function SlickPrevArrow(props) {
-    const { className, onClick } = props;
+    const { className, style, onClick } = props;
     return (
       <button
-        className={`slide-arrow prev-arrow ${className}`}
+        className={`${className} slide-arrow prev-arrow`}
+        style={{ ...style }}
         onClick={onClick}
       >
         <i className="fal fa-arrow-left"></i>
@@ -103,7 +99,7 @@ const PostSectionTwo = ({ postData, adBanner, headingTitle }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,	
+          slidesToShow: 1,    
         },
       },
     ],
@@ -113,88 +109,60 @@ const PostSectionTwo = ({ postData, adBanner, headingTitle }) => {
     <div className="axil-tab-area axil-section-gap bg-color-white">
       <div className="wrapper">
         <div className="container">
-			{adBanner === true ?  
-			<div className="row">
-            <div className="col-lg-12">
-              <AddBanner
-                img="/images/add-banner/banner-03.webp"
-                pClass="mb--30"
-              />
+          {adBanner && (
+            <div className="row">
+              <div className="col-lg-12">
+                <AddBanner
+                  img="/images/add-banner/banner-03.webp"
+                  pClass="mb--30"
+                />
+              </div>
             </div>
-          </div> : ""}
-         
-          <SectionTitleOne title={ headingTitle || "Innovation & Tech"} />
+          )}
+          <SectionTitleOne title={headingTitle || "Drivers"} />
           <div className="row">
             <div className="col-lg-12">
-              <Tab.Container id="axilTab" defaultActiveKey={activeNav}>
-                <Nav className="axil-tab-button nav nav-tabs mt--20">
-                  {filters.map((data) => (
-                    <Nav.Item key={data.id}>
-                      <Nav.Link
-                        onClick={handleChange}
-                        eventKey={slugify(data.cate)}
-                      >
-                        {data.cate}
-                      </Nav.Link>
-                    </Nav.Item>
-                  ))}
-                </Nav>
-
+              <Tab.Container defaultActiveKey="default">
                 <Tab.Content>
-                  <Tab.Pane eventKey={activeNav} className="single-tab-content">
+                  <Tab.Pane eventKey="default" className="single-tab-content">
                     <Slider
                       {...slideSettings}
                       className="modern-post-activation slick-layout-wrapper axil-slick-arrow arrow-between-side"
                     >
-                      {tabPostData.map((data) => (
-                        <div className="slick-single-layout" key={data.slug}>
+                      {drivers.map((data) => (
+                        <div className="slick-single-layout" key={data.id}>
                           <div className="content-block modern-post-style text-center content-block-column">
                             <div className="post-content">
                               <div className="post-cat">
                                 <div className="post-cat-list">
-                                  <Link
-                                    href={`/category/${slugify(data.cate)}`}
-                                  >
-                                    <a className="hover-flip-item-wrapper">
-                                      <span className="hover-flip-item">
-                                        <span data-text={data.cate}>
-                                          {data.cate}
-                                        </span>
+                                  <span className="hover-flip-item-wrapper">
+                                    <span className="hover-flip-item">
+                                      <span data-text={data.team}>
+                                        {data.team}
                                       </span>
-                                    </a>
-                                  </Link>
+                                    </span>
+                                  </span>
                                 </div>
                               </div>
                               <h4 className="title">
-                                <Link href={`/post/${data.slug}`}>
-                                  <a>{data.title}</a>
+                                <Link href={`/post/`}>
+                                  {data.name}
                                 </Link>
                               </h4>
                             </div>
-                            {data.featureImg ? 
-                            <div className="post-thumbnail">
-                              <div className="round-shape">
-                                <Image
-                                    src="/images/icons/shape-01.webp"
-                                    alt="Round Shape"
-                                    height={77}
-                                    width={390}
-                                    priority={true}
-                                  />
-                              </div>
-                              <Link href={`/post/${data.slug}`}>
-                                <a>
+                            {data.img && (
+                              <div className="post-thumbnail">
+                                <Link href={`/post/`}>
                                   <Image
-                                    src={data.featureImg}
-                                    alt={data.title}
-                                    height={260}
+                                    src={data.img}
+                                    alt={data.name}
+                                    height={360}
                                     width={390}
                                     priority={true}
                                   />
-                                </a>
-                              </Link>
-                            </div>
-                            :""}
+                                </Link>
+                              </div>
+                            )}
                           </div>
                         </div>
                       ))}

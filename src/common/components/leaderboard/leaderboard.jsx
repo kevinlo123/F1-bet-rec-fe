@@ -29,7 +29,7 @@ const Leaderboard = () => {
     <div className="leaderboard bg-color-grey driver-standings-wrapper axil-section-gap pb--20">
       <div className="container" style={{textAlign: 'center', marginBottom: '5rem'}}>
         <SectionTitleOne title="Latest Grand Prix Race Results" />
-        <p>Australian Grand Prix&nbsp;&nbsp;<span class="fi fi-au fi"></span></p>
+        <p>Australian Grand Prix&nbsp;&nbsp;<span className="fi fi-au fi"></span></p>
       </div>
       <div className="container">
         {/* Top 3 */}

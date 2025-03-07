@@ -21,15 +21,15 @@ const PostSectionTen = ({ postData }) => {
 
   const [activeNav, setActiveNav] = useState(slugify(filters[0].cate));
   const [tabPostData, setTabPostData] = useState([]);
-
+  
   useEffect(() => {
-    if (postData.length > 0) {
+    if (postData?.length > 0) {  // Ensure postData is defined before accessing length
       const defaultData = postData.filter(
         (post) => slugify(post.cate) === activeNav
       );
       setTabPostData(defaultData);
     }
-  }, [postData]); // Runs whenever postData changes
+  }, [postData]);
 
   const handleChange = (e) => {
     let filterText = slugify(e.target.textContent);
@@ -68,13 +68,17 @@ const PostSectionTen = ({ postData }) => {
                           <div className="content-block post-medium post-medium-border border-thin" key={data.id}>
                             <div className="post-thumbnail">
                               <Link href={`/post/${data.id}`}>
-                                <Image
-                                  src={`${apiUrl}${data.feature_img.url}`}
-                                  alt={data.title}
-                                  height={100}
-                                  width={100}
-                                  priority
-                                />
+                                {data.feature_img ? (
+                                  <Image
+                                    src={`${apiUrl}${data.feature_img.url}`}
+                                    alt={data.title}
+                                    height={100}
+                                    width={100}
+                                    priority
+                                  />
+                                ) : (
+                                  <p>Image not available</p>
+                                )}
                               </Link>
                             </div>
                             <div className="post-content">
