@@ -44,6 +44,18 @@ const drivers = [
     name: "Oscar Piastri",
     img: "/images/drivers/oscpia01.avif",
     team: "Mclaren"
+  },
+  {
+    id: 7,
+    name: "Fernando Alonso",
+    img: "/images/drivers/feralo01.avif",
+    team: "Aston Martin"
+  },
+  {
+    id: 8,
+    name: "Lance Stroll",
+    img: "/images/drivers/lanstr01.avif",
+    team: "Aston Martin"
   }
 ];
 

@@ -5,6 +5,7 @@ import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
 import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
 import { slugify } from "../../utils";
+import TwitterFeed from "../TwitterFeed/TwitterFeed";
 
 const filters = [
   { id: 1, cate: "News and updates" },

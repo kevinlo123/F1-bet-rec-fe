@@ -15,6 +15,7 @@ import React, { useState, useEffect } from 'react';
 import MapComponent from '../common/components/map-component/MapComponent';
 // import { ProtectedRoute } from '../contexts/AuthContext';
 import Leaderboard from '../common/components/leaderboard/leaderboard';
+import TwitterFeed from '../common/components/TwitterFeed/TwitterFeed';
 
 const HomeDefault = ({ allPosts }) => {
   const [posts, setPosts] = useState([]);
@@ -60,11 +61,11 @@ const HomeDefault = ({ allPosts }) => {
       ) : (
         <PostSectionTwelve postData={latestPosts} />  // Pass latestPosts to PostSectionTwelve
       )}
-      <MapComponent />
-      <Leaderboard />
-      {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
       <PostSectionTen postData={posts} />
-      <PostSectionOne postData={allPosts} />
+      <Leaderboard />
+      <MapComponent />
+      {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
+      {/* <PostSectionOne postData={allPosts} /> */}
       <PostSectionTwo />
       <CategoryList cateData={allPosts} />
       <FooterOne />
