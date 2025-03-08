@@ -11,23 +11,23 @@ function MyApp({ Component, pageProps }) {
 
   if (isProduction) {
     return <MaintenancePage />;
+  } else {
+    return (
+      <AuthProvider>
+        <ColorModeProvider>
+          <ColorSwitcher />
+          <Component {...pageProps} />
+          <Toaster
+            position="bottom-center"
+            toastOptions={{
+              duration: 1500,
+              style: { animation: 'none' },
+            }}
+          />
+        </ColorModeProvider>
+      </AuthProvider>
+    );
   }
-
-  return (
-    <AuthProvider>
-      <ColorModeProvider> 
-        <ColorSwitcher />
-        <Component {...pageProps} />
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            duration: 1500,
-            style: { animation: 'none' },
-          }}
-        />
-      </ColorModeProvider>
-    </AuthProvider>
-  );
 }
 
 export default MyApp;
