@@ -67,7 +67,7 @@ const HomeDefault = ({ allPosts }) => {
       {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
       {/* <PostSectionOne postData={allPosts} /> */}
       <PostSectionTwo />
-      <CategoryList cateData={allPosts} />
+      <CategoryList />
       <FooterOne />
     </>
   );

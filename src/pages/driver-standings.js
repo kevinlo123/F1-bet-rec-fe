@@ -8,6 +8,7 @@ import HeadTitle from "../common/elements/head/HeadTitle";
 import driverData from '../data/drivers/driverStandings.json'
 import Nav from "react-bootstrap/Nav";
 import PostComment from "../common/components/post/format/element/PostComment";
+import CategoryList from '../common/components/category/CategoryList';
 
 const DriverStandings = ({allPosts}) => {
     return (
@@ -54,6 +55,7 @@ const DriverStandings = ({allPosts}) => {
                     <div className='mt--80'>
                         <PostComment />
                     </div>
+                    <CategoryList />
                 </div>
             </div>
             <FooterOne />

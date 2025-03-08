@@ -96,7 +96,7 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 			<div className="container">
 				<h1 className="section-title">2024 Formula 1 Calendar</h1>
 				<div className="row">
-					<div className="col-lg-12 mb--150">
+					<div className="col-lg-12 mb--25">
 						<Tab.Container id="axilTab" defaultActiveKey={activeNav}>
 							<Nav className="axil-tab-button nav nav-tabs mt--20">
 								{filters.map((data) => (

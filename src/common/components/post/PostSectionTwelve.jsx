@@ -20,7 +20,7 @@ const PostSectionTwelve = ({ postData }) => {
 
   return (
     <div className="slider-area bg-color-grey pt--80 pb--80">
-      <div className="axil-slide slider-style-2 plr--135 plr_lg--30 plr_md--30 plr_sm--30">
+      <div className="axil-slide slider-style-2 container">
         <div className="row row--10">
           <h1 className="section-title mb--20">Latest News</h1>
           <div className="col-lg-12 col-xl-6 col-md-12 col-12 mt--20">

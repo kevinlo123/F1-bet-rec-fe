@@ -8,6 +8,7 @@ import HeadTitle from "../common/elements/head/HeadTitle";
 import constructorData from '../data/constructors/constructor-standings.json'
 import Nav from "react-bootstrap/Nav";
 import PostComment from "../common/components/post/format/element/PostComment";
+import CategoryList from '../common/components/category/CategoryList';
 
 const ConstructorStandings = ({allPosts}) => {
     return (
@@ -58,6 +59,7 @@ const ConstructorStandings = ({allPosts}) => {
                     <div className='mt--80'>
                         <PostComment />
                     </div>
+                    <CategoryList />
                 </div>
             </div>
 

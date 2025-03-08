@@ -4,6 +4,7 @@ import { getAllPosts } from '../../lib/api';
 import HeadTitle from "../common/elements/head/HeadTitle";
 import PostSectionSix from '../common/components/post/PostSectionSix';
 import scheduleData from '../data/schedule/schedule-2024.json'
+import CategoryList from "../common/components/category/CategoryList";
 
 const Calendar = ({allPosts}) => {
 
@@ -12,6 +13,7 @@ const Calendar = ({allPosts}) => {
             <HeadTitle pageTitle="F1 schedule" />
             <HeaderFour postData={allPosts} />
             <PostSectionSix postData={allPosts} scheduleData={scheduleData}/>
+            <CategoryList />
             <FooterOne />
         </>
     );
