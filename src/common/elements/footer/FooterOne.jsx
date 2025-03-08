@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from "next/link";
-import { useColorMode } from '../../../contexts/ColorModeContext'; // Import the custom hook
+import { useColorMode } from '../../../contexts/ColorModeContext'; 
 
 const FooterOne = () => {
-  const { colorMode } = useColorMode(); // Get the current color mode
+  const { colorMode } = useColorMode(); 
   
   return (
     <div className="axil-footer-area axil-footer-style-1 footer-variation-2">
@@ -130,7 +130,7 @@ const FooterOne = () => {
                 <h5 className="follow-title mb--0 mr--20">Follow Us</h5>
                 <ul className="social-icon color-tertiary md-size justify-content-start">
                   <li>
-                    <a href="https://twitter.com/">
+                    <a href="https://x.com/F1PressNews_">
                       <i className="fa-brands fa-x-twitter" />
                     </a>
                   </li>
