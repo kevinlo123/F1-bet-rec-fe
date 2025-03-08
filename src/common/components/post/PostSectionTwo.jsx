@@ -13,49 +13,162 @@ const drivers = [
     id: 1,
     name: "Lewis Hamilton",
     img: "/images/drivers/lewham01.avif",
-    team: "Ferrari"
+    team: "Ferrari",
+    logoImg: "\/images\/team-logos\/ferrari-logo.png",
+    customImageWidth: "40px"
   },
   {
     id: 2,
     name: "Charles Leclerc",
     img: "/images/drivers/chalec01.avif",
-    team: "Ferrari"
+    team: "Ferrari",
+    logoImg: "\/images\/team-logos\/ferrari-logo.png",
+    customImageWidth: "40px"
   },
   {
     id: 3,
     name: "Max Verstappen",
     img: "/images/drivers/maxver01.avif",
-    team: "Red Bull"
+    team: "Red Bull",
+    logoImg: "\/images\/team-logos\/redbull-logo.png",
+    customImageWidth: "65px"
   },
   {
     id: 4,
     name: "Liam Lawson",
     img: "/images/drivers/lialaw01.avif",
-    team: "Red Bull"
+    team: "Red Bull",
+    logoImg: "\/images\/team-logos\/redbull-logo.png",
+    customImageWidth: "65px"
   },
   {
     id: 5,
     name: "Lando Norris",
     img: "/images/drivers/lannor01.avif",
-    team: "Mclaren"
+    team: "Mclaren",
+    logoImg: "\/images\/team-logos\/mclaren-logo.png",
+    customImageWidth: "40px"
   },
   {
     id: 6,
     name: "Oscar Piastri",
     img: "/images/drivers/oscpia01.avif",
-    team: "Mclaren"
+    team: "Mclaren",
+    logoImg: "\/images\/team-logos\/mclaren-logo.png",
+    customImageWidth: "40px"
   },
   {
     id: 7,
-    name: "Fernando Alonso",
-    img: "/images/drivers/feralo01.avif",
-    team: "Aston Martin"
+    name: "George Russell",
+    img: "/images/drivers/georus01.avif",
+    team: "Mercedes",
+    logoImg: "\/images\/team-logos\/mercedes-logo.png",
+    customImageWidth: "40px"
   },
   {
     id: 8,
+    name: "Andrea Kimi Antonelli",
+    img: "/images/drivers/andant01.avif",
+    team: "Mercedes",
+    logoImg: "\/images\/team-logos\/mercedes-logo.png",
+    customImageWidth: "40px"
+  },
+  {
+    id: 9,
+    name: "Fernando Alonso",
+    img: "/images/drivers/feralo01.avif",
+    team: "Aston Martin",
+    logoImg: "\/images\/team-logos\/aston-martin-logo.png",
+    customImageWidth: "60px"
+  },
+  {
+    id: 10,
     name: "Lance Stroll",
     img: "/images/drivers/lanstr01.avif",
-    team: "Aston Martin"
+    team: "Aston Martin",
+    logoImg: "\/images\/team-logos\/aston-martin-logo.png",
+    customImageWidth: "60px"
+  },
+  {
+    id: 11,
+    name: "Carlos Sainz",
+    img: "/images/drivers/carsai01.avif",
+    team: "Williams",
+    logoImg: "\/images\/team-logos\/williams-logo.png",
+    customImageWidth: "50px"
+  },
+  {
+    id: 12,
+    name: "Alex Albon",
+    img: "/images/drivers/alealb01.avif",
+    team: "Williams",
+    logoImg: "\/images\/team-logos\/williams-logo.png",
+    customImageWidth: "50px"
+  },
+  {
+    id: 13,
+    name: "Yuki Tsunoda",
+    img: "/images/drivers/yuktsu01.avif",
+    team: "Visa Cashapp RB",
+    logoImg: "\/images\/team-logos\/visa-rb-logo.png",
+    customImageWidth: "40px"
+
+  },
+  {
+    id: 14,
+    name: "Isack Hadjar",
+    img: "/images/drivers/isahad01.avif",
+    team: "Visa Cashapp RB",
+    logoImg: "\/images\/team-logos\/visa-rb-logo.png",
+    customImageWidth: "40px"
+  },
+  {
+    id: 15,
+    name: "Pierre Gasly",
+    img: "/images/drivers/piegas01.avif",
+    team: "Alpine",
+    logoImg: "\/images\/team-logos\/alpine-logo.png",
+    customImageWidth: "50px"
+  },
+  {
+    id: 16,
+    name: "Jack Doohan",
+    img: "/images/drivers/jacdoo01.avif",
+    team: "Alpine",
+    logoImg: "\/images\/team-logos\/alpine-logo.png",
+    customImageWidth: "50px"
+  },
+  {
+    id: 17,
+    name: "Esteban Ocon",
+    img: "/images/drivers/estoco01.avif",
+    team: "Haas",
+    logoImg: "\/images\/team-logos\/haas-logo.png",
+    customImageWidth: "42.5px"
+  },
+  {
+    id: 18,
+    name: "Oliver Bearman",
+    img: "/images/drivers/olibea01.avif",
+    team: "Haas",
+    logoImg: "\/images\/team-logos\/haas-logo.png",
+    customImageWidth: "42.5px"
+  },
+  {
+    id: 19,
+    name: "Nico Hulkenberg",
+    img: "/images/drivers/nichul01.avif",
+    team: "Stake F1 team",
+    logoImg: "\/images\/team-logos\/stake-logo.svg",
+    customImageWidth: "40px"
+  },
+  {
+    id: 20,
+    name: "Gabriel Bortoleto",
+    img: "/images/drivers/borto-site.png",
+    team: "Stake F1 team",
+    logoImg: "\/images\/team-logos\/stake-logo.svg",
+    customImageWidth: "40px"
   }
 ];
 
@@ -147,12 +260,14 @@ const PostSectionTwo = ({ adBanner, headingTitle }) => {
                             <div className="post-content">
                               <div className="post-cat">
                                 <div className="post-cat-list">
-                                  <span className="hover-flip-item-wrapper">
-                                    <span className="hover-flip-item">
-                                      <span data-text={data.team}>
-                                        {data.team}
-                                      </span>
-                                    </span>
+                                  <span className="post-logo-img">
+                                    <Image
+                                      src={data.logoImg}
+                                      height={40}
+                                      alt={data.team}
+                                      width={data.customImageWidth}
+                                      priority={true}
+                                    />
                                   </span>
                                 </div>
                               </div>

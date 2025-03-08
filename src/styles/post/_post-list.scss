@@ -257,6 +257,10 @@ Post List Style
                     transition: 0.5s;
                 }
             }
+
+            span {
+                position: static !important;
+            }
         }
         &:hover {
             .post-thumbnail {
