@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from "next/link";
+import { useColorMode } from '../../../contexts/ColorModeContext'; // Import the custom hook
 
 const FooterOne = () => {
-  if (typeof window !== "undefined") {
-    var colorMode = window.localStorage.getItem('color-mode');
-  }
-
+  const { colorMode } = useColorMode(); // Get the current color mode
+  
   return (
     <div className="axil-footer-area axil-footer-style-1 footer-variation-2">
       <div className="footer-mainmenu">
@@ -13,32 +12,38 @@ const FooterOne = () => {
           <div className="row">
             <div className="col-lg-2 col-md-6 col-sm-6 col-12">
               <div className="footer-widget">
-                <h2 className="title">World</h2>
+                <h2 className="title">Explore</h2>
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="#">U.N.</a>
+                      <Link href={'/'}> 
+                        Home
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Conflicts</a>
+                      <Link href={'/news'}> 
+                        F1 News
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Terrorism</a>
+                      <Link href={'/calendar'}> 
+                        F1 2025 Calendar
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Disasters</a>
+                      <Link href={'/driver-standings'}> 
+                        Driver Standings
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Global Economy</a>
+                      <Link href={'/constructor-standings'}> 
+                        Constructor Standings
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Environment</a>
-                    </li>
-                    <li>
-                      <a href="#">Religion</a>
-                    </li>
-                    <li>
-                      <a href="#">Scandals</a>
+                      <Link href={'/predictions'}> 
+                        F1 Predictions
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -46,32 +51,23 @@ const FooterOne = () => {
             </div>
             <div className="col-lg-2 col-md-6 col-sm-6 col-12">
               <div className="footer-widget">
-                <h2 className="title">Politics</h2>
+                <h2 className="title">Categories</h2>
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="#">Executive</a>
+                      <a href="#">News and updates</a>
                     </li>
                     <li>
-                      <a href="#">Senate</a>
+                      <a href="#">Races and Events</a>
                     </li>
                     <li>
-                      <a href="#">House</a>
+                      <a href="#">Lifestyle and culture</a>
                     </li>
                     <li>
-                      <a href="#">Judiciary</a>
+                      <a href="#">Beyond the grid</a>
                     </li>
                     <li>
-                      <a href="#">Global Economy</a>
-                    </li>
-                    <li>
-                      <a href="#">Foreign policy</a>
-                    </li>
-                    <li>
-                      <a href="#">Polls</a>
-                    </li>
-                    <li>
-                      <a href="#">Elections</a>
+                      <a href="#">History and Legacy</a>
                     </li>
                   </ul>
                 </div>
@@ -79,32 +75,14 @@ const FooterOne = () => {
             </div>
             <div className="col-lg-2 col-md-6 col-sm-6 col-12">
               <div className="footer-widget">
-                <h2 className="title">Entertainment</h2>
+                <h2 className="title">Info</h2>
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="#">Celebrity News</a>
+                      <a href="#">About Us</a>
                     </li>
                     <li>
-                      <a href="#">Movies</a>
-                    </li>
-                    <li>
-                      <a href="#">TV News</a>
-                    </li>
-                    <li>
-                      <a href="#">Disasters</a>
-                    </li>
-                    <li>
-                      <a href="#">Music News</a>
-                    </li>
-                    <li>
-                      <a href="#">Environment</a>
-                    </li>
-                    <li>
-                      <a href="#">Style News</a>
-                    </li>
-                    <li>
-                      <a href="#">Entertainment Video</a>
+                      <a href="#">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -112,98 +90,14 @@ const FooterOne = () => {
             </div>
             <div className="col-lg-2 col-md-6 col-sm-6 col-12">
               <div className="footer-widget">
-                <h2 className="title">Business</h2>
+                <h2 className="title">Account</h2>
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="#">Environment</a>
+                      <a href="#">Login</a>
                     </li>
                     <li>
-                      <a href="#">Conflicts</a>
-                    </li>
-                    <li>
-                      <a href="#">Terrorism</a>
-                    </li>
-                    <li>
-                      <a href="#">Disasters</a>
-                    </li>
-                    <li>
-                      <a href="#">Global Economy</a>
-                    </li>
-                    <li>
-                      <a href="#">Environment</a>
-                    </li>
-                    <li>
-                      <a href="#">Religion</a>
-                    </li>
-                    <li>
-                      <a href="#">Scandals</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-2 col-md-6 col-sm-6 col-12">
-              <div className="footer-widget">
-                <h2 className="title">Health</h2>
-                <div className="inner">
-                  <ul className="ft-menu-list">
-                    <li>
-                      <a href="#">Movies</a>
-                    </li>
-                    <li>
-                      <a href="#">Conflicts</a>
-                    </li>
-                    <li>
-                      <a href="#">Terrorism</a>
-                    </li>
-                    <li>
-                      <a href="#">Disasters</a>
-                    </li>
-                    <li>
-                      <a href="#">Global Economy</a>
-                    </li>
-                    <li>
-                      <a href="#">Environment</a>
-                    </li>
-                    <li>
-                      <a href="#">Religion</a>
-                    </li>
-                    <li>
-                      <a href="#">Scandals</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-2 col-md-6 col-sm-6 col-12">
-              <div className="footer-widget">
-                <h2 className="title">About</h2>
-                <div className="inner">
-                  <ul className="ft-menu-list">
-                    <li>
-                      <a href="#">U.N.</a>
-                    </li>
-                    <li>
-                      <a href="#">Conflicts</a>
-                    </li>
-                    <li>
-                      <a href="#">Terrorism</a>
-                    </li>
-                    <li>
-                      <a href="#">Disasters</a>
-                    </li>
-                    <li>
-                      <a href="#">Global Economy</a>
-                    </li>
-                    <li>
-                      <a href="#">Environment</a>
-                    </li>
-                    <li>
-                      <a href="#">Religion</a>
-                    </li>
-                    <li>
-                      <a href="#">Scandals</a>
+                      <a href="#">Signup</a>
                     </li>
                   </ul>
                 </div>
@@ -218,16 +112,15 @@ const FooterOne = () => {
           <div className="row">
             <div className="col-lg-4 col-md-4">
               <div className="logo">
-              <Link href="/">
-                <a>
-                  <Image
-                    className="dark-logo"
-                    src={colorMode === "Dark" ? "/images/logo/logo-white2.webp" : "/images/logo/logo-black.webp"}
-                    alt="Logo Images"
-                    height={37}
-                    width={141}
-                  />
-                </a>
+                <Link href="/">
+                  <a>
+                    <Image 
+                      src={colorMode === "dark" ? '/images/logo/logo-black-bg.png' : '/images/logo/logo-white-bg.png'}
+                      alt="F1 press news logo"
+                      height={200}
+                      width={125}
+                    />
+                  </a>
                 </Link>
               </div>
             </div>
@@ -237,23 +130,8 @@ const FooterOne = () => {
                 <h5 className="follow-title mb--0 mr--20">Follow Us</h5>
                 <ul className="social-icon color-tertiary md-size justify-content-start">
                   <li>
-                    <a href="https://www.facebook.com/" rel="noopener" target="_blank">
-                      <i className="fab fa-facebook-f" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/">
-                      <i className="fab fa-instagram" />
-                    </a>
-                  </li>
-                  <li>
                     <a href="https://twitter.com/">
                       <i className="fa-brands fa-x-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/">
-                      <i className="fab fa-linkedin-in" />
                     </a>
                   </li>
                 </ul>
@@ -293,27 +171,9 @@ const FooterOne = () => {
                     <Link href="#">
                       <a className="hover-flip-item-wrapper">
                         <span className="hover-flip-item">
-                          <span data-text="AdChoices">AdChoices</span>
-                        </span>
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#">
-                      <a className="hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
                           <span data-text="Advertise with Us">
                             Advertise with Us
                           </span>
-                        </span>
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#">
-                      <a className="hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
-                          <span data-text="Blogar Store">Blogar Store</span>
                         </span>
                       </a>
                     </Link>

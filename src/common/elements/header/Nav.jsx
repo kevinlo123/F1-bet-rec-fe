@@ -65,7 +65,7 @@ const Nav = ({posts}) => {
             </li>
             <li className="menu-item-has-children megamenu-wrapper">
                 <Link href="/calendar">
-                    <a>F1 Calendar</a>
+                    <a>F1 2025 Calendar</a>
                 </Link>
                 {/* <ul className="megamenu-sub-menu">
                     <li className="megamenu-item">

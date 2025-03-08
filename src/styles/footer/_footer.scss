@@ -15,9 +15,16 @@
             }
         }
     }
+
+    .logo {
+        span {
+            width: 125px !important;
+        }
+    }
 }
 
 .copyright-area {
+    padding-bottom: 50px;
     .mainmenu {
         @extend %liststyle;
         display: flex;
