@@ -9,13 +9,13 @@ const PostSectionTwelve = ({ postData }) => {
   const apiUrl = window.location.hostname === 'localhost' ? local : prod;
 
   if (!postData || postData.length === 0) {
-    return <div>Loading...</div>; // or any other loading indicator
+    return; // or any other loading indicator
   }
 
   const firstPost = postData[0];
 
   if (!firstPost) {
-    return <div>No posts available</div>; // or any other message for empty posts
+    return; // or any other message for empty posts
   }
 
   return (
