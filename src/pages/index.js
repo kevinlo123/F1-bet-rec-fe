@@ -16,8 +16,6 @@ import { getAllPosts } from '../../lib/api';
 
 const HomeDefault = ({ allPosts }) => {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { colorMode } = useColorMode(); 
 
   useEffect(() => {
     const fetchPostsData = async () => {
@@ -34,10 +32,8 @@ const HomeDefault = ({ allPosts }) => {
   
         const postsData = await response.json(); 
         setPosts(postsData);  
-        setLoading(false);  
       } catch (error) {
         console.error('Error loading posts:', error);
-        setLoading(false); 
       }
     };
   
@@ -50,41 +46,10 @@ const HomeDefault = ({ allPosts }) => {
     <>
       <HeadTitle pageTitle="Home" />
       <HeaderFour postData={allPosts} />
-      {loading ? (
-        <div className="skeleton-container container pt--80 pb--80">
-          <div className="skeleton-feature">
-            { colorMode === "dark" ?
-              <Skeleton height={425} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} /> :
-              <Skeleton height={425} borderRadius={8} />               
-            }
-          </div>
-
-          <div className="skeleton-other">
-            { colorMode === "dark" ?
-              <>
-                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
-                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
-                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
-                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
-              </>
-                          :
-              <>
-                <Skeleton height={200} borderRadius={8} />   
-                <Skeleton height={200} borderRadius={8} />
-                <Skeleton height={200} borderRadius={8} />
-                <Skeleton height={200} borderRadius={8} />            
-              </>
-            }
-          </div>
-        </div>
-      ) : (
-        <PostSectionTwelve postData={latestPosts} />
-      )}
+      <PostSectionTwelve postData={latestPosts} />
       <PostSectionTen postData={posts} />
       <Leaderboard />
       <MapComponent />
-      {/* <PostSectionThree postData={videoPost} heading="Featured Video" /> */}
-      {/* <PostSectionOne postData={allPosts} /> */}
       <PostSectionTwo />
       <CategoryList />
       <FooterOne />

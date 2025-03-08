@@ -1,22 +1,48 @@
 import Link from "next/link";
 import Image from "next/image";
 import { slugify } from "../../utils";
-
+import Skeleton from 'react-loading-skeleton'; // Make sure you've installed this or have a similar Skeleton component
+import { useColorMode } from "../../../contexts/ColorModeContext";
 
 const PostSectionTwelve = ({ postData }) => {
   const local = 'http://localhost:3000';
   const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com';
   const apiUrl = window.location.hostname === 'localhost' ? local : prod;
-
+  const { colorMode } = useColorMode(); 
+  
   if (!postData || postData.length === 0) {
-    return <div>Loading...</div>; // or any other loading indicator
+    return (
+      <div className="skeleton-container container pt--80 pb--80">
+        <div className="skeleton-feature">
+          {colorMode === "dark" ? (
+            <Skeleton height={425} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+          ) : (
+            <Skeleton height={425} borderRadius={8} />
+          )}
+        </div>
+
+        <div className="skeleton-other">
+          {colorMode === "dark" ? (
+            <>
+              <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+              <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+              <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+              <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+            </>
+          ) : (
+            <>
+              <Skeleton height={200} borderRadius={8} />
+              <Skeleton height={200} borderRadius={8} />
+              <Skeleton height={200} borderRadius={8} />
+              <Skeleton height={200} borderRadius={8} />
+            </>
+          )}
+        </div>
+      </div>
+    );
   }
 
   const firstPost = postData[0];
-
-  if (!firstPost) {
-    return <div>No posts available</div>; // or any other message for empty posts
-  }
 
   return (
     <div className="slider-area bg-color-grey pt--80 pb--80">
@@ -61,8 +87,8 @@ const PostSectionTwelve = ({ postData }) => {
                     </Link>
                   </h3>
                   <ul className="post-meta-list mt--0">
-                    <li style={{color: 'white'}}>{firstPost.date}</li>
-                    <li style={{color: 'white'}}>{firstPost.post_views} Views</li>
+                    <li style={{ color: 'white' }}>{firstPost.date}</li>
+                    <li style={{ color: 'white' }}>{firstPost.post_views} Views</li>
                   </ul>
                 </div>
               </div>
@@ -75,9 +101,9 @@ const PostSectionTwelve = ({ postData }) => {
                   <div className="content-block post-grid post-grid-transparent post-grid-small post-overlay-bottom">
                     {data.feature_img && (
                       <div className="post-thumbnail">
-                        <Link href={`/post/${data.id})}`}>
+                        <Link href={`/post/${data.id}`}>
                           <a>
-                          <Image
+                            <Image
                               src={`${apiUrl}${data.feature_img.url}`}
                               alt={data.title}
                               height={225}
@@ -109,8 +135,8 @@ const PostSectionTwelve = ({ postData }) => {
                           </Link>
                         </h5>
                         <ul className="post-meta-list mt--0">
-                          <li style={{color: 'white'}}>{data.date}</li>
-                          <li style={{color: 'white'}}>{data.post_views} Views</li>
+                          <li style={{ color: 'white' }}>{data.date}</li>
+                          <li style={{ color: 'white' }}>{data.post_views} Views</li>
                         </ul>
                       </div>
                     </div>
