@@ -7,9 +7,8 @@ import { ColorModeProvider } from '../contexts/ColorModeContext';
 import MaintenancePage from './maintenance';  // Import the maintenance page
 
 function MyApp({ Component, pageProps }) {
-  const isProduction = process.env.VERCEL_ENV === 'production';
-  console.log(process.env.VERCEL_ENV)
-  console.log(process.env)
+  const isProduction = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
+  console.log(process.env.NEXT_PUBLIC_VERCEL_ENV)
   console.log(isProduction)
 
   if (isProduction) {
