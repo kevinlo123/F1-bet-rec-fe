@@ -3,12 +3,19 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/style.scss';
 import ColorSwitcher from '../common/elements/color-switcher/ColorSwitcher';
 import { Toaster } from 'react-hot-toast';
-import { ColorModeProvider } from '../contexts/ColorModeContext';  // Import the new ColorModeProvider
+import { ColorModeProvider } from '../contexts/ColorModeContext';
+import MaintenancePage from './maintenance';  // Import the maintenance page
 
 function MyApp({ Component, pageProps }) {
+  const isProduction = process.env.VERCEL_ENV === 'production';
+
+  if (isProduction) {
+    return <MaintenancePage />;
+  }
+
   return (
     <AuthProvider>
-      <ColorModeProvider>  {/* Wrap the app with the ColorModeProvider */}
+      <ColorModeProvider> 
         <ColorSwitcher />
         <Component {...pageProps} />
         <Toaster
