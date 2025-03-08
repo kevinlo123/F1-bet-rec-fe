@@ -258,6 +258,47 @@
     }
 }
 
+.skeleton-container {
+    display: flex;
+    gap: 16px;
+
+    @media #{$medium} {
+        display: block;
+    }
+}
+
+.skeleton-feature {
+    width: 50%;
+
+    @media #{$medium} {
+        width: 100%;
+    }
+
+    span {
+        height: 200px;
+
+        @media #{$medium} {
+            height: 335px !important;
+        }
+    }
+}
+
+.skeleton-other {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    @media #{$medium} {
+        display: block;
+        width: 100%;
+    }
+
+    span {
+        height: 200px;
+    }
+}
+
 
 
 

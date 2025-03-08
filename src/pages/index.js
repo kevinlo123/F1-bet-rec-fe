@@ -1,25 +1,23 @@
-import InstagramOne from '../common/components/instagram/InstagramOne';
 import FooterOne from '../common/elements/footer/FooterOne';
 import HeadTitle from '../common/elements/head/HeadTitle';
-import { getAllPosts } from '../../lib/api';
-import PostSectionOne from '../common/components/post/PostSectionOne';
 import PostSectionTwo from '../common/components/post/PostSectionTwo';
-import PostSectionThree from '../common/components/post/PostSectionThree';
 import PostSectionTen from '../common/components/post/PostSectionTen';
 import CategoryList from '../common/components/category/CategoryList';
 import PostSectionTwelve from '../common/components/post/PostSectionTwelve';
-import { slugify } from "../common/utils";
 import HeaderFour from "../common/elements/header/HeaderFour";
-// import { getPosts } from '../../lib/postsService';
 import React, { useState, useEffect } from 'react';
 import MapComponent from '../common/components/map-component/MapComponent';
-// import { ProtectedRoute } from '../contexts/AuthContext';
 import Leaderboard from '../common/components/leaderboard/leaderboard';
 import TwitterFeed from '../common/components/TwitterFeed/TwitterFeed';
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { useColorMode } from '../contexts/ColorModeContext'; 
+import { getAllPosts } from '../../lib/api';
 
 const HomeDefault = ({ allPosts }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { colorMode } = useColorMode(); 
 
   useEffect(() => {
     const fetchPostsData = async () => {
@@ -28,28 +26,24 @@ const HomeDefault = ({ allPosts }) => {
         const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1';
         const apiUrl = window.location.hostname === 'localhost' ? local : prod;
   
-        // Use apiUrl here instead of url
         const response = await fetch(`${apiUrl}/posts`);        
         
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
   
-        const postsData = await response.json();  // This is where postsData gets assigned
-        setPosts(postsData);  // Set the fetched posts to the state
-        setLoading(false);  // Set loading to false after data is fetched
+        const postsData = await response.json(); 
+        setPosts(postsData);  
+        setLoading(false);  
       } catch (error) {
         console.error('Error loading posts:', error);
-        setLoading(false);  // Set loading to false even if there's an error
+        setLoading(false); 
       }
     };
   
     fetchPostsData();
   }, []);
 
-  const videoPost = allPosts.filter(post => post.postFormat === "video");
-  const PageSlug = "lifestyle-blog";
-  const lifestylePost = allPosts.filter(post => slugify(post.pCate) === PageSlug);
   const latestPosts = posts.sort((a, b) => b.id - a.id).slice(0, 5);
 
   return (
@@ -57,9 +51,34 @@ const HomeDefault = ({ allPosts }) => {
       <HeadTitle pageTitle="Home" />
       <HeaderFour postData={allPosts} />
       {loading ? (
-        <div>Loading...</div>  // Display loading indicator while fetching data
+        <div className="skeleton-container container pt--80 pb--80">
+          <div className="skeleton-feature">
+            { colorMode === "dark" ?
+              <Skeleton height={425} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} /> :
+              <Skeleton height={425} borderRadius={8} />               
+            }
+          </div>
+
+          <div className="skeleton-other">
+            { colorMode === "dark" ?
+              <>
+                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+                <Skeleton height={200} baseColor="#2a2a2a" highlightColor="#3e3e3e" borderRadius={8} />
+              </>
+                          :
+              <>
+                <Skeleton height={200} borderRadius={8} />   
+                <Skeleton height={200} borderRadius={8} />
+                <Skeleton height={200} borderRadius={8} />
+                <Skeleton height={200} borderRadius={8} />            
+              </>
+            }
+          </div>
+        </div>
       ) : (
-        <PostSectionTwelve postData={latestPosts} />  // Pass latestPosts to PostSectionTwelve
+        <PostSectionTwelve postData={latestPosts} />
       )}
       <PostSectionTen postData={posts} />
       <Leaderboard />
