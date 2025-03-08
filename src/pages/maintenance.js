@@ -2,11 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SocialData from "../data/social/SocialData.json";
 import HeadTitle from "../common/elements/head/HeadTitle";
-import { useColorMode } from '../contexts/ColorModeContext'; 
 
 const Maintenance = () => {
-    const { colorMode } = useColorMode(); 
-
     return (
         <>
        
@@ -23,7 +20,7 @@ const Maintenance = () => {
                                                 className="dark-logo"
                                                 width={153}
                                                 height={40}
-                                                src={colorMode === "dark" ? '/images/logo/logo-black-bg.png' : '/images/logo/logo-white-bg.png'}
+                                                src={'/images/logo/logo-white-bg.png'}
                                                 alt="Blogar logo"
                                             />
                                         </a>
