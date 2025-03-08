@@ -43,9 +43,9 @@ const Maintenance = () => {
                         </div>
                         <div className="order-1 order-lg-2 col-lg-5 offset-lg-1">
                             <div className="thumbnail">
-                            <Image
-                                width={495}
-                                height={480}
+                            <img
+                                width="495"
+                                height="480"
                                 src="/images/others/maintenance-gif.gif"
                                 alt="Coming Soon"
                             />

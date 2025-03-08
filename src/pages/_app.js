@@ -8,6 +8,9 @@ import MaintenancePage from './maintenance';  // Import the maintenance page
 
 function MyApp({ Component, pageProps }) {
   const isProduction = process.env.VERCEL_ENV === 'production';
+  console.log(process.env.VERCEL_ENV)
+  console.log(process.env)
+  console.log(isProduction)
 
   if (isProduction) {
     return <MaintenancePage />;
