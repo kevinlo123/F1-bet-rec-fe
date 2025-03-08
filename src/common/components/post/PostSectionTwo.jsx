@@ -15,7 +15,8 @@ const drivers = [
     img: "/images/drivers/lewham01.avif",
     team: "Ferrari",
     logoImg: "\/images\/team-logos\/ferrari-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#E8002D"
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ const drivers = [
     img: "/images/drivers/chalec01.avif",
     team: "Ferrari",
     logoImg: "\/images\/team-logos\/ferrari-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#E8002D"
   },
   {
     id: 3,
@@ -31,7 +33,8 @@ const drivers = [
     img: "/images/drivers/maxver01.avif",
     team: "Red Bull",
     logoImg: "\/images\/team-logos\/redbull-logo.png",
-    customImageWidth: "65px"
+    customImageWidth: "65px",
+    color: "#00017d"
   },
   {
     id: 4,
@@ -39,7 +42,8 @@ const drivers = [
     img: "/images/drivers/lialaw01.avif",
     team: "Red Bull",
     logoImg: "\/images\/team-logos\/redbull-logo.png",
-    customImageWidth: "65px"
+    customImageWidth: "65px",
+    color: "#00017d"
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ const drivers = [
     img: "/images/drivers/lannor01.avif",
     team: "Mclaren",
     logoImg: "\/images\/team-logos\/mclaren-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#FF8000"
   },
   {
     id: 6,
@@ -55,7 +60,8 @@ const drivers = [
     img: "/images/drivers/oscpia01.avif",
     team: "Mclaren",
     logoImg: "\/images\/team-logos\/mclaren-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#FF8000"
   },
   {
     id: 7,
@@ -63,7 +69,8 @@ const drivers = [
     img: "/images/drivers/georus01.avif",
     team: "Mercedes",
     logoImg: "\/images\/team-logos\/mercedes-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#27F4D2"
   },
   {
     id: 8,
@@ -71,7 +78,8 @@ const drivers = [
     img: "/images/drivers/andant01.avif",
     team: "Mercedes",
     logoImg: "\/images\/team-logos\/mercedes-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#27F4D2"
   },
   {
     id: 9,
@@ -79,7 +87,8 @@ const drivers = [
     img: "/images/drivers/feralo01.avif",
     team: "Aston Martin",
     logoImg: "\/images\/team-logos\/aston-martin-logo.png",
-    customImageWidth: "60px"
+    customImageWidth: "60px",
+    color: "#229971"
   },
   {
     id: 10,
@@ -87,7 +96,8 @@ const drivers = [
     img: "/images/drivers/lanstr01.avif",
     team: "Aston Martin",
     logoImg: "\/images\/team-logos\/aston-martin-logo.png",
-    customImageWidth: "60px"
+    customImageWidth: "60px",
+    color: "#229971"
   },
   {
     id: 11,
@@ -95,7 +105,8 @@ const drivers = [
     img: "/images/drivers/carsai01.avif",
     team: "Williams",
     logoImg: "\/images\/team-logos\/williams-logo.png",
-    customImageWidth: "50px"
+    customImageWidth: "50px",
+    color: "#64C4FF"
   },
   {
     id: 12,
@@ -103,7 +114,8 @@ const drivers = [
     img: "/images/drivers/alealb01.avif",
     team: "Williams",
     logoImg: "\/images\/team-logos\/williams-logo.png",
-    customImageWidth: "50px"
+    customImageWidth: "50px",
+    color: "#64C4FF"
   },
   {
     id: 13,
@@ -111,7 +123,8 @@ const drivers = [
     img: "/images/drivers/yuktsu01.avif",
     team: "Visa Cashapp RB",
     logoImg: "\/images\/team-logos\/visa-rb-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#6692FF"
 
   },
   {
@@ -120,7 +133,8 @@ const drivers = [
     img: "/images/drivers/isahad01.avif",
     team: "Visa Cashapp RB",
     logoImg: "\/images\/team-logos\/visa-rb-logo.png",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#6692FF"
   },
   {
     id: 15,
@@ -128,7 +142,8 @@ const drivers = [
     img: "/images/drivers/piegas01.avif",
     team: "Alpine",
     logoImg: "\/images\/team-logos\/alpine-logo.png",
-    customImageWidth: "50px"
+    customImageWidth: "50px",
+    color: "#FF87BC"
   },
   {
     id: 16,
@@ -136,7 +151,8 @@ const drivers = [
     img: "/images/drivers/jacdoo01.avif",
     team: "Alpine",
     logoImg: "\/images\/team-logos\/alpine-logo.png",
-    customImageWidth: "50px"
+    customImageWidth: "50px",
+    color: "#FF87BC"
   },
   {
     id: 17,
@@ -144,7 +160,8 @@ const drivers = [
     img: "/images/drivers/estoco01.avif",
     team: "Haas",
     logoImg: "\/images\/team-logos\/haas-logo.png",
-    customImageWidth: "42.5px"
+    customImageWidth: "42.5px",
+    color: "#B6BABD"
   },
   {
     id: 18,
@@ -152,7 +169,8 @@ const drivers = [
     img: "/images/drivers/olibea01.avif",
     team: "Haas",
     logoImg: "\/images\/team-logos\/haas-logo.png",
-    customImageWidth: "42.5px"
+    customImageWidth: "42.5px",
+    color: "#B6BABD"
   },
   {
     id: 19,
@@ -160,7 +178,8 @@ const drivers = [
     img: "/images/drivers/nichul01.avif",
     team: "Stake F1 team",
     logoImg: "\/images\/team-logos\/stake-logo.svg",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#52e252"
   },
   {
     id: 20,
@@ -168,7 +187,8 @@ const drivers = [
     img: "/images/drivers/gabbor01.avif",
     team: "Stake F1 team",
     logoImg: "\/images\/team-logos\/stake-logo.svg",
-    customImageWidth: "40px"
+    customImageWidth: "40px",
+    color: "#52e252"
   }
 ];
 
@@ -257,6 +277,7 @@ const PostSectionTwo = ({ adBanner, headingTitle }) => {
                       {drivers.map((data) => (
                         <div className="slick-single-layout" key={data.id}>
                           <div className="content-block modern-post-style text-center content-block-column">
+                            <div className="content-block__driver-team" style={{ backgroundColor: data.color }}></div>
                             <div className="post-content">
                               <div className="post-cat">
                                 <div className="post-cat-list">
