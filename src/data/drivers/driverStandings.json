@@ -4,7 +4,7 @@
             "position": 1,
             "driver": "Max Verstappen",
             "team": "Red Bull Racing",
-            "points": 255,
+            "points": 0,
             "nationality": "NED",
             "flag": "<span class=\"fi fi-nl fi\"></span>",
             "teamColor": "#00017d"
@@ -13,7 +13,7 @@
             "position": 2,
             "driver": "Lando Norris",
             "team": "McLaren",
-            "points": 171,
+            "points": 0,
             "nationality": "GBR",
             "flag": "<span class=\"fi fi-gb fi\"></span>",
             "teamColor": "#FF8000"
@@ -22,7 +22,7 @@
             "position": 3,
             "driver": "Charles Leclerc",
             "team": "Ferrari",
-            "points": 150,
+            "points": 0,
             "nationality": "MON",
             "flag": "<span class=\"fi fi-mc fi\"></span>",
             "teamColor": "#E8002D"
@@ -30,35 +30,35 @@
         {
             "position": 4,
             "driver": "Carlos Sainz",
-            "team": "Ferrari",
-            "points": 146,
+            "team": "Williams",
+            "points": 0,
             "nationality": "ESP",
             "flag": "<span class=\"fi fi-es fi\"></span>",
-            "teamColor": "#E8002D"
+            "teamColor": "#64C4FF"
         },
         {
             "position": 5,
             "driver": "Oscar Piastri",
             "team": "McLaren",
-            "points": 124,
+            "points": 0,
             "nationality": "AUS",
             "flag": "<span class=\"fi fi-au fi\"></span>",
             "teamColor": "#FF8000"
         },
         {
             "position": 6,
-            "driver": "Sergio Perez",
+            "driver": "Liam Lawson",
             "team": "Red Bull Racing",
-            "points": 118,
-            "nationality": "MEX",
-            "flag": "<span class=\"fi fi-mx fi\"></span>",
+            "points": 0,
+            "nationality": "NZ",
+            "flag": "<span class=\"fi fi-nz fi\"></span>",
             "teamColor": "#00017d"
         },
         {
             "position": 7,
             "driver": "George Russell",
             "team": "Mercedes",
-            "points": 111,
+            "points": 0,
             "nationality": "GBR",
             "flag": "<span class=\"fi fi-gb fi\"></span>",
             "teamColor": "#27F4D2"
@@ -66,17 +66,17 @@
         {
             "position": 8,
             "driver": "Lewis Hamilton",
-            "team": "Mercedes",
-            "points": 110,
+            "team": "Ferrari",
+            "points": 0,
             "nationality": "GBR",
             "flag": "<span class=\"fi fi-gb fi\"></span>",
-            "teamColor": "#27F4D2"
+            "teamColor": "#E8002D"
         },
         {
             "position": 9,
             "driver": "Fernando Alonso",
             "team": "Aston Martin",
-            "points": 44,
+            "points": 0,
             "nationality": "ESP",
             "flag": "<span class=\"fi fi-es fi\"></span>",
             "teamColor": "#229971"
@@ -84,8 +84,8 @@
         {
             "position": 10,
             "driver": "Lance Stroll",
-            "team": "Aston MartinS",
-            "points": 23,
+            "team": "Aston Martin",
+            "points": 0,
             "nationality": "CAN",
             "flag": "<span class=\"fi fi-ca fi\"></span>",
             "teamColor": "#229971"
@@ -93,62 +93,62 @@
         {
             "position": 11,
             "driver": "Nico Hülkenberg",
-            "team": "Haas F1 team",
-            "points": 22,
+            "team": "Stake F1 team",
+            "points": 0,
             "nationality": "GER",
             "flag": "<span class=\"fi fi-de fi\"></span>",
-            "teamColor": "#B6BABD"
+            "teamColor": "#52e252"
         },
         {
             "position": 12,
             "driver": "Yuki Tsunoda",
             "team": "Visa Cashapp RB",
-            "points": 20,
+            "points": 0,
             "nationality": "JPN",
             "flag": "<span class=\"fi fi-jp fi\"></span>",
             "teamColor": "#6692FF"
         },
         {
             "position": 13,
-            "driver": "Daniel Ricciardo",
+            "driver": "Isack Hadjar",
             "team": "Visa Cashapp RB",
-            "points": 11,
-            "nationality": "AUS",
-            "flag": "<span class=\"fi fi-au fi\"></span>",
+            "points": 0,
+            "nationality": "FRA",
+            "flag": "<span class=\"fi fi-fr fi\"></span>",
             "teamColor": "#6692FF"
         },
         {
             "position": 14,
             "driver": "Oliver Bearman",
-            "team": "Ferrari",
-            "points": 6,
+            "team": "Haas F1 team",
+            "points": 0,
             "nationality": "GBR",
             "flag": "<span class=\"fi fi-gb fi\"></span>",
-            "teamColor": "#E8002D"
+            "teamColor": "#B6BABD"
         },
         {
             "position": 15,
             "driver": "Pierre Gasly",
             "team": "Alpine Renault",
-            "points": 6,
+            "points": 0,
             "nationality": "FRA",
             "flag": "<span class=\"fi fi-fr fi\"></span>",
             "teamColor": "#FF87BC"
         },
         {
             "position": 16,
-            "driver": "Kevin Magnussen",
-            "team": "Haas F1 team",
-            "points": 5,
-            "nationality": "DEN",
-            "flag": "<span class=\"fi fi-dk fi\"></span>",
-            "teamColor": "#B6BABD"
+            "driver": "Jack Doohan",
+            "team": "Alpine Renault",
+            "points": 0,
+            "nationality": "AUS",
+            "flag": "<span class=\"fi fi-au fi\"></span>",
+            "teamColor": "#FF87BC"
         },
         {
             "position": 17,
             "driver": "Alex Albon",
             "team": "Williams Racing",
-            "points": 4,
+            "points": 0,
             "nationality": "THA",
             "flag": "<span class=\"fi fi-th fi\"></span>",
             "teamColor": "#64C4FF"
@@ -156,38 +156,29 @@
         {
             "position": 18,
             "driver": "Esteban Ocon",
-            "team": "Alpine Renault",
-            "points": 3,
+            "team": "Haas F1 team",
+            "points": 0,
             "nationality": "FRA",
             "flag": "<span class=\"fi fi-fr fi\"></span>",
-            "teamColor": "#FF87BC"
+            "teamColor": "#B6BABD"
         },
         {
             "position": 19,
-            "driver": "Guanyu Zhou",
-            "team": "Stake F1 Team",
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
             "points": 0,
-            "nationality": "CHN",
-            "flag": "<span class=\"fi fi-cn fi\"></span>",
-            "teamColor": "#52E252"
+            "nationality": "ITA",
+            "flag": "<span class=\"fi fi-it fi\"></span>",
+            "teamColor": "#27F4D2"
         },
         {
             "position": 20,
-            "driver": "Logan Sargaent",
-            "team": "Williams Racing",
-            "points": 0,
-            "nationality": "USA",
-            "flag": "<span class=\"fi fi-us fi\"></span>",
-            "teamColor": "#64C4FF"
-        },
-        {
-            "position": 21,
-            "driver": "Valtteri Bottas",
+            "driver": "Gabriel Bortoleto",
             "team": "Stake F1 Team",
             "points": 0,
-            "nationality": "FIN",
-            "flag": "<span class=\"fi fi-fi fi\"></span>",
-            "teamColor": "#52E252"
+            "nationality": "BRA",
+            "flag": "<span class=\"fi fi-br fi\"></span>",
+            "teamColor": "#52e252"
         }
     ]
 }

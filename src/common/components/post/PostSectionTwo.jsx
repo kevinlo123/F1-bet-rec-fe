@@ -165,7 +165,7 @@ const drivers = [
   {
     id: 20,
     name: "Gabriel Bortoleto",
-    img: "/images/drivers/borto-site.png",
+    img: "/images/drivers/gabbor01.avif",
     team: "Stake F1 team",
     logoImg: "\/images\/team-logos\/stake-logo.svg",
     customImageWidth: "40px"

@@ -84,7 +84,7 @@ const PostSectionTen = ({ postData }) => {
                             </div>
                             <div className="post-content">
                               <div className="post-cat">
-                                <div className="post-cat-list">
+                                <div className="post-cat-list" style={{margin: 0}}>
                                   <Link href={`/category/${slugify(data.cate)}`}>
                                     <span className="hover-flip-item">
                                       <span data-text={data.cate}>{data.cate}</span>

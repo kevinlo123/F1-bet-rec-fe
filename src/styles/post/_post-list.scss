@@ -779,6 +779,11 @@ Post List Style
                 margin-right: 10px;
                 min-width: 70px;
             }
+            span {
+                img {
+                    object-fit: cover;
+                }
+            }
             a {
                 img {
                     width: 100%;
