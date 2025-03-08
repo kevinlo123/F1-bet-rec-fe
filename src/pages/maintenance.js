@@ -30,7 +30,7 @@ const Maintenance = () => {
                                     </Link>
                                 </div>
                                 <h1 className="title">We're Building Something Exciting!</h1>
-                                <h5>Our platform is currently under maintanence, but we’re working hard to bring you the best source for all things Formula 1 and more!.</h5>
+                                <h5>Our platform is currently under maintanence, but we&rsquo;re working hard to bring you the best source for all things Formula 1 and more!.</h5>
                                 <p>Stay tuned—something fast is coming soon.</p>
                                 <div className="inner d-flex align-items-center flex-wrap">
                                     <h5 className="follow-title mb--0 mr--20">Follow Us</h5>
