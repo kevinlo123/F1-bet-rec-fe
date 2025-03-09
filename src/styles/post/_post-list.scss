@@ -13,7 +13,7 @@ Post List Style
         position: relative;
         a {
             display: block;
-            overflow: hidden;
+            overflow: visible;
             border-radius: var(--radius);
             span {
                 display: block !important;
