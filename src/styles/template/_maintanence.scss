@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     height: 770px;
+
     @media #{$md-layout} {
         height: auto;
         padding: 100px 0;
@@ -19,6 +20,11 @@
     .content {
         .logo {
             margin-bottom: 40px;
+
+            @media #{$medium} {
+                display: none;
+            }
+
             @media #{$md-layout} {
                 margin-bottom: 20px;
             }
@@ -87,6 +93,18 @@
 
 .maintanence-area .content .logo a img.light-logo {
     display: none;
+}
+
+.maintenance-bg {
+    background-color: #e4e4e4 !important;
+}
+
+.logo-top-mb {
+    display: none;
+    
+    @media #{$medium} {
+        display: block;
+    }
 }
 
 

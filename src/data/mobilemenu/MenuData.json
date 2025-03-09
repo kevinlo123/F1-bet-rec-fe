@@ -1,29 +1,7 @@
 [
     {
         "label": "Home",
-        "path": "#",
-        "submenu": [
-            {
-                "sublabel": "Home Default",
-                "subpath": "/"
-            },
-            {
-                "sublabel": "Home Creative Blog",
-                "subpath": "/creative-blog"
-            },
-            {
-                "sublabel": "Home SEO Blog",
-                "subpath": "/seo-blog"
-            },
-            {
-                "sublabel": "Home Tech Blog",
-                "subpath": "/tech-blog"
-            },
-            {
-                "sublabel": "Home Lifestyle Blog",
-                "subpath": "/lifestyle-blog"
-            }
-        ]
+        "path": "#"
     },
     {
         "label": "F1 News",
@@ -37,11 +15,11 @@
         "label": "F1 Standings",
         "submenu": [
             {
-                "sublabel": "Drivers",
+                "sublabel": "- Drivers",
                 "subpath": "/driver-standings"
             },
             {
-                "sublabel": "Constructors",
+                "sublabel": "- Constructors",
                 "subpath": "/constructor-standings"
             }
         ]

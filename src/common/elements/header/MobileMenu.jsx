@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link'
 import MenuData from '../../../data/mobilemenu/MenuData.json';
 
-const MobileMenu = ({menuShow, menuHide}) => {
+const MobileMenu = ({menuShow, menuHide, theme}) => {
     if (typeof window !== "undefined") {
         var colorMode = window.localStorage.getItem('color-mode');
     }
@@ -27,14 +27,12 @@ const MobileMenu = ({menuShow, menuHide}) => {
             <div className="logo">
                 <Link href="/">
                     <a>
-                        {/* <Image
-                        className="dark-logo"
-                        width={141}
-                        height={37}
-                        src={colorMode === "Dark" ?  "/images/logo/f1(2)_processed.png" :  "/images/logo/f1(2)light_processed.png"  }
-                        alt="Blogar logo"
-                        /> */}
-                       <h2 className="title">F1 Press News</h2>
+                        <Image 
+                            src={theme === "dark" ? '/images/logo/logo-black-bg.png' : '/images/logo/logo-white-bg.png'}
+                            alt="F1 press news logo"
+                            height={200}
+                            width={125}
+                        />
                     </a>
                 </Link>
             </div>

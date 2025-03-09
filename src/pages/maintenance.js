@@ -11,6 +11,19 @@ const Maintenance = () => {
             <div className="maintanence-area">
                 <div className="container">
                     <div className="row align-items-center">
+                        <div className="logo-top-mb">
+                            <Link href="/">
+                                <a>
+                                    <Image
+                                        className="dark-logo"
+                                        width={153}
+                                        height={40}
+                                        src={'/images/logo/logo-white-bg.png'}
+                                        alt="Blogar logo"
+                                    />
+                                </a>
+                            </Link>
+                        </div>
                         <div className="order-2 order-lg-1 col-lg-6 mt_md--40 mt_sm--40">
                             <div className="content">
                                 <div className="logo">

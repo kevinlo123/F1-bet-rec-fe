@@ -143,30 +143,20 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                   </ul>
                 </div>
               </div>
-              {/* <div className="col-lg-6 col-md-4 col-sm-12">
-                <ul className="social-share-transparent md-size justify-content-center justify-content-md-end">
+              <div className="col-lg-6 col-md-4 col-sm-12">
+                <ul className="social-share-transparent md-size justify-content-start justify-content-md-end">
                   <li>
-                    <a href={SocialData.fb.url}>
-                      <i className={SocialData.fb.icon} />
-                    </a>
-                  </li>
-                  <li>
-                    <a href={SocialData.instagram.url}>
-                      <i className={SocialData.instagram.icon} />
-                    </a>
-                  </li>
-                  <li>
-                    <a href={SocialData.twitter.url}>
+                    <a href={'https://x.com/F1PressNews_'}>
                       <i className={SocialData.twitter.icon} />
                     </a>
                   </li>
                   <li>
-                    <a href={SocialData.linked.url}>
-                      <i className={SocialData.linked.icon} />
+                    <a href={'https://x.com/F1PressNews_'}>
+                      <i className={SocialData.discord.icon} />
                     </a>
                   </li>
                 </ul>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -305,7 +295,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
         </div>
       </header>
 
-      <MobileMenu menuShow={showMMenu} menuHide={MobileHideHandler} />
+      <MobileMenu menuShow={showMMenu} theme={colorMode} menuHide={MobileHideHandler} />
     </>
   );
 };

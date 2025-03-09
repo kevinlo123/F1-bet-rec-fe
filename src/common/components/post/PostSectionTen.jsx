@@ -68,7 +68,7 @@ const PostSectionTen = ({ postData }) => {
                         tabPostData.slice(0, 4).map((data) => (
                           <div className="content-block post-medium post-medium-border border-thin" key={data.id}>
                             <div className="post-thumbnail">
-                              <Link href={`/post/${data.id}`}>
+                              <a href={`/post/${data.id}`}>
                                 {data.feature_img ? (
                                   <Image
                                     src={`${apiUrl}${data.feature_img.thumb.url}`}
@@ -80,7 +80,7 @@ const PostSectionTen = ({ postData }) => {
                                 ) : (
                                   <p>Image not available</p>
                                 )}
-                              </Link>
+                              </a>
                             </div>
                             <div className="post-content">
                               <div className="post-cat">

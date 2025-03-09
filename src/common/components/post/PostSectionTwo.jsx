@@ -300,7 +300,7 @@ const PostSectionTwo = ({ adBanner, headingTitle }) => {
                             </div>
                             {data.img && (
                               <div className="post-thumbnail">
-                                <Link href={`/post/`}>
+                                <a href={`/post/`}>
                                   <Image
                                     src={data.img}
                                     alt={data.name}
@@ -308,7 +308,7 @@ const PostSectionTwo = ({ adBanner, headingTitle }) => {
                                     width={390}
                                     priority={true}
                                   />
-                                </Link>
+                                </a>
                               </div>
                             )}
                           </div>
