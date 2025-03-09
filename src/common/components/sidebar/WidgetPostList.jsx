@@ -6,8 +6,8 @@ const WidgetPostList = ({ postData }) => {
     <div className="axil-single-widget widget widget_postlist mb--30">
       <h5 className="widget-title">Popular on Blogar</h5>
       <div className="post-medium-block">
-        {postData.slice(0, 3).map((data) => (
-          <div className="content-block post-medium mb--20" key={data.id}>
+        {postData.slice(0, 3).map((data, i) => (
+          <div className="content-block post-medium mb--20" key={i}>
 			  {data.featureImg ? 
             <div className="post-thumbnail">
               <Link href={`/post/${data.slug}`}>

@@ -3,7 +3,7 @@ import WidgetInstagramPost from "./WidgetInstagramPost";
 import WidgetPostList from "./WidgetPostList";
 import WidgetSearch from "./WidgetSearch";
 import WidgetSocialShare from "./WidgetSocialShare";
-import TwitterFeed from '../TwitterFeed/TwitterFeed';
+// import TwitterFeed from '../TwitterFeed/TwitterFeed';
 import WidgetAd from "./WidgetAd";
 
 const SidebarOne = ({dataPost}) => {
@@ -11,7 +11,6 @@ const SidebarOne = ({dataPost}) => {
     <div className="sidebar-inner">
       <WidgetPostList postData={dataPost}/>
       <WidgetSocialShare />
-      <TwitterFeed />
       <div style={{marginTop: '3.5rem'}}>
         <WidgetAd
           url="https://example.com/"

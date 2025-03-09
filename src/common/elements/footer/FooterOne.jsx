@@ -134,6 +134,11 @@ const FooterOne = () => {
                       <i className="fa-brands fa-x-twitter" />
                     </a>
                   </li>
+                  <li>
+                    <a href="https://x.com/F1PressNews_">
+                      <i className="fa-brands fa-discord" />
+                    </a>
+                  </li>
                 </ul>
               </div>
               {/* End Post List  */}
