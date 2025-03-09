@@ -6,7 +6,7 @@ import PostLayoutOne from "./layout/PostLayoutOne";
 const PostSectionOne = ({postData}) => {
     const hoverRef = useRef('');
     HoverActiveClass(hoverRef);
-
+    
     return ( 
         <div className="axil-featured-post axil-section-gap bg-color-grey">
             <div className="container">

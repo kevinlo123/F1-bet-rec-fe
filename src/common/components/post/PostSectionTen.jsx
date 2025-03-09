@@ -71,7 +71,7 @@ const PostSectionTen = ({ postData }) => {
                               <Link href={`/post/${data.id}`}>
                                 {data.feature_img ? (
                                   <Image
-                                    src={`${apiUrl}${data.feature_img.url}`}
+                                    src={`${apiUrl}${data.feature_img.thumb.url}`}
                                     alt={data.title}
                                     height={100}
                                     width={100}
