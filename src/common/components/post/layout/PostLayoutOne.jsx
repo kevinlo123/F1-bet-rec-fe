@@ -3,20 +3,21 @@ import Image from "next/image";
 import { slugify } from "../../../utils";
 
 const PostLayoutOne = ({ postData, itemShow }) => {
-
-  const featuredPost = postData.filter(post => post.featured === true );
+  const local = "http://localhost:3000";
+  const prod = "https://limitless-escarpment-05345-1ca012576c29.herokuapp.com";
+  const apiUrl = typeof window !== "undefined" && window.location.hostname === "localhost" ? local : prod;
 
   return (
     <>
-      {featuredPost.slice(0, itemShow).map((data) => (
+      {postData.slice(0, itemShow).map((data, i) => (
         <div
           className="col-lg-6 col-xl-6 col-md-12 col-12 mt--30"
-          key={data.slug}>
+          key={i}>
           <div className="content-block content-direction-column post-horizontal thumb-border-rounded">
             <div className="post-content">
               <div className="post-cat">
                 <div className="post-cat-list">
-                  <Link href={`/category/${slugify(data.cate)}`}>
+                  <Link href={`/category/${data.cate}`}>
                     <a className="hover-flip-item-wrapper">
                       <span className="hover-flip-item">
                         <span data-text={data.cate}>{data.cate}</span>
@@ -26,44 +27,25 @@ const PostLayoutOne = ({ postData, itemShow }) => {
                 </div>
               </div>
               <h4 className="title">
-                <Link href={`/post/${data.slug}`}>
+                <Link href={`/post/${data.id}`}>
                   <a>{data.title}</a>
                 </Link>
               </h4>
               <div className="post-meta">
-                <div className="post-author-avatar border-rounded">
-                  <Image
-                    src={data.author_img}
-                    alt={data.author_name}
-                    height={50}
-                    width={50}
-                  />
-                </div>
                 <div className="content">
-                  <h6 className="post-author-name">
-                    <Link href={`/author/${slugify(data.author_name)}`}>
-                      <a className="hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
-                          <span data-text={data.author_name}>
-                            {data.author_name}
-                          </span>
-                        </span>
-                      </a>
-                    </Link>
-                  </h6>
                   <ul className="post-meta-list">
-                    <li>{data.date}</li>
-                    <li>{data.post_views}</li>
+                    <li>Published: {data.date}</li>
+                    <li>{data.post_views} views</li>
                   </ul>
                 </div>
               </div>
             </div>
-            {data.featureImg ? 
+            {data.feature_img ? 
             <div className="post-thumbnail">
-              <Link href={`/post/${data.slug}`}>
+              <Link href={`/post/${data.id}`}>
                 <a>
                   <Image
-                    src={data.featureImg}
+                    src={`${apiUrl}${data.feature_img.thumb.url}`}
                     alt={data.title}
                     height={250}
                     width={250}
