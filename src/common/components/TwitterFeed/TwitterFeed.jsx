@@ -1,27 +1,36 @@
 import { useEffect } from "react";
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
 const TwitterFeed = () => {
-  useEffect(() => {
-    if (!window.twttr) {
-      const script = document.createElement("script");
-      script.src = "https://platform.twitter.com/widgets.js";
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      window.twttr.widgets.load();
-    }
-  }, []);
+  // useEffect(() => {
+  //   const scriptId = "twitter-wjs";
+  //   const existingScript = document.getElementById(scriptId);
+
+  //   if (!existingScript) {
+  //     const script = document.createElement("script");
+  //     script.id = scriptId;
+  //     script.src = "https://platform.twitter.com/widgets.js";
+  //     script.async = true;
+  //     document.body.appendChild(script);
+
+  //     script.onload = () => {
+  //       if (window.twttr) {
+  //         window.twttr.widgets.load();
+  //       }
+  //     };
+  //   } else {
+  //     // If script already exists, force reload the Twitter widget
+  //     window.twttr?.widgets?.load();
+  //   }
+  // }, []);
 
   return (
     <div>
-      <a
-        className="twitter-timeline"
-        href="https://twitter.com/F1PressNews_"
-        data-theme="dark"
-        data-height="500"
-      >
-        Tweets by F1PressNews
-      </a>
+      <TwitterTimelineEmbed
+        sourceType="profile"
+        screenName="F1PressNews_"
+        options={{height: 400}}
+      />
     </div>
   );
 };
