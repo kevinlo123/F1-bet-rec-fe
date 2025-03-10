@@ -5,6 +5,7 @@ import HeadTitle from "../common/elements/head/HeadTitle";
 import HeaderFour from "../common/elements/header/HeaderFour";
 import PostSectionOne from "../common/components/post/PostSectionOne";
 import React, { useState, useEffect } from 'react';
+import CategoryList from "../common/components/category/CategoryList";
 
 const News = ({allPosts}) => {
     const [posts, setPosts] = useState([]);
@@ -36,8 +37,9 @@ const News = ({allPosts}) => {
         <>
             <HeadTitle pageTitle="F1 News" />
             <HeaderFour postData={allPosts} />
-            <PostSectionFour postData={allPosts} adBanner={true} />
+            <PostSectionFour postData={posts} adBanner={true} />
             <PostSectionOne postData={posts}/>
+            <CategoryList />
             <FooterOne />
         </>
     );
