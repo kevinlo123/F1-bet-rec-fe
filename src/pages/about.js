@@ -1,19 +1,46 @@
 import InstagramOne from "../common/components/instagram/InstagramOne";
 import BreadcrumbTwo from "../common/elements/breadcrumb/breadcrumbTwo";
-import FooterThree from "../common/elements/footer/FooterThree";
-import HeaderOne from "../common/elements/header/HeaderOne";
+import FooterOne from "../common/elements/footer/FooterOne";
+import HeaderFour from "../common/elements/header/HeaderFour";
 import { getAllPosts } from '../../lib/api';
 import WidgetCategory from "../common/components/sidebar/WidgetCategory";
 import WidgetSearch from "../common/components/sidebar/WidgetSearch";
 import WidgetPostList from "../common/components/sidebar/WidgetPostList";
 import WidgetSocialShare from "../common/components/sidebar/WidgetSocialShare";
 import HeadTitle from "../common/elements/head/HeadTitle";
+import CategoryList from "../common/components/category/CategoryList";
+import React, { useState, useEffect } from 'react';
 
 const AboutUs = ({allPosts}) => {
+      const [posts, setPosts] = useState([]);
+    
+      useEffect(() => {
+        const fetchPostsData = async () => {
+          try {
+            const local = 'http://localhost:3000/api/v1';
+            const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1';
+            const apiUrl = window.location.hostname === 'localhost' ? local : prod;
+      
+            const response = await fetch(`${apiUrl}/posts`);        
+            
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+      
+            const postsData = await response.json(); 
+            setPosts(postsData);  
+          } catch (error) {
+            console.error('Error loading posts:', error);
+          }
+        };
+      
+        fetchPostsData();
+      }, []);
+      
     return (
         <>
         <HeadTitle pageTitle="About Us" />
-            <HeaderOne postData={allPosts} />
+            <HeaderFour postData={allPosts} />
             <BreadcrumbTwo
                 title="About Us"
                 paragraph="Wherever &amp; whenever you need us. We are here for you – contact us for all your support needs. <br />
@@ -43,9 +70,9 @@ const AboutUs = ({allPosts}) => {
                         </div>
                         <div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
                             <div className="sidebar-inner">
-                                <WidgetCategory catData={allPosts} />
+                                <WidgetCategory catData={posts} />
                                 <WidgetSearch />
-                                <WidgetPostList postData={allPosts} />
+                                <WidgetPostList postData={posts} />
                                 <WidgetSocialShare />
                             </div>
                         </div>
@@ -53,8 +80,8 @@ const AboutUs = ({allPosts}) => {
                 </div>
             </div>
 
-            <InstagramOne parentClass="bg-color-grey" />
-            <FooterThree />
+            <CategoryList />
+            <FooterOne />
         </>
     );
 }

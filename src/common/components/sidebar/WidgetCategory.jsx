@@ -9,7 +9,7 @@ const WidgetCategory = ({ catData }) => {
   return (
     <div className="axil-single-widget widget widget_categories mb--30">
       <ul>
-        {uniqueCategory.slice(0, 4).map((data) => (
+        {uniqueCategory.map((data) => (
           <li className="cat-item" key={data.id}>
             <Link href={`/category/${slugify(data.cate)}`}>
               <a className="inner">

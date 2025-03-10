@@ -9,28 +9,29 @@ import PostFormatVideo from '../../common/components/post/format/PostFormatVideo
 import PostFormatGallery from '../../common/components/post/format/PostFormatGallery';
 import PostFormatAudio from '../../common/components/post/format/PostFormatAudio';
 import PostFormatQuote from '../../common/components/post/format/PostFormatQuote';
+import CategoryList from '../../common/components/category/CategoryList';
 
 const PostDetails = ({ post, allPosts }) => {
-  const PostFormatHandler = () => {
-    if (post.postFormat === 'video') {
-      return <PostFormatVideo postData={post} allData={allPosts} />;
-    } else if (post.postFormat === 'gallery') {
-      return <PostFormatGallery postData={post} allData={allPosts} />;
-    } else if (post.postFormat === 'audio') {
-      return <PostFormatAudio postData={post} allData={allPosts} />;
-    } else if (post.postFormat === 'quote') {
-      return <PostFormatQuote postData={post} allData={allPosts} />;
-    } else {
-      return <PostFormatStandard postData={post} allData={allPosts} />;
-    }
-  };
+  // const PostFormatHandler = () => {
+  //   if (post.postFormat === 'video') {
+  //     return <PostFormatVideo postData={post} allData={allPosts} />;
+  //   } else if (post.postFormat === 'gallery') {
+  //     return <PostFormatGallery postData={post} allData={allPosts} />;
+  //   } else if (post.postFormat === 'audio') {
+  //     return <PostFormatAudio postData={post} allData={allPosts} />;
+  //   } else if (post.postFormat === 'quote') {
+  //     return <PostFormatQuote postData={post} allData={allPosts} />;
+  //   } else {
+  //     return <PostFormatStandard postData={post} allData={allPosts} />;
+  //   }
+  // };
 
   return (
     <>
       <HeaderFour postData={allPosts} />
       <HeadTitle pageTitle={post.title} />
-	  <PostFormatStandard postData={post} allData={allPosts} />
-	  <InstagramOne parentClass="bg-color-extra03" />
+      <PostFormatStandard postData={post} allData={allPosts} />
+      <CategoryList />
       <FooterOne />
     </>
   );

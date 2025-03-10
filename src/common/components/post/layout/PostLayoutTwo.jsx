@@ -1,39 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
 import { slugify } from "../../../utils";
-const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => { 
+const PostLayoutTwo = ({ dataPost, bgColor }) => { 
+  const local = "http://localhost:3000";
+  const prod = "https://limitless-escarpment-05345-1ca012576c29.herokuapp.com";
+  const apiUrl = typeof window !== "undefined" && window.location.hostname === "localhost" ? local : prod;
+
   return (
     <>
-      {dataPost.slice(postStart || 0, show).map((data) => (
+      {dataPost.map((data, i) => (
         <div
           className={`content-block post-list-view axil-control mt--30 ${bgColor || ""} ${data.sticky === true ? "sticky": ""} ${data.postFormat === 'quote' ? "format-quote" : ""}`}
-          key={data.slug}
+          key={i}
         >
-			{data.featureImg ? 
-			<div className="post-thumbnail">
-				<Link href={`/post/${data.slug}`}>
-				<a>
-					<Image
-					src={data.featureImg}
-					alt={data.title}
-					height={250}
-					width={295}
-					priority={true}
-					/>
-				</a>
-				</Link>
-				{data.playBtn === true ? 
-				<Link href={`/post/${data.slug}`}>
-					<a className="video-popup size-medium position-top-center icon-color-secondary"><span className="play-icon"></span></a>
-				</Link>
-				: ""}
-			</div>
-			: "" }
+        {data.feature_img ? 
+        <div className="post-thumbnail">
+          <Link href={`/post/${data.id}`}>
+          <a>
+            <Image
+            src={`${apiUrl}${data.feature_img.url}`}
+            alt={data.title}
+            height={250}
+            width={295}
+            priority={true}
+            />
+          </a>
+          </Link>
+          {data.playBtn === true ? 
+          <Link href={`/post/${data.slug}`}>
+            <a className="video-popup size-medium position-top-center icon-color-secondary"><span className="play-icon"></span></a>
+          </Link>
+          : ""}
+        </div>
+        : "" }
 
           <div className="post-content">
             <div className="post-cat">
               <div className="post-cat-list">
-                <Link href={`/category/${slugify(data.cate)}`}>
+                <Link href={`/category/${data.cate}`}>
                   <a className="hover-flip-item-wrapper">
                     <span className="hover-flip-item">
                       <span data-text={data.cate}>{data.cate}</span>
@@ -45,32 +49,21 @@ const PostLayoutTwo = ({ dataPost, postStart, show, bgColor }) => {
 			{data.postFormat === 'quote' ? 
 			<blockquote>
 				<h4 className="title">
-				<Link href={`/post/${data.slug}`}>
+				<Link href={`/post/${data.id}`}>
 					<a>{data.title}</a>
 				</Link>
 				</h4>
 			</blockquote> : 
 			<h4 className="title">
-              <Link href={`/post/${data.slug}`}>
+              <Link href={`/post/${data.id}`}>
                 <a>{data.title}</a>
               </Link>
             </h4>}
             <div className="post-meta-wrapper">
               <div className="post-meta">
                 <div className="content">
-                  <h6 className="post-author-name">
-                    <Link href={`/author/${slugify(data.author_name)}`}>
-                      <a className="hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
-                          <span data-text={data.author_name}>
-                            {data.author_name}
-                          </span>
-                        </span>
-                      </a>
-                    </Link>
-                  </h6>
                   <ul className="post-meta-list">
-                    <li>{data.date}</li>
+                    <li>Published: {data.date}</li>
                     <li>{data.read_time}</li>
                   </ul>
                 </div>

@@ -79,7 +79,7 @@ const FooterOne = () => {
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="#">About Us</a>
+                      <a href="/about">About Us</a>
                     </li>
                     <li>
                       <a href="#">Contact</a>
@@ -94,10 +94,10 @@ const FooterOne = () => {
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="#">Login</a>
+                      <a href="/login">Login</a>
                     </li>
                     <li>
-                      <a href="#">Signup</a>
+                      <a href="/signup">Signup</a>
                     </li>
                   </ul>
                 </div>

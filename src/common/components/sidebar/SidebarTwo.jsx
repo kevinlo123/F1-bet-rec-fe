@@ -12,7 +12,6 @@ const SidebarTwo = ({ dataPost, tagData }) => {
       <WidgetCategory catData={dataPost} />
       <WidgetSearch />
       <WidgetPostList postData={dataPost} />
-      <WidgetNewsletter />
       <WidgetAd
         url="https://example.com/"
         image="/images/post-single/ads-01.webp"
@@ -20,7 +19,6 @@ const SidebarTwo = ({ dataPost, tagData }) => {
         width={390}
       />
       <WidgetSocialShare />
-      <WidgetInstagramPost />
       <WidgetAd
         url="https://example.com/"
         image="/images/add-banner/banner-02.webp"
