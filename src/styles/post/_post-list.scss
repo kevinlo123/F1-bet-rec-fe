@@ -6,6 +6,15 @@ Post List Style
 }
 .slick-single-layout {
     padding: 0 15px;
+
+    .post-thumbnail {
+        a {
+            img {
+                overflow: visible;
+                object-fit: contain !important;
+            }
+        }
+    }
 }
 
 .content-block {
@@ -13,7 +22,7 @@ Post List Style
         position: relative;
         a {
             display: block;
-            overflow: visible;
+            overflow: hidden;
             border-radius: var(--radius);
             span {
                 display: block !important;

@@ -5,10 +5,15 @@ const WidgetSocialShare = () => {
   return (
     <div className="axil-single-widget widget widget_social mb--30">
       <h5 className="widget-title">Stay In Touch</h5>
-      <ul className="social-icon md-size justify-content-start">
+      <ul className="social-icon md-size justify-content-center">
         <li>
           <a href={'https://x.com/F1PressNews_'}>
             <i className={SocialData.twitter.icon} />
+          </a>
+        </li>
+        <li>
+          <a href={'https://x.com/F1PressNews_'}>
+            <i className={SocialData.discord.icon} />
           </a>
         </li>
       </ul>
