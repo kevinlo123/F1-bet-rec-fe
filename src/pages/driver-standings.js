@@ -9,8 +9,35 @@ import driverData from '../data/drivers/driverStandings.json'
 import Nav from "react-bootstrap/Nav";
 import PostComment from "../common/components/post/format/element/PostComment";
 import CategoryList from '../common/components/category/CategoryList';
+import PostSectionOne from '../common/components/post/PostSectionOne';
+import React, { useState, useEffect } from 'react';
 
 const DriverStandings = ({allPosts}) => {
+    const [posts, setPosts] = useState([]);
+    
+    useEffect(() => {
+        const fetchPostsData = async () => {
+        try {
+            const local = 'http://localhost:3000/api/v1';
+            const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1';
+            const apiUrl = window.location.hostname === 'localhost' ? local : prod;
+    
+            const response = await fetch(`${apiUrl}/posts`);        
+            
+            if (!response.ok) {
+            throw new Error('Network response was not ok');
+            }
+    
+            const postsData = await response.json(); 
+            setPosts(postsData);  
+        } catch (error) {
+            console.error('Error loading posts:', error);
+        }
+        };
+    
+        fetchPostsData();
+    }, []);
+
     return (
         <>
             <HeadTitle pageTitle="Driver Standings" />
@@ -55,6 +82,7 @@ const DriverStandings = ({allPosts}) => {
                     <div className='mt--80'>
                         <PostComment />
                     </div>
+                    <PostSectionOne postData={posts}/>
                     <CategoryList />
                 </div>
             </div>
