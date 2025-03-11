@@ -210,6 +210,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                           placeholder="Search"
                           value={searchQuery || ""}
                           onChange={(e) => setSearchQuery(e.target.value)}
+                          required
                         />
                     </div>
                   </form>
@@ -228,6 +229,7 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                           placeholder="Search"
                           value={searchQuery || ""}
                           onChange={(e) => setSearchQuery(e.target.value)}
+                          required
                         />
                       </div>
                     </form>
