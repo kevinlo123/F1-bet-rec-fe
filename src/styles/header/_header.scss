@@ -190,10 +190,6 @@ Search Styles
         display: inline-block;
         display: block;
 
-        @media #{$smlg-device} {
-            display: none;
-        }
-
         input {
             background: var(--color-lightest);
             border-radius: 44px;
@@ -530,6 +526,18 @@ button {
                 padding: 10px 0;
             }
         }
+
+        .mobile-search-wrapper {
+            @media #{$large-mobile} {
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 399px) {
+            .mobile-search-wrapper {
+                display: none !important;
+            }
+          }
 
         .metabar-block {
             li {

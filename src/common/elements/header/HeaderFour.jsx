@@ -9,6 +9,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 // import logoWhite from '/images/logo/logo-white-bg.png';
 // import logoBlack from '/images/logo/black-bg.png';
 import { useColorMode } from '../../../contexts/ColorModeContext'; // Import the custom hook
+import { useRouter } from 'next/router';
 
 const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
   const [profilePic, setProfilePic] = useState('');
@@ -18,6 +19,16 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
   const { colorMode } = useColorMode(); // Get the current color mode
 
   const { getUserData } = useContext(AuthContext);
+
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim() !== '') {
+      router.push(`/search-results?query=${encodeURIComponent(searchQuery)}`);
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -186,26 +197,10 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-4 col-lg-8 col-md-8 col-6">
+              <div className="col-xl-4 col-lg-8 col-md-8 col-6 pl--0">
                 <div className="header-search d-flex flex-wrap align-items-center justify-content-end justify-content-xl-end">
-                  <form className="header-search-form d-sm-block d-none">
+                  <form className="header-search-form d-none d-lg-block" onSubmit={handleSearch}>
                     <div className="axil-search form-group">
-                      <button type="submit" className="search-button">
-                        <i className="fal fa-search" />
-                      </button>
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Search"
-                      />
-                    </div>
-                  </form>
-                  <div className="mobile-search-wrapper d-sm-none d-block">
-                    {/* <button className="search-button-toggle" onClick={toggleHandler}>
-                      <i className="fal fa-search" />
-                    </button> */}
-                    <form className={`header-search-form ${togglaClass ? "open": ""}`}>
-                      <div className="axil-search form-group">
                         <button type="submit" className="search-button">
                           <i className="fal fa-search" />
                         </button>
@@ -213,6 +208,26 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                           type="text"
                           className="form-control"
                           placeholder="Search"
+                          value={searchQuery || ""}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                    </div>
+                  </form>
+                  <div className="mobile-search-wrapper d-lg-none d-block">
+                    <button className="search-button-toggle" onClick={toggleHandler}>
+                      <i className="fal fa-search" />
+                    </button>
+                    <form className={`header-search-form ${togglaClass ? "open": ""}`} onSubmit={handleSearch}>
+                      <div className="axil-search form-group">
+                        <button  type="submit" className="search-button">
+                          <i className="fal fa-search" />
+                        </button>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Search"
+                          value={searchQuery || ""}
+                          onChange={(e) => setSearchQuery(e.target.value)}
                         />
                       </div>
                     </form>
@@ -227,13 +242,13 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                             </a>
                           </Link>
                         </li> */}
-                        <li className="icon">
+                        {/* <li className="icon">
                           <Link href="#">
                             <a>
                               <i className="fas fa-bell" />
                             </a>
                           </Link>
-                        </li> 
+                        </li>  */}
                         <li>
                           {/* <Link href="#">
                             <a>
