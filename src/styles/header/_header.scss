@@ -541,7 +541,9 @@ button {
 
         .metabar-block {
             li {
-                margin-left: 10px;
+                @media #{$large-mobile} {
+                    margin: 0;
+                }
                 &.icon {
                     a {
                         color: #050505;
