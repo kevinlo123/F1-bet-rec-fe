@@ -177,7 +177,7 @@ const drivers = [
     name: "Nico Hulkenberg",
     img: "/images/drivers/nichul01.avif",
     team: "Stake F1 team",
-    logoImg: "\/images\/team-logos\/stake-logo.svg",
+    logoImg: "\/images\/team-logos\/stake-f1-team-logo.svg",
     customImageWidth: "40px",
     color: "#52e252"
   },
@@ -186,7 +186,7 @@ const drivers = [
     name: "Gabriel Bortoleto",
     img: "/images/drivers/gabbor01.avif",
     team: "Stake F1 team",
-    logoImg: "\/images\/team-logos\/stake-logo.svg",
+    logoImg: "\/images\/team-logos\/stake-f1-team-logo.svg",
     customImageWidth: "40px",
     color: "#52e252"
   }

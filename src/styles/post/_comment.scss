@@ -69,12 +69,15 @@
                 img {
                     border-radius: 100%;
                     width: 100%;
+                    object-fit: cover;
                 }
             }
         }
         .commenter {
             margin-bottom: 4px;
             line-height: 18px;
+            display: flex;
+            align-items: center;            
             a {
                 .hover-flip-item {
                     span {
