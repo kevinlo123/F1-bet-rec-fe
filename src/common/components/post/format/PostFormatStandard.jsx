@@ -23,7 +23,7 @@ const PostFormatStandard = ({ postData, allData}) => {
               <div className="axil-post-details">
                 <div className="post-details-content">{postData.top_content}</div>
                 <PostTagShare postTags={postData}/>
-                <PostComment />
+                <PostComment postId={postData.id}  />
               </div>
             </div>
             <div className="col-lg-4">

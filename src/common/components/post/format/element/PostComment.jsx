@@ -1,234 +1,206 @@
+import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { slugify } from "../../../../utils";
+import { AuthContext } from "../../../../../contexts/AuthContext";
 
-const PostComment = () => {
+const PostComment = ({ postId }) => {
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const local = "http://localhost:3000";
+  const prod = "https://limitless-escarpment-05345-1ca012576c29.herokuapp.com";
+  const apiUrl = typeof window !== "undefined" && window.location.hostname === "localhost" ? local : prod;
+  const { isAuthenticated } = useContext(AuthContext); 
+  const [commentContent, setCommentContent] = useState("");
+
+  const fetchCommentsData = async () => {
+    if (!postId) return;
+
+    try {
+      const response = await fetch(`${apiUrl}/api/v1/posts/${postId}/comments/`);
+      if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
+
+      const commentsData = await response.json();
+      setComments(commentsData);
+    } catch (err) {
+      console.error("Error loading comments:", err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchCommentsData();
+  }, [postId]);
+
+  const handleCommentChange = (e) => {
+    setCommentContent(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!commentContent) return;
+    const commentData = { content: commentContent };
+
+    try {
+      const response = await fetch(`${apiUrl}/api/v1/posts/${postId}/comments/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
+        },
+        body: JSON.stringify(commentData),
+      });
+
+      if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
+      const newComment = await response.json();
+
+      setComments((prevComments) => [newComment.comment, ...prevComments]);
+      setCommentContent(""); 
+      fetchCommentsData();
+
+    } catch (err) {
+      console.error("Error submitting comment:", err);
+      setError(err.message);
+    }
+  };
+
+  const getTeamLogo = (teamName) => {
+    if (!teamName) return null;
+    const formattedName = teamName.toLowerCase().replace(/\s+/g, "-");
+  
+    if (formattedName.includes("stake")) {
+      return `/images/team-logos/${formattedName}-logo.svg`;
+    }
+  
+    return `/images/team-logos/${formattedName}-logo.png`;
+  };
+
   return (
     <div className="axil-comment-area">
       <div className="axil-total-comment-post">
-        <div className="title">
-          <h4 className="mb--0">30+ Comments</h4>
-        </div>
-        <div className="add-comment-button cerchio">
-            <Link href="#">
-                <a className="axil-button button-rounded">
-                    <span>Add Your Comment</span>
-                </a>
+        {!isAuthenticated ? (
+          <div className="add-comment-button cerchio">
+            <Link href="/login">
+              <a className="axil-button button-rounded">
+                <span>Login to Comment</span>
+              </a>
             </Link>
-        </div>
-      </div>
-      {/* Start Comment Area  */}
-      <div className="axil-comment-area">
-        <h4 className="title mt--20">2 comments</h4>
-        <ul className="comment-list">
-          {/* Start Single Comment  */}
-          <li className="comment">
-            <div className="comment-body">
-              <div className="single-comment">
-                <div className="comment-img">
-                <Image
-                    src="/images/posts/author/author-b4.webp"
-                    alt="Rahabi Khan"
-                    height={60}
-                    width={60}
-                  />
-                </div>
-                <div className="comment-inner">
-                  <h6 className="commenter">
-                    <Link href={`/author/${slugify("Jone Doe")}`}>
-                      <a className="hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
-                          <span data-text="Jone Doe">
-                          Jone Doe
-                          </span>
-                        </span>
-                      </a>
-                    </Link>
-                  </h6>
-                  <div className="comment-meta">
-                    <div className="time-spent">Nov 23, 2018 at 12:23 pm</div>
-                    <div className="reply-edit">
-                      <div className="reply">
-                        <a
-                          className="comment-reply-link hover-flip-item-wrapper"
-                          href="#"
-                        >
-                          <span className="hover-flip-item">
-                            <span data-text="Reply">Reply</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="comment-text">
-                    <p className="b2">
-                      Duis hendrerit velit scelerisque felis tempus, id porta
-                      libero venenatis. Nulla facilisi. Phasellus viverra magna
-                      commodo dui lacinia tempus. Donec malesuada nunc non dui
-                      posuere, fringilla vestibulum urna mollis. Integer
-                      condimentum ac sapien quis maximus.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <ul className="children">
-              {/* Start Single Comment  */}
-              <li className="comment">
-              <div className="comment-body">
-              <div className="single-comment">
-                <div className="comment-img">
-                <Image
-                    src="/images/posts/author/author-b5.webp"
-                    alt="Rahabi Khan"
-                    height={60}
-                    width={60}
-                  />
-                </div>
-                <div className="comment-inner">
-                  <h6 className="commenter">
-                    <Link href={`/author/${slugify("Fatima Jane")}`}>
-                      <a className="hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
-                          <span data-text="Fatima Jane">
-                          Fatima Jane
-                          </span>
-                        </span>
-                      </a>
-                    </Link>
-                  </h6>
-                  <div className="comment-meta">
-                    <div className="time-spent">Nov 23, 2018 at 12:23 pm</div>
-                    <div className="reply-edit">
-                      <div className="reply">
-                        <a
-                          className="comment-reply-link hover-flip-item-wrapper"
-                          href="#"
-                        >
-                          <span className="hover-flip-item">
-                            <span data-text="Reply">Reply</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="comment-text">
-                    <p className="b2">
-                      Duis hendrerit velit scelerisque felis tempus, id porta
-                      libero venenatis. Nulla facilisi. Phasellus viverra magna
-                      commodo dui lacinia tempus. Donec malesuada nunc non dui
-                      posuere, fringilla vestibulum urna mollis. Integer
-                      condimentum ac sapien quis maximus.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-              </li>
-              {/* End Single Comment  */}
-            </ul>
-          </li>
-          {/* End Single Comment  */}
-          {/* Start Single Comment  */}
-          <li className="comment">
-            <div className="comment-body">
-              <div className="single-comment">
-                <div className="comment-img">
-                <Image
-                    src="/images/posts/author/author-b4.webp"
-                    alt="Rahabi Khan"
-                    height={60}
-                    width={60}
-                  />
-                </div>
-                <div className="comment-inner">
-                  <h6 className="commenter">
-                    <Link href={`/author/${slugify("Jone Doe")}`}>
-                      <a className="hover-flip-item-wrapper">
-                        <span className="hover-flip-item">
-                          <span data-text="Jone Doe">
-                          Jone Doe
-                          </span>
-                        </span>
-                      </a>
-                    </Link>
-                  </h6>
-                  <div className="comment-meta">
-                    <div className="time-spent">Nov 23, 2018 at 12:23 pm</div>
-                    <div className="reply-edit">
-                      <div className="reply">
-                        <a
-                          className="comment-reply-link hover-flip-item-wrapper"
-                          href="#"
-                        >
-                          <span className="hover-flip-item">
-                            <span data-text="Reply">Reply</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="comment-text">
-                    <p className="b2">
-                      Duis hendrerit velit scelerisque felis tempus, id porta
-                      libero venenatis. Nulla facilisi. Phasellus viverra magna
-                      commodo dui lacinia tempus. Donec malesuada nunc non dui
-                      posuere, fringilla vestibulum urna mollis. Integer
-                      condimentum ac sapien quis maximus.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          {/* End Single Comment  */}
-        </ul>
-      </div>
-      {/* End Comment Area  */}
-      {/* Start Comment Respond  */}
-      <div className="comment-respond">
-        <h4 className="title">Post a comment</h4>
-        <form action="#">
-          <p className="comment-notes">
-            <span id="email-notes">
-              Your email address will not be published.
-            </span>
-            Required fields are marked <span className="required">*</span>
-          </p>
-          <div className="row row--10">
-            <div className="col-12">
-              <div className="form-group">
-                <label htmlFor="message">Leave a Reply</label>
-                <textarea id="message" name="message" />
-              </div>
-            </div>
-            <div className="col-lg-12">
-              <p className="comment-form-cookies-consent">
-                <input
-                  id="wp-comment-cookies-consent"
-                  name="wp-comment-cookies-consent"
-                  type="checkbox"
-                />
-                <label htmlFor="wp-comment-cookies-consent">
-                  Save my name, email, and website in this browser for the next
-                  time I comment.
-                </label>
-              </p>
-            </div>
-            <div className="col-lg-12">
-              <div className="form-submit cerchio">
-                <input
-                  name="submit"
-                  type="submit"
-                  id="submit"
-                  className="axil-button button-rounded"
-                />
-              </div>
-            </div>
           </div>
-        </form>
+        ) : (
+          <div className="add-comment-button cerchio">
+            <Link href="#comment-form">
+              <a className="axil-button button-rounded">
+                <span>Post a Comment</span>
+              </a>
+            </Link>
+          </div>
+        )}
       </div>
-      {/* End Comment Respond  */}
+
+      <div className="axil-comment-area">
+        <h4 className="title mt--20">{comments.length} comments</h4>
+
+        {loading ? (
+          <p>Loading comments...</p>
+        ) : error ? (
+          <p style={{ color: "red" }}>{error}</p>
+        ) : comments.length === 0 ? (
+          <p>No comments yet.</p>
+        ) : (
+          <ul className="comment-list">
+            {comments.map((comment, i) => {
+              const teamLogo = getTeamLogo(comment.user?.favorite_f1_team);
+
+              return (
+                <li key={i} className="comment">
+                  <div className="comment-body">
+                    <div className="single-comment">
+                      <div className="comment-img">
+                        <Image
+                          src={comment.user?.profile_picture?.url ? `${apiUrl}/${comment.user.profile_picture.url}` : "/images/others/author.png"}
+                          alt={comment.user?.username || "Anonymous"}
+                          height={60}
+                          width={60}
+                        />
+                      </div>
+                      <div className="comment-inner">
+                        <h6 className="commenter">
+                          <Link href={`/author/${slugify(comment.user?.username || "Anonymous")}`}>
+                            <a className="hover-flip-item-wrapper">
+                              <span className="hover-flip-item">
+                                <span data-text={comment.user?.username || "Anonymous"}>
+                                  {comment.user?.username || "Anonymous"}
+                                </span>
+                              </span>
+                            </a>
+                          </Link>
+                          {teamLogo ? (
+                            <>
+                              &nbsp;
+                              <Image
+                                src={teamLogo}
+                                height={20}
+                                width={20}
+                                priority={true}
+                                alt={`${comment.user?.favorite_f1_team} logo`}
+                              />
+                            </>
+                          ): ''}
+                        </h6>
+                        <div className="comment-meta">
+                          <div className="time-spent">{new Date(comment.created_at).toLocaleString()}</div>
+                          <div className="reply-edit">
+                            <div className="reply">
+                              <a className="comment-reply-link hover-flip-item-wrapper" href="#">
+                                <span className="hover-flip-item">
+                                  <span data-text="Reply">Reply</span>
+                                </span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="comment-text">
+                          <p className="b2">{comment.content}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </div>
+
+      {isAuthenticated && (
+        <div className="comment-respond" id="comment-form">
+          <h4 className="title">Post a comment</h4>
+          <form onSubmit={handleSubmit}>
+            <div className="row row--10">
+              <div className="col-12">
+                <div className="form-group">
+                  <label htmlFor="message">Leave a Reply</label>
+                  <textarea 
+                    id="message"
+                    name="message"
+                    value={commentContent}
+                    onChange={handleCommentChange}
+                  />
+                </div>
+              </div>
+              <div className="col-lg-12">
+                <div className="form-submit cerchio">
+                  <input name="submit" type="submit" id="submit" className="axil-button button-rounded" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
