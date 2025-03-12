@@ -13,6 +13,8 @@ const PostComment = ({ postId }) => {
   const apiUrl = typeof window !== "undefined" && window.location.hostname === "localhost" ? local : prod;
   const { isAuthenticated } = useContext(AuthContext); 
   const [commentContent, setCommentContent] = useState("");
+  const [replyingTo, setReplyingTo] = useState(null);
+  const [replyingToUsername, setReplyingToUsername] = useState(null);
 
   const fetchCommentsData = async () => {
     if (!postId) return;
@@ -22,7 +24,24 @@ const PostComment = ({ postId }) => {
       if (!response.ok) throw new Error(`Error ${response.status}: ${response.statusText}`);
 
       const commentsData = await response.json();
-      setComments(commentsData);
+      const commentMap = new Map();
+    
+      commentsData.forEach(comment => commentMap.set(comment.id, { ...comment, replies: [] }));
+  
+      const structuredComments = [];
+  
+      commentsData.forEach(comment => {
+        if (comment.parent_comment_id) {
+          const parent = commentMap.get(comment.parent_comment_id);
+          if (parent) {
+            parent.replies.push(comment);
+          }
+        } else {
+          structuredComments.push(commentMap.get(comment.id));
+        }
+      });
+  
+      setComments(structuredComments);
     } catch (err) {
       console.error("Error loading comments:", err);
       setError(err.message);
@@ -43,7 +62,11 @@ const PostComment = ({ postId }) => {
     e.preventDefault();
 
     if (!commentContent) return;
-    const commentData = { content: commentContent };
+
+    const commentData = { 
+      content: commentContent, 
+      parent_comment_id: replyingTo 
+    };
 
     try {
       const response = await fetch(`${apiUrl}/api/v1/posts/${postId}/comments/`, {
@@ -60,8 +83,9 @@ const PostComment = ({ postId }) => {
 
       setComments((prevComments) => [newComment.comment, ...prevComments]);
       setCommentContent(""); 
+      setReplyingTo(null);  
       fetchCommentsData();
-
+      console.log(comments)
     } catch (err) {
       console.error("Error submitting comment:", err);
       setError(err.message);
@@ -102,7 +126,9 @@ const PostComment = ({ postId }) => {
       </div>
 
       <div className="axil-comment-area">
-        <h4 className="title mt--20">{comments.length} comments</h4>
+      <h4 className="title mt--20">
+        {comments.reduce((total, comment) => total + 1 + (comment.replies?.length || 0), 0)} comments
+      </h4>
 
         {loading ? (
           <p>Loading comments...</p>
@@ -155,7 +181,7 @@ const PostComment = ({ postId }) => {
                           <div className="time-spent">{new Date(comment.created_at).toLocaleString()}</div>
                           <div className="reply-edit">
                             <div className="reply">
-                              <a className="comment-reply-link hover-flip-item-wrapper" href="#">
+                              <a className="comment-reply-link hover-flip-item-wrapper" href="#comment-form" onClick={() => {setReplyingTo(comment.id); setReplyingToUsername(comment.user?.username);}}>
                                 <span className="hover-flip-item">
                                   <span data-text="Reply">Reply</span>
                                 </span>
@@ -169,6 +195,61 @@ const PostComment = ({ postId }) => {
                       </div>
                     </div>
                   </div>
+                  {comment.replies && comment.replies.length > 0 && (
+                    <ul className="children">
+                      {comment.replies.map((reply) => {
+                      const replyTeamLogo = getTeamLogo(reply.user?.favorite_f1_team); // <--- Place it here
+
+                        return (
+                          <li key={reply.id} className="comment">
+                            <div className="comment-body">
+                              <div className="single-comment">
+                                <div className="comment-img">
+                                  <Image
+                                    src={reply.user?.profile_picture?.url ? `${apiUrl}/${reply.user.profile_picture.url}` : "/images/others/author.png"}
+                                    alt={reply.user?.username || "Anonymous"}
+                                    height={60}
+                                    width={60}
+                                  />
+                                </div>
+                                <div className="comment-inner">
+                                  <h6 className="commenter">
+                                    <Link href={`/author/${slugify(reply.user?.username || "Anonymous")}`}>
+                                      <a className="hover-flip-item-wrapper">
+                                        <span className="hover-flip-item">
+                                          <span data-text={reply.user?.username || "Anonymous"}>
+                                            {reply.user?.username || "Anonymous"}
+                                          </span>
+                                        </span>
+                                      </a>
+                                    </Link>
+                                    {replyTeamLogo ? (
+                                      <>
+                                        &nbsp;
+                                        <Image
+                                          src={replyTeamLogo}
+                                          height={20}
+                                          width={20}
+                                          priority={true}
+                                          alt={`${reply.user?.favorite_f1_team} logo`}
+                                        />
+                                      </>
+                                    ): ''}
+                                  </h6>
+                                  <div className="comment-meta">
+                                    <div className="time-spent">{new Date(reply.created_at).toLocaleString()}</div>
+                                  </div>
+                                  <div className="comment-text">
+                                    <p className="b2">{reply.content}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  )}
                 </li>
               );
             })}
@@ -179,7 +260,13 @@ const PostComment = ({ postId }) => {
       {isAuthenticated && (
         <div className="comment-respond" id="comment-form">
           <h4 className="title">Post a comment</h4>
-          <form onSubmit={handleSubmit}>
+            {replyingTo && (
+              <div className="replying-to-notice">
+                <p>Replying to <span style={{color: '#e10600'}}>{replyingToUsername}</span></p>
+                <button className="axil-button button-rounded" style={{maxWidth: '175px', marginBottom: '2rem'}}onClick={() => setReplyingTo(null)}>Cancel Reply</button>
+              </div>
+            )}
+            <form onSubmit={handleSubmit}>
             <div className="row row--10">
               <div className="col-12">
                 <div className="form-group">
