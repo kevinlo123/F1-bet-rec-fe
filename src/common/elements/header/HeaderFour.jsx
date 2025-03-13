@@ -143,11 +143,11 @@ const HeaderFour = ({ darkLogo, lightLogo, postData }) => {
                     </li>
                     <li>
                       <Link href="/about">
-                        <a href="/about">About Us</a>
+                        <a href="/about">About</a>
                       </Link>
                     </li>
                     <li>
-                      <Link href="#">
+                      <Link href="/contact">
                         <a>Contact</a>
                       </Link>
                     </li>

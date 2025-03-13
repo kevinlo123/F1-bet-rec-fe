@@ -4,7 +4,7 @@
             "position": 1,
             "team": "Red Bull Racing",
             "points": 0,
-            "logoImg": "\/images\/team-logos\/redbull-logo.png",
+            "logoImg": "\/images\/team-logos\/red-bull-racing-logo.png",
             "drivers": "M. Verstappen, S. Perez",
             "teamColor": "#00017d",
             "customImageWidth": "65px"
@@ -49,7 +49,7 @@
             "position": 6,
             "team": "Visa Cashapp RB",
             "points": 0,
-            "logoImg": "\/images\/team-logos\/visa-rb-logo.png",
+            "logoImg": "\/images\/team-logos\/visa-cashapp-rb-logo.png",
             "drivers": "Y. Tsunoda, D. Ricciardo",
             "teamColor": "#6692FF",
             "customImageWidth": "40px"
@@ -58,7 +58,7 @@
             "position": 7,
             "team": "Haas F1 team",
             "points": 0,
-            "logoImg": "\/images\/team-logos\/haas-logo.png",
+            "logoImg": "\/images\/team-logos\/haas-f1-team-logo.png",
             "drivers": "N. Hülkenberg, K. Magnussen",
             "teamColor": "#B6BABD",
             "customImageWidth": "42.5px"
@@ -67,7 +67,7 @@
             "position": 8,
             "team": "Alpine Renault",
             "points": 0,
-            "logoImg": "\/images\/team-logos\/alpine-logo.png",
+            "logoImg": "\/images\/team-logos\/alpine-renault-logo.png",
             "drivers": "E. Ocon, P. Gasly",
             "teamColor": "#FF87BC",
             "customImageWidth": "50x"
@@ -76,7 +76,7 @@
             "position": 9,
             "team": "Williams Racing",
             "points": 0,
-            "logoImg": "\/images\/team-logos\/williams-logo.png",
+            "logoImg": "\/images\/team-logos\/williams-racing-logo.png",
             "drivers": "A. Albon, L. Sargaent",
             "teamColor": "#64C4FF",
             "customImageWidth": "50px"

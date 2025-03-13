@@ -10,7 +10,7 @@ const WidgetPostList = ({ postData }) => {
     <div className="axil-single-widget widget widget_postlist mb--30">
       <h5 className="widget-title">Popular on F1PressNews</h5>
       <div className="post-medium-block">
-        {postData.slice(3, 6).map((data, i) => (
+        {postData.slice(0, 3).map((data, i) => (
           <div className="content-block post-medium mb--20" key={i}>
 			  {data.feature_img ? 
             <div className="post-thumbnail">

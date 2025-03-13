@@ -116,6 +116,8 @@
                     overflow: visible;
                     @extend %transition;
                     .hover-flip-item {
+                        color: var(--color-primary);
+
                         span {
                             &::before {
                                 color: var(--color-heading);

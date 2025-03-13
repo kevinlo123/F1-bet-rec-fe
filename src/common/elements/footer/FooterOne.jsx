@@ -55,19 +55,29 @@ const FooterOne = () => {
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="#">News and updates</a>
+                      <Link href={'/category/news-and-updates'}> 
+                        News and updates
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Races and Events</a>
+                      <Link href={'/category/races-and-events'}> 
+                        Races and Events
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Lifestyle and culture</a>
+                      <Link href={'/category/lifestyle-and-culture'}> 
+                        Lifestyle and culture
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Beyond the grid</a>
+                      <Link href={'/category/beyond-the-grid'}> 
+                        Beyond the grid
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">History and Legacy</a>
+                      <Link href={'/category/history-and-Legacy'}> 
+                        History and Legacy
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -79,10 +89,14 @@ const FooterOne = () => {
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="/about">About Us</a>
+                      <Link href={'/about'}> 
+                        About
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">Contact</a>
+                      <Link href={'/contact'}> 
+                        Contact
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -94,10 +108,14 @@ const FooterOne = () => {
                 <div className="inner">
                   <ul className="ft-menu-list">
                     <li>
-                      <a href="/login">Login</a>
+                      <Link href={'/login'}> 
+                        Login
+                      </Link>
                     </li>
                     <li>
-                      <a href="/signup">Signup</a>
+                      <Link href={'/signup'}> 
+                        Signup
+                      </Link>
                     </li>
                   </ul>
                 </div>
