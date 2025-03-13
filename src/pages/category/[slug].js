@@ -4,31 +4,22 @@ import PostLayoutTwo from '../../common/components/post/layout/PostLayoutTwo';
 import BreadcrumbOne from '../../common/elements/breadcrumb/breadcrumbOne';
 import FooterOne from '../../common/elements/footer/FooterOne';
 import HeadTitle from "../../common/elements/head/HeadTitle";
-import HeaderOne from '../../common/elements/header/HeaderOne';
 import SidebarOne from "../../common/components/sidebar/SidebarOne";
 import { slugify } from '../../common/utils';
-
+import HeaderFour from '../../common/elements/header/HeaderFour';
+import PostSectionFour from '../../common/components/post/PostSectionFour';
+import CategoryList from '../../common/components/category/CategoryList';
 
 const PostCategory = ({ postData, allPosts }) => {
+
 	
 	return (
 		<>
 		<HeadTitle pageTitle="Category Archive"/>
-		<HeaderOne postData={allPosts} />
-		<BreadcrumbOne title={postData[0].cate} />
-		<div className="axil-post-list-area axil-section-gap bg-color-white">
-			<div className="container">
-				<div className="row">
-				<div className="col-lg-8 col-xl-8">
-					<PostLayoutTwo dataPost={postData} show="5"/>
-				</div>
-				<div className="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
-					<SidebarOne dataPost={allPosts}/>
-				</div>
-				</div>
-			</div>
-		</div>
-		<InstagramOne parentClass="bg-color-grey" />
+		<HeaderFour postData={allPosts} />
+		<BreadcrumbOne customProp={true} title={postData?.[0]?.cate || "Not Found"} />
+		<PostSectionFour postData={postData} adBanner={true} />
+		<CategoryList />
 		<FooterOne />
 
 		</>
@@ -38,46 +29,49 @@ const PostCategory = ({ postData, allPosts }) => {
 export default PostCategory;
 
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps(context) {
+  const { params } = context;
 
-	const postParams = params.slug;
+  const local = 'http://localhost:3000/api/v1/';
+  const prod = 'https://limitless-escarpment-05345-1ca012576c29.herokuapp.com/api/v1/';
 
-	const allPosts = getAllPosts([
-		'slug',
-		'cate',
-		'cate_img',
-		'title',
-		'featureImg',
-		'date',
-		'post_views',
-		'read_time',
-		'author_name',
-		'author_social'
-	]);
-	
-	const getCategoryData = allPosts.filter(post => slugify(post.cate) === postParams);
-	const postData = getCategoryData;
-	
-	return {
-		props: {
-			postData,
-			allPosts
-		}
+  const apiUrl = process.env.NODE_ENV === 'production' ? prod : local;
+
+  const allPosts = getAllPosts([
+	'slug',
+	'cate',
+	'cate_img',
+	'title',
+	'featureImg',
+	'date',
+	'post_views',
+	'read_time',
+	'author_name',
+	'author_social'
+]);
+
+
+  try {
+	const response = await fetch(`${apiUrl}/posts/`);
+	if (!response.ok) {
+	  throw new Error('Network response was not ok');
 	}
-}
 
-
-export async function getStaticPaths() {
-	const posts = getAllPosts(['cate']);
-
-	const paths = posts.map(post => ({
-		params: {
-			slug: slugify(post.cate)
-		}
-	}))
+	const posts = await response.json();
+	const getCategoryPosts = posts.filter(post => slugify(post.cate) === params.slug);
+	const postData = getCategoryPosts;
 
 	return {
-		paths,
-		fallback: false,
-	}
+	  props: {
+		allPosts,
+		postData 
+	  }
+	};
+  } catch (error) {
+	console.error('Error fetching data for posts:', error);
+
+	return {
+	  notFound: true,
+	};
+  }
 }

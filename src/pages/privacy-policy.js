@@ -1,5 +1,5 @@
-import FooterThree from "../common/elements/footer/FooterThree";
-import HeaderOne from "../common/elements/header/HeaderOne";
+import FooterOne from '../common/elements/footer/FooterOne';
+import HeaderFour from "../common/elements/header/HeaderFour";
 import { getFileContentBySlug, getAllPosts } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 import HeadTitle from "../common/elements/head/HeadTitle";
@@ -9,7 +9,7 @@ const PrivacyPolicy = ({privacyData, allPosts}) => {
     return ( 
         <>
         <HeadTitle pageTitle="Privacy Policy"/>
-        <HeaderOne postData={allPosts} pClass="header-light header-sticky header-with-shadow"/>
+        <HeaderFour postData={allPosts} />
         <div className="axil-privacy-area axil-section-gap bg-color-white">
             <div className="container">
                 <div className="row">
@@ -27,7 +27,7 @@ const PrivacyPolicy = ({privacyData, allPosts}) => {
             </div>
         </div>
 
-        <FooterThree bgColor="bg-color-black" darkLogo="/images/logo/logo-white2.webp"/>
+        <FooterOne />
         </>
     );
 }

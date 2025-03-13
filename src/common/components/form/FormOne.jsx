@@ -49,12 +49,6 @@ const FormOne = () => {
           </div>
           <div className="col-lg-4 col-md-4 col-12">
             <div className="form-group">
-              <label htmlFor="contact-phone">Phone</label>
-              <input type="text" name="contact-phone" id="contact-phone" required/>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-4 col-12">
-            <div className="form-group">
               <label htmlFor="contact-email">Your Email</label>
               <input
                 name="contact-email"

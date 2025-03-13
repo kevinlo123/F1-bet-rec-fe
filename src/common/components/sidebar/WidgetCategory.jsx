@@ -13,15 +13,6 @@ const WidgetCategory = ({ catData }) => {
           <li className="cat-item" key={data.id}>
             <Link href={`/category/${slugify(data.cate)}`}>
               <a className="inner">
-                <div className="thumbnail">
-                  <Image
-                    src={'/images/posts/category/design.webp'}
-                    alt={data.cate}
-                    height={50}
-                    width={50}
-                    priority={true}
-                  />
-                </div>
                 <div className="content">
                   <h5 className="title">{data.cate}</h5>
                 </div>

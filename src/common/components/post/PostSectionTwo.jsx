@@ -32,7 +32,7 @@ const drivers = [
     name: "Max Verstappen",
     img: "/images/drivers/maxver01.avif",
     team: "Red Bull",
-    logoImg: "\/images\/team-logos\/redbull-logo.png",
+    logoImg: "\/images\/team-logos\/red-bull-racing-logo.png",
     customImageWidth: "65px",
     color: "#00017d"
   },
@@ -41,7 +41,7 @@ const drivers = [
     name: "Liam Lawson",
     img: "/images/drivers/lialaw01.avif",
     team: "Red Bull",
-    logoImg: "\/images\/team-logos\/redbull-logo.png",
+    logoImg: "\/images\/team-logos\/red-bull-racing-logo.png",
     customImageWidth: "65px",
     color: "#00017d"
   },
@@ -104,7 +104,7 @@ const drivers = [
     name: "Carlos Sainz",
     img: "/images/drivers/carsai01.avif",
     team: "Williams",
-    logoImg: "\/images\/team-logos\/williams-logo.png",
+    logoImg: "\/images\/team-logos\/williams-racing-logo.png",
     customImageWidth: "50px",
     color: "#64C4FF"
   },
@@ -113,7 +113,7 @@ const drivers = [
     name: "Alex Albon",
     img: "/images/drivers/alealb01.avif",
     team: "Williams",
-    logoImg: "\/images\/team-logos\/williams-logo.png",
+    logoImg: "\/images\/team-logos\/williams-racing-logo.png",
     customImageWidth: "50px",
     color: "#64C4FF"
   },
@@ -122,7 +122,7 @@ const drivers = [
     name: "Yuki Tsunoda",
     img: "/images/drivers/yuktsu01.avif",
     team: "Visa Cashapp RB",
-    logoImg: "\/images\/team-logos\/visa-rb-logo.png",
+    logoImg: "\/images\/team-logos\/visa-cashapp-rb-logo.png",
     customImageWidth: "40px",
     color: "#6692FF"
 
@@ -132,7 +132,7 @@ const drivers = [
     name: "Isack Hadjar",
     img: "/images/drivers/isahad01.avif",
     team: "Visa Cashapp RB",
-    logoImg: "\/images\/team-logos\/visa-rb-logo.png",
+    logoImg: "\/images\/team-logos\/visa-cashapp-rb-logo.png",
     customImageWidth: "40px",
     color: "#6692FF"
   },
@@ -141,7 +141,7 @@ const drivers = [
     name: "Pierre Gasly",
     img: "/images/drivers/piegas01.avif",
     team: "Alpine",
-    logoImg: "\/images\/team-logos\/alpine-logo.png",
+    logoImg: "\/images\/team-logos\/alpine-renault-logo.png",
     customImageWidth: "50px",
     color: "#FF87BC"
   },
@@ -150,7 +150,7 @@ const drivers = [
     name: "Jack Doohan",
     img: "/images/drivers/jacdoo01.avif",
     team: "Alpine",
-    logoImg: "\/images\/team-logos\/alpine-logo.png",
+    logoImg: "\/images\/team-logos\/alpine-renault-logo.png",
     customImageWidth: "50px",
     color: "#FF87BC"
   },
@@ -159,7 +159,7 @@ const drivers = [
     name: "Esteban Ocon",
     img: "/images/drivers/estoco01.avif",
     team: "Haas",
-    logoImg: "\/images\/team-logos\/haas-logo.png",
+    logoImg: "\/images\/team-logos\/haas-f1-team-logo.png",
     customImageWidth: "42.5px",
     color: "#B6BABD"
   },
@@ -168,7 +168,7 @@ const drivers = [
     name: "Oliver Bearman",
     img: "/images/drivers/olibea01.avif",
     team: "Haas",
-    logoImg: "\/images\/team-logos\/haas-logo.png",
+    logoImg: "\/images\/team-logos\/haas-f1-team-logo.png",
     customImageWidth: "42.5px",
     color: "#B6BABD"
   },

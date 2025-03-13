@@ -2,26 +2,26 @@ import React from 'react';
 import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
 
 const raceResults = [
-  { position: 1, driver: "VER", team: "1:29:08.289", color: "#1E41FF", points: 25 },
-  { position: 2, driver: "HAM", team: "+2.070s", color: "#00D2BE", points: 18 },
-  { position: 3, driver: "LEC", team: "+2.241s", color: "#DC0000", points: 15 },
-  { position: 4, driver: "NOR", team:"+4.241s", color: "#FF8700", points: 12 },
-  { position: 5, driver: "PER", team: "+8.141s", color: "#1E41FF", points: 10 },
-  { position: 6, driver: "SAI", team: "+8.141s", color: "#DC0000", points: 8 },
-  { position: 7, driver: "RUS", team: "+8.141s", color: "#00D2BE", points: 6 },
-  { position: 8, driver: "ALO", team: "+8.141s", color: "#006F62", points: 4 },
-  { position: 9, driver: "GAS", team: "+8.141s", color: "#0090FF", points: 2 },
-  { position: 10, driver: "PIA", team: "+8.141s", color: "#FF8700", points: 1 },
-  { position: 11, driver: "MAG", team: "+8.141s", color: "#FFFFFF", points: 0 },
-  { position: 12, driver: "OCO", team: "+8.141s", color: "#0090FF", points: 0 },
-  { position: 13, driver: "TSU", team: "+8.141s", color: "#5E8FAA", points: 0 },
-  { position: 14, driver: "HUL", team: "+8.141s", color: "#FFFFFF", points: 0 },
-  { position: 15, driver: "ZHO", team: "+8.141s", color: "#900000", points: 0 },
-  { position: 16, driver: "RIC", team: "+8.141s", color: "#5E8FAA", points: 0 },
-  { position: 17, driver: "SAR", team: "+8.141s", color: "#005AFF", points: 0 },
-  { position: 18, driver: "ALB", team: "+8.141s", color: "#005AFF", points: 0 },
-  { position: 19, driver: "STR", team: "+8.141s", color: "#006F62", points: 0 },
-  { position: 20, driver: "BOT", team: "+8.141s", color: "#900000", points: 0 }
+  { position: 1, driver: "VER", team: "1:29:08.289", color: "#00017d", points: 25 }, // Red Bull Racing
+  { position: 2, driver: "HAM", team: "+2.070s", color: "#E8002D", points: 18 }, // Ferrari
+  { position: 3, driver: "LEC", team: "+2.241s", color: "#E8002D", points: 15 }, // Ferrari
+  { position: 4, driver: "NOR", team:"+4.241s", color: "#FF8000", points: 12 }, // McLaren
+  { position: 5, driver: "LAW", team: "+8.141s", color: "#00017d", points: 10 }, // Red Bull Racing
+  { position: 6, driver: "SAI", team: "+8.141s", color: "#64C4FF", points: 8 }, // Williams
+  { position: 7, driver: "RUS", team: "+8.141s", color: "#27F4D2", points: 6 }, // Mercedes
+  { position: 8, driver: "ALO", team: "+8.141s", color: "#229971", points: 4 }, // Aston Martin
+  { position: 9, driver: "GAS", team: "+8.141s", color: "#FF87BC", points: 2 }, // Alpine Renault
+  { position: 10, driver: "PIA", team: "+8.141s", color: "#FF8000", points: 1 }, // McLaren
+  { position: 11, driver: "BEA", team: "+8.141s", color: "#B6BABD", points: 0 }, // Haas F1 Team
+  { position: 12, driver: "OCO", team: "+8.141s", color: "#B6BABD", points: 0 }, // Haas F1 Team
+  { position: 13, driver: "TSU", team: "+8.141s", color: "#6692FF", points: 0 }, // Visa Cashapp RB
+  { position: 14, driver: "HAD", team: "+8.141s", color: "#6692FF", points: 0 }, // Visa Cashapp RB
+  { position: 15, driver: "BOR", team: "+8.141s", color: "#52e252", points: 0 }, // Stake F1 Team
+  { position: 16, driver: "DOO", team: "+8.141s", color: "#FF87BC", points: 0 }, // Alpine Renault
+  { position: 17, driver: "ANT", team: "+8.141s", color: "#27F4D2", points: 0 }, // Mercedes
+  { position: 18, driver: "ALB", team: "+8.141s", color: "#64C4FF", points: 0 }, // Williams Racing
+  { position: 19, driver: "STR", team: "+8.141s", color: "#229971", points: 0 }, // Aston Martin
+  { position: 20, driver: "HUL", team: "+8.141s", color: "#52e252", points: 0 }  // Stake F1 Team
 ];
 
 const Leaderboard = () => {
