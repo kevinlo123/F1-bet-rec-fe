@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import { SectionTitleOne } from "../../elements/sectionTitle/SectionTitle";
 import { HoverActiveClass, slugify } from "../../utils";
 import trophy from '../../../../public/images/others/trophy.svg';
+import { useEffect } from "react";
 
 const filters = [
 	{
@@ -53,6 +54,18 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 	const [activeNav, setActiveNav] = useState(defaultActiveCat);
 	const [tabPostData, setTabPostData] = useState(defaultData);
 	const [hoveredIndex, setHoveredIndex] = useState(null);
+
+	useEffect(() => {
+		const hash = window.location.hash;
+		if (hash) {
+		  setTimeout(() => {
+			const element = document.getElementById(`${hash}`);
+			if (element) {
+			  element.scrollIntoView({ behavior: 'smooth' });
+			}
+		  }, 1000);
+		}
+	  }, []);
 
 	const handleChange = (e) => {
 		if (e.target.textContent === "All Races") {
@@ -113,7 +126,7 @@ const PostSectionSix = ({ postData, scheduleData }) => {
 									<div className="col-lg-8">
 										<div className="row">
 											{tabPostData.map((data, index) => (
-												<div className="col-12" key={index}>
+												<div className="col-12" key={index} id={`#${data.ref}`}>
 													<div
 														id={`${data.raceName}`}
 														className={`content-block trend-post post-order-list ${hoveredIndex === index ? "is-active" : "axil-control"}`}
